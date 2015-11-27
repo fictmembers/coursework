@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: pguser
+  password: pguser
+
+development:
+  <<: *default
+  database: course_development_db
+
+test:
+  <<: *default
+  database: course_test_db
+
+production:
+  <<: *default
+  database: course_production_db
