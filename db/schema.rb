@@ -17,10 +17,11 @@ ActiveRecord::Schema.define(version: 20151127182112) do
   enable_extension "plpgsql"
 
   create_table "administrators", force: :cascade do |t|
-    t.string   "LASTMANE"
-    t.integer  "restaurant_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "lastname"
+    t.string   "tel"
+    t.integer  "jobplace"
   end
 
   create_table "bills", force: :cascade do |t|
@@ -103,11 +104,11 @@ ActiveRecord::Schema.define(version: 20151127182112) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string   "NAME"
-    t.string   "ADRESS"
-    t.string   "TEL"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "tel"
+    t.string   "address"
   end
 
   create_table "review_books", force: :cascade do |t|
