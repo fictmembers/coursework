@@ -25,8 +25,8 @@ class ReservationsController < ApplicationController
         SELECT TABLES.id
           FROM TABLES
           INNER JOIN RESERVATIONS
-          ON TABLES.ID = RESERVATIONS.TABLE_ID AND RESERVATIONS.ID = 3)
-    "])
+          ON TABLES.ID = RESERVATIONS.TABLE_ID AND RESERVATIONS.ID = ?)
+    ", @reservation.id])
 
     @guest = Customer.find(@reservation.customer_id)
   end

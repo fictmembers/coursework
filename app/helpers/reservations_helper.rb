@@ -1,13 +1,4 @@
 module ReservationsHelper
-  def customer_select
-    @customers = Customer.all
-    s = ''
-    @customers.each do |guest|
-      s << "<option value=#{guest.id}>#{guest.LASTNAME}</option>"
-    end
-    s.html_safe
-  end
-
   def table_select
     @tables = Table.find_by_sql('
       SELECT tables.id AS t_id,

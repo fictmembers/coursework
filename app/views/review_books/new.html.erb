@@ -1,0 +1,10 @@
+<div class="formfactor">
+  <h3>New review:</h3>
+  <%= form_for(@review_book) do |f| %>
+    <%= f.select :customer_id, customer_select, :prompt => "-Select guest-"%></br>
+    <%= f.select :review_type, options_for_select([["commendation (+)", "commendation"], ["complaint (-)", "complaint"]]), :prompt => "-Select guest-"%></br>
+    <%= f.text_area :REVIEW, :placeholder => "Text" %></br>
+
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>
