@@ -1,0 +1,10 @@
+<div class="formfactor">
+  <h3>Hello, new administrator!</h3>
+  <h4>Join us now:</h4>
+  <%= form_for(@administrator) do |f| %>
+    <%= f.text_field :lastname,     :placeholder => "Name of restaurant" %> </br>
+    <%= f.telephone_field :tel,     :placeholder => "Telephone" %> </br>
+    <%= f.select :jobplace, restaurant_select, class: "select", :prompt => "Choose jobplace"%>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<div class="formfactor">
+  <h3>Reserve a table for your company!</h3>
+  <h4>Just fill this fields:</h4>
+  <%= form_for(@reservation) do |f| %>
+    <%= f.select :customer_id, customer_select, :prompt => "-Select guest-"%></br>
+    <%= f.select :table_id,    table_select,    :prompt => "-Select table-"%></br>
+    <%= f.datetime_select :RESERV_TIME %>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<div class="formfactor">
+  <h3>Hello, new hostess!</h3>
+  <h4>Be a face of restaurant:</h4>
+  <%= form_for(@hostess) do |f| %>
+    <%= f.text_field :NAME,     :placeholder => "Your name and lastname" %></br>
+    <%= f.select :restaurant_id, restaurant_select, :prompt => "Your restaurant"%></br>
+    <%= f.select :hall_id,       hall_select,       :prompt => "Your hall"%></br>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>

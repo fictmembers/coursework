@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :administrators
   resources :bills
   resources :cashiers
   resources :chefs
@@ -14,4 +15,7 @@ Rails.application.routes.draw do
   resources :tables
   resources :waiters
 
+  root 'administrators#panel'
+
+  match '/controlpanel',       to: 'administrators#panel',            via: 'get'
 end

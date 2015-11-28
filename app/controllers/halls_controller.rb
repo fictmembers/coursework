@@ -1,44 +1,48 @@
 class HallsController < ApplicationController
 
   def new
-  @hall = Hall.new()
+    @hall = Hall.new()
   end
 
   def index
-  @hall = Hall.all
+    @hall = Hall.all
   end
 
   def create
-  @hall = Hall.new(hall_params)
+    @hall = Hall.new(hall_params)
+    @hall.save
+
+    redirect_to @hall
   end
 
   def show
-  @hall = Hall.find(params[:id])
+    @hall = Hall.find(params[:id])
+    @restaurant = Restaurant.find(@hall.restaurant_id)
   end
 
   def edit
-  @hall = Hall.find(params[:id])
+    @hall = Hall.find(params[:id])
   end
 
   def update
-  @hall = Hall.find(params[:id])
+    @hall = Hall.find(params[:id])
 
-  if @hall.update_attributes(hall_params)
-    redirect_to halls_path
-  else
-      render 'edit'
-  end
+    if @hall.update_attributes(hall_params)
+      redirect_to halls_path
+    else
+        render 'edit'
+    end
   end
 
   def destroy
-  Hall.find(params[:id]).destroy
-  redirect_to :back
+    Hall.find(params[:id]).destroy
+    redirect_to :back
   end
 
   private
 
   def hall_params
-  params.require(:hall).permit(:HALL_TYPE, :CAPACITY)
+    params.require(:hall).permit(:HALL_TYPE, :CAPACITY, :restaurant_id)
   end
 
 end

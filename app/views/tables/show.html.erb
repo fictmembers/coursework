@@ -1,0 +1,12 @@
+<div class="formfactor">
+  <h4>Table #<%= @table.id %></h4>
+  Persons on it: <%= @table.VISNUMBER %></br>
+  Located in: <b><%= @restaurant.name %></b></br>
+  Current status:
+      <% if @table.STATUS == true %>
+        Occupied!</br>
+      <% else %>
+        Free!</br>
+      <% end %>
+  Serviced by: <%= @waiter.LASTNAME %>
+</div>

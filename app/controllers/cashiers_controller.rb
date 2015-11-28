@@ -1,45 +1,46 @@
 class CashiersController < ApplicationController
 
   def new
-  @cashier = Cashier.new()
-end
-
-def index
-  @cashier = Cashier.all
-end
-
-def create
-  @cashier = Cashier.new(cashier_params)
-end
-
-def show
-  @cashier = Cashier.find(params[:id])
-end
-
-def edit
-  @cashier = Cashier.find(params[:id])
-end
-
-def update
-  @cashier = Cashier.find(params[:id])
-
-  if @cashier.update_attributes(cashier_params)
-    redirect_to cashiers_path
-  else
-      render 'edit'
+    @cashier = Cashier.new()
   end
-end
 
-def destroy
-  Cashier.find(params[:id]).destroy
-  redirect_to :back
-end
+  def index
+    @cashier = Cashier.all
+  end
 
-private
+  def create
+    @cashier = Cashier.new(cashier_params)
+    @cashier.save
+    redirect_to @cashier
+  end
 
-def cashier_params
-  params.require(:cashier).permit(:LASTNAME)
-end
+  def show
+    @cashier = Cashier.find(params[:id])
+    @restaurant = Restaurant.find(@cashier.restaurant_id)
+  end
 
+  def edit
+    @cashier = Cashier.find(params[:id])
+  end
 
+  def update
+    @cashier = Cashier.find(params[:id])
+
+    if @cashier.update_attributes(cashier_params)
+      redirect_to cashiers_path
+    else
+        render 'edit'
+    end
+  end
+
+  def destroy
+    Cashier.find(params[:id]).destroy
+    redirect_to :back
+  end
+
+  private
+
+  def cashier_params
+    params.require(:cashier).permit(:LASTNAME, :restaurant_id)
+  end
 end
