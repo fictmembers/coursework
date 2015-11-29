@@ -1,0 +1,12 @@
+<div class="formfactor">
+  <h3>Add a paybill!</h3>
+  <%= form_for(@bill) do |f| %>
+    <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    <%= f.label :name, 'Specify a date' %>
+    <%= f.datetime_select :CREATED %>
+    <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+    <%= f.text_area :OPTIONS,  :placeholder => "Additional options" %> </br>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>

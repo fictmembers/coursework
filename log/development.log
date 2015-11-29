@@ -16241,3 +16241,1065 @@ Processing by ReviewBooksController#new as HTML
   [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
   Rendered review_books/new.html.erb within layouts/application (2.8ms)
 Completed 200 OK in 125ms (Views: 123.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AdministratorsController#panel as HTML
+  Rendered administrators/panel.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 270ms (Views: 259.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/administrators.self-6e86d131dd4cec4f041549fabb467b7bccfa9d293d9ac0411721b4d2a484dc77.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/cashiers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/customers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/application.self-5a4e08a87f9a0eba77cce2e674c2717400c23fb3a66c5b81cab05e848870ba85.css?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/administrators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/cashiers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/chefs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/customers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/halls.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/hostesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/review_books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/tables.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/waiters.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-28 23:59:08 +0200
+
+
+Started GET "/administrators/new" for 127.0.0.1 at 2015-11-28 23:59:10 +0200
+Processing by AdministratorsController#new as HTML
+  [1m[35mRestaurant Load (0.6ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered administrators/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 182ms (Views: 164.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/chefs/new" for 127.0.0.1 at 2015-11-28 23:59:14 +0200
+Processing by ChefsController#new as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered chefs/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 121ms (Views: 111.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-28 23:59:27 +0200
+Processing by AdministratorsController#panel as HTML
+  Rendered administrators/panel.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 123ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:20:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (1.2ms)[0m  [1m
+        SELECT CASHIERS.LASTNAME AS c_name,
+               CASHIERS.ID AS c_id,
+               RESTAURANTS.NAME AS r_name
+        FROM CASHIERS
+        INNER JOIN RESTAURANTS
+        ON CASHIERS.restaurant_id = RESTAURANTS.id
+    [0m
+PG::UndefinedColumn: ERROR:  column cashiers.lastname does not exist
+LINE 2:         SELECT CASHIERS.LASTNAME AS c_name,
+                       ^
+: 
+        SELECT CASHIERS.LASTNAME AS c_name,
+               CASHIERS.ID AS c_id,
+               RESTAURANTS.NAME AS r_name
+        FROM CASHIERS
+        INNER JOIN RESTAURANTS
+        ON CASHIERS.restaurant_id = RESTAURANTS.id
+    
+  Rendered bills/new.html.erb within layouts/application (22.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 5.5ms)
+
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cashiers.lastname does not exist
+LINE 2:         SELECT CASHIERS.LASTNAME AS c_name,
+                       ^
+: 
+        SELECT CASHIERS.LASTNAME AS c_name,
+               CASHIERS.ID AS c_id,
+               RESTAURANTS.NAME AS r_name
+        FROM CASHIERS
+        INNER JOIN RESTAURANTS
+        ON CASHIERS.restaurant_id = RESTAURANTS.id
+    ):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:3:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb__789312097_99163700'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb__789312097_99163700'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.9ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.1ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (40.3ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:22:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.7ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (1.5ms)[0m  [1m
+        SELECT CASHIERS.'LASTNAME' AS c_name,
+               CASHIERS.ID AS c_id,
+               RESTAURANTS.NAME AS r_name
+        FROM CASHIERS
+        INNER JOIN RESTAURANTS
+        ON CASHIERS.restaurant_id = RESTAURANTS.id
+    [0m
+PG::SyntaxError: ERROR:  syntax error at or near "'LASTNAME'"
+LINE 2:         SELECT CASHIERS.'LASTNAME' AS c_name,
+                                ^
+: 
+        SELECT CASHIERS.'LASTNAME' AS c_name,
+               CASHIERS.ID AS c_id,
+               RESTAURANTS.NAME AS r_name
+        FROM CASHIERS
+        INNER JOIN RESTAURANTS
+        ON CASHIERS.restaurant_id = RESTAURANTS.id
+    
+  Rendered bills/new.html.erb within layouts/application (28.2ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 6.2ms)
+
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near "'LASTNAME'"
+LINE 2:         SELECT CASHIERS.'LASTNAME' AS c_name,
+                                ^
+: 
+        SELECT CASHIERS.'LASTNAME' AS c_name,
+               CASHIERS.ID AS c_id,
+               RESTAURANTS.NAME AS r_name
+        FROM CASHIERS
+        INNER JOIN RESTAURANTS
+        ON CASHIERS.restaurant_id = RESTAURANTS.id
+    ):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:3:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb___499289125_90691380'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb___499289125_90691380'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (39.6ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:23:35 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT "customers".* FROM "customers"
+  Rendered bills/new.html.erb within layouts/application (64.2ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 3.2ms)
+
+ActionView::Template::Error (Association named 'restaurants' was not found on Cashier; perhaps you misspelled it?):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:5:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb___499289125_90691380'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb___499289125_90691380'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.9ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:23:54 +0200
+Processing by BillsController#new as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT "customers".* FROM "customers"[0m
+  Rendered bills/new.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.2ms)
+
+ActionView::Template::Error (uninitialized constant BillsHelper::Restaurants):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:3:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb___499289125_90691380'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb___499289125_90691380'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.3ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:27:03 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (0.8ms)[0m  [1mSELECT "cashiers".* FROM "cashiers" INNER JOIN RESTAURANTS
+                                ON RESTAURANTS.ID = CASHIERS.restaurant_id[0m
+  Rendered bills/new.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.5ms)
+
+ActionView::Template::Error (undefined method `c_id' for #<Cashier:0xb54bcc64>):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:9:in `block in cashier_select'
+  app/helpers/bills_helper.rb:8:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb___499289125_90691380'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb___499289125_90691380'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.7ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.5ms)
+
+
+Started PUT "/bills/console/repl_sessions/3b06094554135c6fec9ac9b6032650cc" for 127.0.0.1 at 2015-11-29 13:27:14 +0200
+
+
+Started PUT "/bills/console/repl_sessions/3b06094554135c6fec9ac9b6032650cc" for 127.0.0.1 at 2015-11-29 13:27:26 +0200
+
+
+Started PUT "/bills/console/repl_sessions/3b06094554135c6fec9ac9b6032650cc" for 127.0.0.1 at 2015-11-29 13:27:41 +0200
+
+
+Started PUT "/bills/console/repl_sessions/3b06094554135c6fec9ac9b6032650cc" for 127.0.0.1 at 2015-11-29 13:28:58 +0200
+  [1m[35mCashier Load (0.5ms)[0m  SELECT "cashiers".* FROM "cashiers" INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id
+
+
+Started PUT "/bills/console/repl_sessions/3b06094554135c6fec9ac9b6032650cc" for 127.0.0.1 at 2015-11-29 13:32:19 +0200
+  [1m[36mCashier Load (0.5ms)[0m  [1m                                SELECT CASHIERS.LASTNAME AS c_name,                                       CASHIERS.id       AS c_id,                                       RESTAURANT.name   AS r_name                                 INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+PG::SyntaxError: ERROR:  syntax error at or near "INNER"
+LINE 1: ....name   AS r_name                                 INNER JOIN...
+                                                             ^
+:                                 SELECT CASHIERS.LASTNAME AS c_name,                                       CASHIERS.id       AS c_id,                                       RESTAURANT.name   AS r_name                                 INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:32:42 +0200
+
+SyntaxError (/home/ic2h/Project/coursework/app/helpers/bills_helper.rb:12: syntax error, unexpected tSTRING_DEND, expecting '('
+...s << "<option value=#{cashier.}>#{cashier.c_name} (#{cashier...
+...                               ^
+/home/ic2h/Project/coursework/app/helpers/bills_helper.rb:15: syntax error, unexpected keyword_end, expecting tSTRING_DEND):
+  app/helpers/bills_helper.rb:12: syntax error, unexpected tSTRING_DEND, expecting '('
+  app/helpers/bills_helper.rb:15: syntax error, unexpected keyword_end, expecting tSTRING_DEND
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/bills_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.1ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:32:58 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (1.1ms)[0m  [1m
+                               SELECT CASHIERS.LASTNAME AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANT.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+PG::UndefinedColumn: ERROR:  column cashiers.lastname does not exist
+LINE 2:                                SELECT CASHIERS.LASTNAME AS c...
+                                              ^
+: 
+                               SELECT CASHIERS.LASTNAME AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANT.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id
+  Rendered bills/new.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.2ms)
+
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cashiers.lastname does not exist
+LINE 2:                                SELECT CASHIERS.LASTNAME AS c...
+                                              ^
+: 
+                               SELECT CASHIERS.LASTNAME AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANT.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:3:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb___499289125_90691380'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb___499289125_90691380'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.4ms)
+
+
+Started PUT "/bills/console/repl_sessions/a0cdf3cc27f941e46682afa0c996e31e" for 127.0.0.1 at 2015-11-29 13:33:34 +0200
+  [1m[35mCashier Load (0.7ms)[0m                                  SELECT CASHIERS.'LASTNAME' AS c_name,                                       CASHIERS.id       AS c_id,                                       RESTAURANT.name   AS r_name                                FROM CASHIERS                                INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id
+PG::SyntaxError: ERROR:  syntax error at or near "'LASTNAME'"
+LINE 1:                                 SELECT CASHIERS.'LASTNAME' A...
+                                                        ^
+:                                 SELECT CASHIERS.'LASTNAME' AS c_name,                                       CASHIERS.id       AS c_id,                                       RESTAURANT.name   AS r_name                                FROM CASHIERS                                INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id
+
+
+Started PUT "/bills/console/repl_sessions/a0cdf3cc27f941e46682afa0c996e31e" for 127.0.0.1 at 2015-11-29 13:34:19 +0200
+  [1m[36mCashier Load (0.7ms)[0m  [1m                                SELECT CASHIERS."LASTNAME" AS c_name,                                       CASHIERS.id       AS c_id,                                       RESTAURANT.name   AS r_name                                FROM CASHIERS                                INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "restaurant"
+LINE 1: ...   AS c_id,                                       RESTAURANT...
+                                                             ^
+:                                 SELECT CASHIERS."LASTNAME" AS c_name,                                       CASHIERS.id       AS c_id,                                       RESTAURANT.name   AS r_name                                FROM CASHIERS                                INNER JOIN RESTAURANTS                                ON RESTAURANTS.id = CASHIERS.restaurant_id
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:46:55 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (1.0ms)[0m  [1m
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANT.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "restaurant"
+LINE 4:                                       RESTAURANT.name   AS r...
+                                              ^
+: 
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANT.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id
+  Rendered bills/new.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 5.4ms)
+
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "restaurant"
+LINE 4:                                       RESTAURANT.name   AS r...
+                                              ^
+: 
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANT.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id):
+    2:   <h3>Add a paybill!</h3>
+    3:   <%= form_for(@bill) do |f| %>
+    4:     <%= f.select :customer_id, customer_select, class: "select", :prompt => "-Select guest-"%>
+    5:     <%= f.select :cashier_id,  cashier_select,  class: "select", :prompt => "-Select cashier-"%>
+    6:     <%= f.label :name, 'Specify a date' %>
+    7:     <%= f.datetime_select :CREATED %>
+    8:     <%= f.number_field :SUMMARY, :placeholder => "Summary in $", :value => "1", :step => "any"%>
+  app/helpers/bills_helper.rb:3:in `cashier_select'
+  app/views/bills/new.html.erb:5:in `block in _app_views_bills_new_html_erb___499289125_90691380'
+  app/views/bills/new.html.erb:3:in `_app_views_bills_new_html_erb___499289125_90691380'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (31.7ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:49:02 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (0.4ms)[0m  [1m
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANTS.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+  Rendered bills/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 344ms (Views: 332.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/administrators.self-6e86d131dd4cec4f041549fabb467b7bccfa9d293d9ac0411721b4d2a484dc77.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/customers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/cashiers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/application.self-5a4e08a87f9a0eba77cce2e674c2717400c23fb3a66c5b81cab05e848870ba85.css?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/administrators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/cashiers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/chefs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/customers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/halls.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/hostesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/review_books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/tables.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/waiters.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-29 13:49:03 +0200
+
+
+Started POST "/bills" for 127.0.0.1 at 2015-11-29 13:49:36 +0200
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yl2IBSsYevmAlzSBOz+UWJHZ9ZQlCUaua06yH/pIpn255YodrdITLsz9VEyxWKofzX3yaCVp9Jlls2eR+X7KGw==", "bill"=>{"customer_id"=>"2", "cashier_id"=>"1", "CREATED(1i)"=>"2016", "CREATED(2i)"=>"6", "CREATED(3i)"=>"17", "CREATED(4i)"=>"03", "CREATED(5i)"=>"49", "SUMMARY"=>"2.11", "OPTIONS"=>"Nothing"}, "commit"=>"Save information"}
+Unpermitted parameters: customer_id, cashier_id
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/bills
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2015-11-29 13:49:36 +0200
+Processing by BillsController#index as HTML
+  Rendered bills/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 121ms (Views: 120.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (0.6ms)[0m  [1m
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANTS.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+  Rendered bills/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 139ms (Views: 122.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/administrators.self-6e86d131dd4cec4f041549fabb467b7bccfa9d293d9ac0411721b4d2a484dc77.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/customers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/cashiers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/application.self-5a4e08a87f9a0eba77cce2e674c2717400c23fb3a66c5b81cab05e848870ba85.css?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/administrators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/cashiers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/chefs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/customers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/halls.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/hostesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/review_books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/tables.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/waiters.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-29 13:50:28 +0200
+
+
+Started POST "/bills" for 127.0.0.1 at 2015-11-29 13:50:30 +0200
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yp6OFMRYwu4b02V+hoZie/e5ACbtJSZwXWUz9hyoyt25JowMQpKrOVe5BbMM4Vw8qx0H2u1FlEdTmOZ4H56muw==", "bill"=>{"customer_id"=>"2", "cashier_id"=>"1", "CREATED(1i)"=>"2016", "CREATED(2i)"=>"6", "CREATED(3i)"=>"17", "CREATED(4i)"=>"03", "CREATED(5i)"=>"49", "SUMMARY"=>"2.11", "OPTIONS"=>"Nothing"}, "commit"=>"Save information"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (40.9ms)[0m  [1mINSERT INTO "bills" ("OPTIONS", "SUMMARY", "customer_id", "cashier_id", "CREATED", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["OPTIONS", "Nothing"], ["SUMMARY", 2], ["customer_id", 2], ["cashier_id", 1], ["CREATED", "2016-06-17 03:49:00.000000"], ["created_at", "2015-11-29 11:50:30.573487"], ["updated_at", "2015-11-29 11:50:30.573487"]]
+  [1m[35m (16.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/bills/1
+Completed 302 Found in 68ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2015-11-29 13:50:30 +0200
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBill Load (0.5ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered bills/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 117ms (Views: 109.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2015-11-29 14:09:49 +0200
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBill Load (0.2ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCashier Load (0.3ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered bills/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 7.5ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    2:   <h4>Bill №<%= @bill.id %></h4>
+    3:   Payed by: <i><%= @guest.LASTNAME %></i></br>
+    4:   Processed by: <i><%= @cashier.LASTNAME %></i></br>
+    5:   Summary: <%= @bills.id %>$</br>
+    6:   At: <%= @restaurant.name %> on <%= @bill.CREATED %>
+    7: 
+    8: </div>
+  app/views/bills/show.html.erb:5:in `_app_views_bills_show_html_erb___900945573_92693840'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (32.2ms)
+
+
+Started PUT "/bills/console/repl_sessions/39f9ebdf1897dc96bdbdbe5fe804b373" for 127.0.0.1 at 2015-11-29 14:10:03 +0200
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBill Load (0.6ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCashier Load (1.1ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRestaurant Load (0.8ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered bills/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 176ms (Views: 164.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/administrators.self-6e86d131dd4cec4f041549fabb467b7bccfa9d293d9ac0411721b4d2a484dc77.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/customers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/cashiers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/application.self-5a4e08a87f9a0eba77cce2e674c2717400c23fb3a66c5b81cab05e848870ba85.css?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/administrators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/cashiers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/chefs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/customers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/halls.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/hostesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/review_books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/tables.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/waiters.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-29 14:10:24 +0200
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 14:10:55 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.4ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (0.7ms)[0m  [1m
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANTS.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+  Rendered bills/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 122ms (Views: 119.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cashier/new" for 127.0.0.1 at 2015-11-29 14:11:07 +0200
+
+ActionController::RoutingError (No route matches [GET] "/cashier/new"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ic2h/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/ic2h/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/ic2h/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.2ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.5ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.6ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ic2h/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.2ms)
+
+
+Started GET "/cashiers/new" for 127.0.0.1 at 2015-11-29 14:11:09 +0200
+Processing by CashiersController#new as HTML
+  [1m[35mRestaurant Load (0.5ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered cashiers/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 126ms (Views: 124.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/cashiers" for 127.0.0.1 at 2015-11-29 14:11:40 +0200
+Processing by CashiersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l2+mBoW7S9d/ihCkT6hBOk5OVQqLmQxEd/FloeCObgzk16QeA3EiADPgcGnFz399EupS9ov5vnN5DLAv47gCag==", "cashier"=>{"LASTNAME"=>"Юрий Талько", "restaurant_id"=>"3"}, "commit"=>"Save information"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (65.6ms)[0m  INSERT INTO "cashiers" ("LASTNAME", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["LASTNAME", "Юрий Талько"], ["restaurant_id", 3], ["created_at", "2015-11-29 12:11:40.370566"], ["updated_at", "2015-11-29 12:11:40.370566"]]
+  [1m[36m (30.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cashiers/2
+Completed 302 Found in 103ms (ActiveRecord: 96.4ms)
+
+
+Started GET "/cashiers/2" for 127.0.0.1 at 2015-11-29 14:11:40 +0200
+Processing by CashiersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCashier Load (0.3ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered cashiers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 101ms (Views: 98.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 14:11:57 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (0.7ms)[0m  [1m
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANTS.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+  Rendered bills/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 132ms (Views: 130.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/bills" for 127.0.0.1 at 2015-11-29 14:12:22 +0200
+Processing by BillsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M0VYZq+XtdeHV+QbgLkzfvOqEcG77L4j39Zh/fg2DoZA/Vp+KV3cAMs9hNYK3g05rw4WPbuMDBTRK7Rz+wBi4A==", "bill"=>{"customer_id"=>"1", "cashier_id"=>"2", "CREATED(1i)"=>"2015", "CREATED(2i)"=>"11", "CREATED(3i)"=>"29", "CREATED(4i)"=>"12", "CREATED(5i)"=>"11", "SUMMARY"=>"11", "OPTIONS"=>"Tips 1$"}, "commit"=>"Save information"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "bills" ("OPTIONS", "SUMMARY", "customer_id", "cashier_id", "CREATED", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["OPTIONS", "Tips 1$"], ["SUMMARY", 11], ["customer_id", 1], ["cashier_id", 2], ["CREATED", "2015-11-29 12:11:00.000000"], ["created_at", "2015-11-29 12:12:22.024262"], ["updated_at", "2015-11-29 12:12:22.024262"]]
+  [1m[35m (28.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/bills/2
+Completed 302 Found in 42ms (ActiveRecord: 34.3ms)
+
+
+Started GET "/bills/2" for 127.0.0.1 at 2015-11-29 14:12:22 +0200
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBill Load (0.5ms)[0m  [1mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCashier Load (0.3ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered bills/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 113ms (Views: 109.8ms | ActiveRecord: 1.5ms)
