@@ -17303,3 +17303,239 @@ Processing by BillsController#show as HTML
   [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
   Rendered bills/show.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 113ms (Views: 109.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/bills/2" for 127.0.0.1 at 2015-11-29 15:39:50 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BillsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBill Load (0.4ms)[0m  SELECT  "bills".* FROM "bills" WHERE "bills"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCashier Load (0.4ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered bills/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 291ms (Views: 231.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/administrators.self-6e86d131dd4cec4f041549fabb467b7bccfa9d293d9ac0411721b4d2a484dc77.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/customers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/cashiers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/application.self-5a4e08a87f9a0eba77cce2e674c2717400c23fb3a66c5b81cab05e848870ba85.css?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/administrators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/cashiers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/chefs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/customers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/halls.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/hostesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/review_books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/tables.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/waiters.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-29 15:39:51 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-29 15:40:01 +0200
+Processing by AdministratorsController#panel as HTML
+  Rendered administrators/panel.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 128ms (Views: 127.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+Processing by AdministratorsController#panel as HTML
+  Rendered administrators/panel.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 134ms (Views: 133.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/administrators.self-6e86d131dd4cec4f041549fabb467b7bccfa9d293d9ac0411721b4d2a484dc77.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/cashiers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/customers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/application.self-5a4e08a87f9a0eba77cce2e674c2717400c23fb3a66c5b81cab05e848870ba85.css?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/administrators.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/bills.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/cashiers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/chefs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/customers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:37 +0200
+
+
+Started GET "/assets/halls.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/hostesses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/review_books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/tables.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/waiters.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-29 15:40:38 +0200
+
+
+Started GET "/bills/new" for 127.0.0.1 at 2015-11-29 15:40:39 +0200
+Processing by BillsController#new as HTML
+  [1m[35mCustomer Load (0.6ms)[0m  SELECT "customers".* FROM "customers"
+  [1m[36mCashier Load (0.9ms)[0m  [1m
+                               SELECT CASHIERS."LASTNAME" AS c_name,
+                                      CASHIERS.id       AS c_id,
+                                      RESTAURANTS.name   AS r_name
+                               FROM CASHIERS
+                               INNER JOIN RESTAURANTS
+                               ON RESTAURANTS.id = CASHIERS.restaurant_id[0m
+  Rendered bills/new.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 167ms (Views: 164.2ms | ActiveRecord: 1.5ms)
