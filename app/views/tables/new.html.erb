@@ -3,8 +3,8 @@
   <h4>Be a face of restaurant:</h4>
   <%= form_for(@table) do |f| %>
     <%= f.number_field :visnumber,  :placeholder => "Person on it" %></br>
-    <%= f.select :restaurant_id, restaurant_select, :prompt => "Choose restaurant"%></br>
-    <%= f.select :waiter_id,     waiter_select,     :prompt => "Choose waiter"%></br>
+    <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose restaurant"%></br>
+    <%= f.select :waiter_id,     waiter_select,     class: "input-field col s4", :prompt => "Choose waiter"%></br>
     <%= f.submit "Save information" %>
   <% end %>
 </div>
