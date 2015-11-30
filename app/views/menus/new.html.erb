@@ -1,0 +1,7 @@
+<div class="formfactor">
+  <h3>Adding new part of menu!</h3>
+  <%= form_for(@menu) do |f| %>
+    <%= f.text_field :cuisine,     :placeholder => "new cuisine" %> </br>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>

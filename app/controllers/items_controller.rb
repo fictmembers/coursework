@@ -1,44 +1,49 @@
 class ItemsController < ApplicationController
 
   def new
-  @item = Item.new()
+    @item = Item.new()
   end
 
   def index
-  @item = Item.all
+    @item = Item.all
   end
 
   def create
-  @item = Item.new(item_params)
+    @item = Item.new(item_params)
+    @item.save
+
+    redirect_to @item
+
   end
 
   def show
-  @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    @cuisine = Menu.find(@item.menu_id)
   end
 
   def edit
-  @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def update
-  @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
 
-  if @item.update_attributes(item_params)
-    redirect_to items_path
-  else
-      render 'edit'
-  end
+    if @item.update_attributes(item_params)
+      redirect_to items_path
+    else
+        render 'edit'
+    end
   end
 
   def destroy
-  Item.find(params[:id]).destroy
-  redirect_to :back
+    Item.find(params[:id]).destroy
+    redirect_to :back
   end
 
   private
 
   def item_params
-  params.require(:item).permit(:PRICE, :DESCRIPTION)
+    params.require(:item).permit(:PRICE, :DESCRIPTION, :menu_id)
   end
 
 end

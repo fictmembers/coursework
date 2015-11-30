@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :review_books
   resources :tables
   resources :waiters
+  resources :menus
 
   root 'administrators#panel'
 
