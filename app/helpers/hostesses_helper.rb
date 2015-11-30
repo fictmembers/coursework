@@ -3,8 +3,8 @@ module HostessesHelper
     job_place = Hall.find_by_sql('
     SELECT restaurants.id AS r_id,
            restaurants.name AS r_name,
-           halls."id" AS h_id,
-	         halls."HALL_TYPE" AS h_name
+           halls.id AS h_id,
+	         halls.hall_type AS h_name
     FROM restaurants
     INNER JOIN halls
     ON halls.restaurant_id = restaurants.id')

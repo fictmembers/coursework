@@ -1,8 +1,8 @@
 <div class="formfactor">
   <h3>Adding new hall to restaurant</h3>
   <%= form_for(@hall) do |f| %>
-    <%= f.text_field :HALL_TYPE,      :placeholder => "Name of hall and its type" %> </br>
-    <%= f.number_field :CAPACITY, :placeholder => "Max number of customers" %> </br>
+    <%= f.text_field :hall_type,      :placeholder => "Name of hall and its type" %> </br>
+    <%= f.number_field :capacity, :placeholder => "Max number of customers" %> </br>
     <%= f.select :restaurant_id, restaurant_select, class: "select", :prompt => "Choose restaurant"%>
     <%= f.submit "Save information" %>
   <% end %>

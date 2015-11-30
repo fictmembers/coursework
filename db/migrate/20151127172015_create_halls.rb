@@ -1,8 +1,8 @@
 class CreateHalls < ActiveRecord::Migration
   def change
     create_table :halls do |t|
-      t.string :HALL_TYPE
-      t.integer :CAPACITY
+      t.string :hall_type
+      t.integer :capacity
       t.references :restaurant
 
       t.timestamps null: false

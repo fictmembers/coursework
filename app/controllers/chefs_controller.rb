@@ -42,7 +42,7 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:LASTNAME, :restaurant_id)
+    params.require(:chef).permit(:lastname, :restaurant_id)
   end
 
 end

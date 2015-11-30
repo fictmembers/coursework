@@ -17,17 +17,17 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   enable_extension "plpgsql"
 
   create_table "administrators", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "lastname"
     t.string   "tel"
-    t.integer  "jobplace"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "bills", force: :cascade do |t|
-    t.datetime "CREATED"
-    t.string   "OPTIONS"
-    t.integer  "SUMMARY"
+    t.datetime "created"
+    t.string   "options"
+    t.integer  "summary"
     t.integer  "cashier_id"
     t.integer  "customer_id"
     t.datetime "created_at",  null: false
@@ -35,35 +35,35 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   end
 
   create_table "cashiers", force: :cascade do |t|
-    t.string   "LASTNAME"
+    t.string   "lastname"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "chefs", force: :cascade do |t|
-    t.string   "LASTNAME"
+    t.string   "lastname"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "LASTNAME"
+    t.string   "lastname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "halls", force: :cascade do |t|
-    t.string   "HALL_TYPE"
-    t.integer  "CAPACITY"
+    t.string   "hall_type"
+    t.integer  "capacity"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "hostesses", force: :cascade do |t|
-    t.string   "NAME"
+    t.string   "lastname"
     t.integer  "restaurant_id"
     t.integer  "hall_id"
     t.datetime "created_at",    null: false
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer  "PRICE"
-    t.string   "DESCRIPTION"
+    t.integer  "price"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "menu_id"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   add_index "parts", ["order_id"], name: "index_parts_on_order_id", using: :btree
 
   create_table "reservations", force: :cascade do |t|
-    t.datetime "RESERV_TIME"
+    t.datetime "reserv_time"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "table_id"
@@ -115,15 +115,15 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "tel"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
-    t.string   "tel"
-    t.string   "address"
   end
 
   create_table "review_books", force: :cascade do |t|
-    t.string   "REVIEW"
+    t.string   "review"
     t.integer  "customer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -131,8 +131,8 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   end
 
   create_table "tables", force: :cascade do |t|
-    t.integer  "VISNUMBER"
-    t.boolean  "STATUS",        default: false
+    t.integer  "visnumber"
+    t.boolean  "status",        default: false
     t.integer  "restaurant_id"
     t.integer  "waiter_id"
     t.datetime "created_at",                    null: false
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 20151130105903) do
   end
 
   create_table "waiters", force: :cascade do |t|
-    t.string   "LASTNAME"
+    t.string   "lastname"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

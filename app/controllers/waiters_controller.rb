@@ -42,7 +42,7 @@ class WaitersController < ApplicationController
   private
 
   def waiter_params
-    params.require(:waiter).permit(:LASTNAME, :restaurant_id)
+    params.require(:waiter).permit(:lastname, :restaurant_id)
 end
 
 end

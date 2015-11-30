@@ -3,6 +3,6 @@ class Waiter < ActiveRecord::Base
     has_many :tables
     has_many :orders
 
-    validates :LASTNAME, 	      presence: true
+    validates :lastname, 	      presence: true
     validates :restaurant_id, 	presence: true
 end

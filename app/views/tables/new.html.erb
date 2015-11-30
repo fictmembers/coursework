@@ -2,7 +2,7 @@
   <h3>Adding table to restaurant:</h3>
   <h4>Be a face of restaurant:</h4>
   <%= form_for(@table) do |f| %>
-    <%= f.number_field :VISNUMBER,  :placeholder => "Person on it" %></br>
+    <%= f.number_field :visnumber,  :placeholder => "Person on it" %></br>
     <%= f.select :restaurant_id, restaurant_select, :prompt => "Choose restaurant"%></br>
     <%= f.select :waiter_id,     waiter_select,     :prompt => "Choose waiter"%></br>
     <%= f.submit "Save information" %>

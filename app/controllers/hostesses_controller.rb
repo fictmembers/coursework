@@ -43,7 +43,7 @@ class HostessesController < ApplicationController
   private
 
   def hostess_params
-    params.require(:hostess).permit(:NAME, :restaurant_id, :hall_id)
+    params.require(:hostess).permit(:lastname, :restaurant_id, :hall_id)
   end
 
 end

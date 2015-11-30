@@ -1,8 +1,8 @@
 <div class="formfactor">
   <h4>Request № <%= @reservation.id %></h4>
-  Guest: <%= @guest.LASTNAME%></br>
+  Guest: <%= @guest.lastname%></br>
   For table №<%= @reservation.table_id %></br>
-  Time: <%= @reservation.RESERV_TIME %></br>
+  Time: <%= @reservation.reserv_time %></br>
   <% @restaurant.each do |f| %>
     At: <%= f.name%></br>
     Located at:    <%= f.address %></br>

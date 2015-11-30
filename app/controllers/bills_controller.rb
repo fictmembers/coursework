@@ -44,7 +44,7 @@ class BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bill).permit(:CREATED, :OPTIONS, :SUMMARY, :customer_id, :cashier_id)
+    params.require(:bill).permit(:created, :options, :summary, :customer_id, :cashier_id)
   end
 
 end

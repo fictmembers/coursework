@@ -4,7 +4,7 @@ module TablesHelper
 
     s = ''
     waiter.each do |w|
-      s << "<option value=#{w.id}>#{w.LASTNAME}</option>"
+      s << "<option value=#{w.id}>#{w.lastname}</option>"
     end
     s.html_safe
   end

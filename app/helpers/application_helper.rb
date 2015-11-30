@@ -12,7 +12,7 @@ module ApplicationHelper
     @customers = Customer.all
     s = ''
     @customers.each do |guest|
-      s << "<option value=#{guest.id}>#{guest.LASTNAME}</option>"
+      s << "<option value=#{guest.id}>#{guest.lastname}</option>"
     end
     s.html_safe
   end

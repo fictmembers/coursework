@@ -41,6 +41,6 @@ class CashiersController < ApplicationController
   private
 
   def cashier_params
-    params.require(:cashier).permit(:LASTNAME, :restaurant_id)
+    params.require(:cashier).permit(:lastname, :restaurant_id)
   end
 end

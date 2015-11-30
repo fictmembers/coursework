@@ -1,8 +1,8 @@
 class CreateTables < ActiveRecord::Migration
   def change
     create_table :tables do |t|
-      t.integer :VISNUMBER
-      t.boolean :STATUS, default: true
+      t.integer :visnumber
+      t.boolean :status, default: true
       t.references :restaurant
       t.references :reservation
       t.references :waiter

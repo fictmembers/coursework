@@ -1,7 +1,7 @@
 module BillsHelper
   def cashier_select
     @cashiers = Cashier.find_by_sql('
-                               SELECT CASHIERS."LASTNAME" AS c_name,
+                               SELECT CASHIERS."lastname" AS c_name,
                                       CASHIERS.id       AS c_id,
                                       RESTAURANTS.name   AS r_name
                                FROM CASHIERS

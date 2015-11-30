@@ -2,8 +2,8 @@
   <h3>Adding new item to menu</h3>
   <h4>Tasty one</h4>
   <%= form_for(@item) do |f| %>
-    <%= f.text_field :DESCRIPTION, :placeholder => "Item name and brief description"%>
-    <%= f.number_field :PRICE,     :placeholder => "Set price", :step => "any" %> </br>
+    <%= f.text_field :description, :placeholder => "Item name and brief description"%>
+    <%= f.number_field :price,     :placeholder => "Set price", :step => "any" %> </br>
     <%= f.select :menu_id, cuisine_select, class: "select", :prompt => "Choose cuisine"%>
     <%= f.submit "Save information" %>
   <% end %>

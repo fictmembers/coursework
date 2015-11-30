@@ -1,9 +1,9 @@
 class CreateBills < ActiveRecord::Migration
   def change
     create_table :bills do |t|
-      t.datetime :CREATED
-      t.string :OPTIONS
-      t.integer :SUMMARY
+      t.datetime :created
+      t.string :options
+      t.integer :summary
       t.references :cashier
       t.references :customer
 
