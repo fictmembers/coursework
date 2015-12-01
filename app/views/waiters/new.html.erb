@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s4 offset-s4">
@@ -20,3 +21,14 @@
       </div>
     </div>
     <% end %>
+=======
+<div class="formfactor">
+  <h3>Hello, new waiter!</h3>
+  <h4>Recrute to us:</h4>
+  <%= form_for(@waiter) do |f| %>
+    <%= f.text_field :lastname,     :placeholder => "Your name and lastname" %> </br>
+    <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose jobplace"%>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>
+>>>>>>> 242c028e3334782a8175586a5a8cc384c494e29f

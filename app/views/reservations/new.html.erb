@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s4 offset-s4">
@@ -20,3 +21,17 @@
       </div>
     </div>
     <% end %>
+=======
+<div class="formfactor">
+  <h3>Reserve a table for your company!</h3>
+  <h4>Just fill this fields:</h4>
+  <%= form_for(@reservation) do |f| %>
+    <%= f.label "Select user" %>
+    <%= f.select :customer_id, customer_select, :prompt => "-Select guest-", class: "input-field col s4" %></br>
+    <%= f.label "Select table" %>
+    <%= f.select :table_id,    table_select,    class: "input-field col s4", :prompt => "-Select table-" %></br>
+    <%= f.datetime_field :reserv_time, type: "date", class: "datepicker col s4" %>
+    <%= f.submit "Save information" %>
+  <% end %>
+</div>
+>>>>>>> 242c028e3334782a8175586a5a8cc384c494e29f

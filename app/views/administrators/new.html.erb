@@ -12,7 +12,11 @@
               <div class="field">
                 <%= f.text_field :lastname,     :placeholder => "Lastname" %> </br>
                 <%= f.telephone_field :tel,     :placeholder => "Telephone" %> </br>
+<<<<<<< HEAD
                 <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select jobplace-" }, class: "browser-default" %>
+=======
+                <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose jobplace"%>
+>>>>>>> 242c028e3334782a8175586a5a8cc384c494e29f
               </div>
           </div>
           <div class="card-action">

@@ -1,7 +1,5 @@
 $(document).ready(function() {
-
     $('.dropdown-button').dropdown();
-
-    $('.datepicker').pickadate({
-
-    }); });
+    $('.datepicker').pickadate({});
+    $('select').material_select();
+});
