@@ -10,10 +10,9 @@
           <div class="card-content">
             <%= form_for(@administrator) do |f| %>
               <div class="field">
-                <%= f.label :administrator %><br>
                 <%= f.text_field :lastname,     :placeholder => "Lastname" %> </br>
                 <%= f.telephone_field :tel,     :placeholder => "Telephone" %> </br>
-                <%= f.select :restaurant_id, restaurant_select, class: "select", :prompt => "Choose jobplace"%>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select jobplace-" }, class: "browser-default" %>
               </div>
           </div>
           <div class="card-action">
@@ -22,5 +21,4 @@
         </div>
       </div>
     </div>
-
     <% end %>

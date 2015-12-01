@@ -5,7 +5,7 @@ class BillsController < ApplicationController
   end
 
   def index
-    @bill = Bill.all
+    @bills = Bill.all
   end
 
   def create

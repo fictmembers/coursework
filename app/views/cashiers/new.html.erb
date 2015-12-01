@@ -1,9 +1,22 @@
-<div class="formfactor">
-  <h3>Hello, new cashier!</h3>
-  <h4>Help us count money:</h4>
-  <%= form_for(@cashier) do |f| %>
-    <%= f.text_field :lastname,     :placeholder => "Your name and lastname" %> </br>
-    <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
-    <%= f.submit "Save information" %>
-  <% end %>
-</div>
+<%= render 'layouts/header' %>
+<div class="row">
+  <div class="col s4 offset-s4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag("administrator_new.jpg")%>
+            <span class="card-title grey-text text-lighten-2">Hello, new cashier! Help us count money:</span>
+
+          </div>
+          <div class="card-content">
+            <%= form_for(@cashier) do |f| %>
+              <div class="field">
+                <%= f.text_field :lastname,     :placeholder => "Your name and lastname" %> </br>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select jobplace-" }, class: "browser-default" %>
+          </div>
+          <div class="card-action">
+            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>

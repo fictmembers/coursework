@@ -1,0 +1,35 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<table id="bill">
+			    <thead>
+			          <tr>
+										<th data-field="id">ID</th>
+			              <th data-field="customer">Customer</th>
+			              <th data-field="cashier">Cashier</th>
+			              <th data-field="summary">Summary</th>
+                    <th data-field="options">Options</th>
+                    <th data-field="date">Created at</th>
+				            <th data-field="edit">Edit</th>
+		    				    <th data-field="delete">Delete</th>
+			          </tr>
+			    </thead>
+
+			    <tbody>
+			    	<% @bills.each do |bill| %>
+			          <tr>
+									<td><%= bill.id %></td>
+			            <td><%= bill.customer_id %></td>
+			            <td><%= bill.cashier_id %></td>
+			            <td><%= bill.summary %></td>
+                  <td><%= bill.options %></td>
+                  <td><%= bill.created %></td>
+                  <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+	    					  <td><%= link_to "Delete", bill, method: :delete, data: { confirm: "You sure?" } %></td>
+			          </tr>
+			        <% end %>
+			    <tbody>
+			</table>
+		</div>
+	</div>

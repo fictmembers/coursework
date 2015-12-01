@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservation = Reservation.all
+    @reservations = Reservation.all
   end
 
   def create

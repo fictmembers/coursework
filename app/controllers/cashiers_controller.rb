@@ -5,7 +5,7 @@ class CashiersController < ApplicationController
   end
 
   def index
-    @cashier = Cashier.all
+    @cashiers = Cashier.all
   end
 
   def create

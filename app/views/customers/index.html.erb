@@ -1,0 +1,29 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<table id="customer">
+			    <thead>
+			          <tr>
+										<th data-field="id">ID</th>
+			              <th data-field="lastname">Lastname</th>
+										<th data-field="created_at">Created at</th>
+                    <th data-field="edit">Edit</th>
+		    				    <th data-field="delete">Delete</th>
+			          </tr>
+			    </thead>
+
+			    <tbody>
+			    	<% @customers.each do |customer| %>
+			          <tr>
+									<td><%= customer.id %></td>
+			            <td><%= customer.lastname %></td>
+									<td><%= customer.created_at %></td>
+			            <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+	    					  <td><%= link_to "Delete", customer, method: :delete, data: { confirm: "You sure?" } %></td>
+			          </tr>
+			        <% end %>
+			    <tbody>
+			</table>
+		</div>
+	</div>

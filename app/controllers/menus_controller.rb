@@ -4,7 +4,7 @@ class MenusController < ApplicationController
   end
 
   def index
-    @menu = Menu.all
+    @menus = Menu.all
   end
 
   def create

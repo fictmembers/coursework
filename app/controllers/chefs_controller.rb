@@ -5,7 +5,7 @@ class ChefsController < ApplicationController
   end
 
   def index
-    @chef = Chef.all
+    @chefs = Chef.all
   end
 
   def create

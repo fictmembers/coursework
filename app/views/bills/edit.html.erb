@@ -1,0 +1,28 @@
+<%= render 'layouts/header' %>
+<div class="row">
+  <div class="col s4 offset-s4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag("administrator_new.jpg")%>
+            <span class="card-title grey-text text-lighten-2">Add a paybill!</span>
+
+          </div>
+          <div class="card-content">
+            <%= form_for(@bill) do |f| %>
+              <div class="field">
+                <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select guest-" }, class: "browser-default" %>
+                <%= f.collection_select :cashier_id, Cashier.all, :id, :lastname, { prompt: "-Select cashier-" }, class: "browser-default" %>
+                <%= f.number_field :summary, class: "form-control", :placeholder => "Summary in $", :value => "1", :step => "any"%>
+                <%= f.text_area :options, class: "form-control",  :placeholder => "Additional options" %> </br>
+                <%= f.label :name, class: "form-control", 'Specify a date' %>
+                <%= f.text_field :created ,  type: "date", class: "datepicker"%>
+                  <input type="date" class="datepicker">
+
+          </div>
+          <div class="card-action">
+            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>

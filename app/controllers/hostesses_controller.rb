@@ -5,7 +5,7 @@ class HostessesController < ApplicationController
   end
 
   def index
-    @hostess = Hostess.all
+    @hostesses = Hostess.all
   end
 
   def create

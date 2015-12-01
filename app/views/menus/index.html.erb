@@ -1,0 +1,29 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<table id="menu">
+			    <thead>
+			          <tr>
+										<th data-field="id">ID</th>
+			              <th data-field="cuisine">Cuisine</th>
+                    <th data-field="created_at">Created at</th>
+                    <th data-field="edit">Edit</th>
+		    				    <th data-field="delete">Delete</th>
+			          </tr>
+			    </thead>
+
+			    <tbody>
+			    	<% @menus.each do |menu| %>
+			          <tr>
+									<td><%= menu.id %></td>
+			            <td><%= menu.cuisine %></td>
+									<td><%= menu.created_at %></td>
+			            <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+	    					  <td><%= link_to "Delete", menu, method: :delete, data: { confirm: "You sure?" } %></td>
+			          </tr>
+			        <% end %>
+			    <tbody>
+			</table>
+		</div>
+	</div>

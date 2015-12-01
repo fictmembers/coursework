@@ -1,10 +1,22 @@
-<div class="formfactor">
-  <h3>Adding new item to menu</h3>
-  <h4>Tasty one</h4>
-  <%= form_for(@item) do |f| %>
-    <%= f.text_field :description, :placeholder => "Item name and brief description"%>
-    <%= f.number_field :price,     :placeholder => "Set price", :step => "any" %> </br>
-    <%= f.select :menu_id, cuisine_select, class: "select", :prompt => "Choose cuisine"%>
-    <%= f.submit "Save information" %>
-  <% end %>
-</div>
+<%= render 'layouts/header' %>
+<div class="row">
+  <div class="col s4 offset-s4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag("administrator_new.jpg")%>
+            <span class="card-title grey-text text-lighten-2">Adding new item to menu.Tasty one: </span>
+          </div>
+          <div class="card-content">
+            <%= form_for(@item) do |f| %>
+              <div class="field">
+                <%= f.text_field :description, :placeholder => "Item name and brief description"%>
+                <%= f.number_field :price,     :placeholder => "Set price", :step => "any" %> </br>
+                <%= f.collection_select :menu_id, Menu.all, :id, :cuisine, { prompt: "-Select cuisine-" }, class: "browser-default" %>
+              </div>
+          <div class="card-action">
+            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>

@@ -5,7 +5,7 @@ class AdministratorsController < ApplicationController
   end
 
   def index
-    @administrator = Administrator.all
+    @administrators = Administrator.all
   end
 
   def create

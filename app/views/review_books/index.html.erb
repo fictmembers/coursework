@@ -1,0 +1,33 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<table id="review_book">
+			    <thead>
+			          <tr>
+										<th data-field="id">ID</th>
+			              <th data-field="customer">Customer</th>
+                    <th data-field="review_type">Review type</th>
+                    <th data-field="review">Review</th>
+			              <th data-field="created_at">Created at</th>
+				            <th data-field="edit">Edit</th>
+		    				    <th data-field="delete">Delete</th>
+			          </tr>
+			    </thead>
+
+			    <tbody>
+			    	<% @review_books.each do |review_book| %>
+			          <tr>
+									<td><%= review_book.id %></td>
+			            <td><%= review_book.customer_id %></td>
+			            <td><%= review_book.review_type %></td>
+                  <td><%= review_book.review %></td>
+			            <td><%= review_book.created_at %></td>
+                  <td><%= link_to 'Edit', edit_review_book_path(review_book) %></td>
+	    					  <td><%= link_to "Delete", review_book, method: :delete, data: { confirm: "You sure?" } %></td>
+			          </tr>
+			        <% end %>
+			    <tbody>
+			</table>
+		</div>
+	</div>

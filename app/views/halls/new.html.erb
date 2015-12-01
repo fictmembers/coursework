@@ -1,9 +1,22 @@
-<div class="formfactor">
-  <h3>Adding new hall to restaurant</h3>
-  <%= form_for(@hall) do |f| %>
-    <%= f.text_field :hall_type,      :placeholder => "Name of hall and its type" %> </br>
-    <%= f.number_field :capacity, :placeholder => "Max number of customers" %> </br>
-    <%= f.select :restaurant_id, restaurant_select, class: "select", :prompt => "Choose restaurant"%>
-    <%= f.submit "Save information" %>
-  <% end %>
-</div>
+<%= render 'layouts/header' %>
+<div class="row">
+  <div class="col s4 offset-s4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag("administrator_new.jpg")%>
+            <span class="card-title grey-text text-lighten-2">Adding new hall to restaurant!</span>
+          </div>
+          <div class="card-content">
+            <%= form_for(@hall) do |f| %>
+              <div class="field">
+                <%= f.text_field :hall_type,      :placeholder => "Name of hall and its type" %> </br>
+                <%= f.number_field :capacity, :placeholder => "Max number of customers" %> </br>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
+              </div>
+          <div class="card-action">
+            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>

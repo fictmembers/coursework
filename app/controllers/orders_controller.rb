@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-  @order = Order.all
+  @orders = Order.all
   end
 
   def create
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-  params.require(:order).permit()
+  params.require(:order).permit(:bill_id, :customer_id, :waiter_id, :administrator_id, :chef_id)
   end
 
 end

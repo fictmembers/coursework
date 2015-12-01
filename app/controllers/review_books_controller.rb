@@ -4,7 +4,7 @@ class ReviewBooksController < ApplicationController
   end
 
   def index
-    @review_book = ReviewBook.all
+    @review_books = ReviewBook.all
   end
 
   def create

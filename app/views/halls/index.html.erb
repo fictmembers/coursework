@@ -1,0 +1,33 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<table id="hall">
+			    <thead>
+			          <tr>
+										<th data-field="id">ID</th>
+			              <th data-field="hall_type">Hall type</th>
+                    <th data-field="capacity">Capacity</th>
+                    <th data-field="restaurant">Restaurant</th>
+										<th data-field="created_at">Created at</th>
+                    <th data-field="edit">Edit</th>
+		    				    <th data-field="delete">Delete</th>
+			          </tr>
+			    </thead>
+
+			    <tbody>
+			    	<% @halls.each do |hall| %>
+			          <tr>
+									<td><%= hall.id %></td>
+			            <td><%= hall.hall_type %></td>
+                  <td><%= hall.capacity %></td>
+                  <td><%= hall.restaurant_id %></td>
+									<td><%= hall.created_at %></td>
+			            <td><%= link_to 'Edit', edit_hall_path(hall) %></td>
+	    					  <td><%= link_to "Delete", hall, method: :delete, data: { confirm: "You sure?" } %></td>
+			          </tr>
+			        <% end %>
+			    <tbody>
+			</table>
+		</div>
+	</div>

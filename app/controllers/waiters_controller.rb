@@ -5,7 +5,7 @@ class WaitersController < ApplicationController
   end
 
   def index
-    @waiter = Waiter.all
+    @waiters = Waiter.all
   end
 
   def create

@@ -1,0 +1,37 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<table id="order">
+			    <thead>
+			          <tr>
+										<th data-field="id">ID</th>
+			              <th data-field="bill">Bill</th>
+			              <th data-field="customer">Customer</th>
+                    <th data-field="waiter">Waiter</th>
+                    <th data-field="administrator">Administrator</th>
+                    <th data-field="chef">Chef</th>
+			              <th data-field="created_at">Created at</th>
+				            <th data-field="edit">Edit</th>
+		    				    <th data-field="delete">Delete</th>
+			          </tr>
+			    </thead>
+
+			    <tbody>
+			    	<% @orders.each do |order| %>
+			          <tr>
+									<td><%= order.id %></td>
+			            <td><%= order.bill_id %></td>
+			            <td><%= order.customer_id %></td>
+                  <td><%= order.waiter_id %></td>
+                  <td><%= order.administrator_id %></td>
+                  <td><%= order.chef_id %></td>
+			            <td><%= order.created_at %></td>
+                  <td><%= link_to 'Edit', edit_order_path(order) %></td>
+	    					  <td><%= link_to "Delete", order, method: :delete, data: { confirm: "You sure?" } %></td>
+			          </tr>
+			        <% end %>
+			    <tbody>
+			</table>
+		</div>
+	</div>

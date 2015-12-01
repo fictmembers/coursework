@@ -5,7 +5,7 @@ class HallsController < ApplicationController
   end
 
   def index
-    @hall = Hall.all
+    @halls = Hall.all
   end
 
   def create

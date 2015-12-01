@@ -4,7 +4,7 @@ class TablesController < ApplicationController
   end
 
   def index
-    @table = Table.all
+    @tables = Table.all
   end
 
   def create
