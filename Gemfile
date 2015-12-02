@@ -29,6 +29,9 @@ gem 'rails_12factor', '0.0.2'
 gem 'bcrypt-ruby', '3.1.2'
 
 gem 'jquery-datatables-rails'
+gem 'jquery-ui-rails'
+gem 'will_paginate'
+
 gem 'bootstrap-will_paginate', '0.0.9'
 
 gem 'pickdate'

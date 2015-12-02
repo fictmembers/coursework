@@ -9,8 +9,8 @@
           <div class="card-content">
             <%= form_for(@review_book) do |f| %>
               <div class="field">
-                <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
-                <%= f.select :review_type, options_for_select([["commendation (+)", "commendation"], ["complaint (-)", "complaint"]]), :prompt => "-Select guest-", class: "browser-default"%></br>
+                <%= f.select :customer_id, customer_select, prompt: "-Select customer-", class: "input-field col s4" %>
+                <%= f.select :review_type, options_for_select([["commendation (+)", "commendation"], ["complaint (-)", "complaint"]]), :prompt => "Review Type", class: "input-field col s4" %></br>
                 <%= f.text_area :review, :placeholder => "Text" %></br>
               </div>
           <div class="card-action">

@@ -1,0 +1,7 @@
+I"h(function() {
+  jQuery(function() {
+    return $('#restaurant').dataTable();
+  });
+
+}).call(this);
+:ET
