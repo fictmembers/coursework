@@ -1,28 +1,53 @@
 <%= render 'layouts/header' %>
 <div class="row">
-  <div class="col s4 offset-s4">
+  <div class="col s8 offset-s2">
         <div class="card">
           <div class="card-image">
             <%= image_tag("administrator_new.jpg")%>
             <span class="card-title grey-text text-lighten-2">Hello, new administrator! Join us now:</span>
 
           </div>
+          <%= form_for(@administrator) do |f| %>
+<div class="row">
+  <div class="col s6">
           <div class="card-content">
-            <%= form_for(@administrator) do |f| %>
               <div class="field">
-                <%= f.text_field :lastname,     :placeholder => "Lastname" %> </br>
-                <%= f.telephone_field :tel,     :placeholder => "Telephone" %> </br>
-<<<<<<< HEAD
-                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select jobplace-" }, class: "browser-default" %>
-=======
-                <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose jobplace"%>
->>>>>>> 242c028e3334782a8175586a5a8cc384c494e29f
+                <div class="input-field">
+                  <i class="material-icons prefix">account_circle</i>
+                  <%= f.text_field :lastname,     :placeholder => "Name and Lastname", class: "validate", id: "icon_prefix" %>
+                </div>
+                <div class="input-field">
+                  <i class="material-icons prefix">phone</i>
+                  <%= f.telephone_field :tel,     :placeholder => "Telephone", class: "validate", id: "icon_prefix" %>
+                </div>
+                <div class="input-field">
+                  <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose jobplace"%>
+                </div>
               </div>
           </div>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+</div>
+<div class="col s6">
+          <div class="card-content">
+            <div class="input-field">
+              <i class="material-icons prefix">perm_identity</i>
+              <%= f.text_field :login,        :placeholder => "Login", class: "validate", id: "icon_prefix" %>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">lock_outline</i>
+              <%= f.password_field :password, :placeholder => "Password", class: "validate", id: "icon_prefix" %>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">lock</i>
+              <%= f.password_field :password_confirmation, :placeholder => "Confirm password", class: "validate", id: "icon_prefix" %>
+            </div>
           </div>
+</div>
+</div>
+<%= render 'shared/errors_admin_registration' %>
+<div class="card-action">
+    <%= f.submit "Save", class: "btn waves-effect waves-light cyan darken-4", style: "margin: auto;" %>
+  <% end %>
+</div>
         </div>
       </div>
     </div>
-    <% end %>

@@ -12,13 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require turbolinks
-//= require_tree .
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require picker
 //= require picker.date
 //= require picker.time
+//= require_tree .
 
 $(document).ready(function() {
     $('.dropdown-button').dropdown();

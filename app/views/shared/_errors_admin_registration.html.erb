@@ -1,0 +1,10 @@
+  <% if @administrator.errors.any? %>
+    <div class="card-action red-text">
+    The form contains <%= pluralize(@administrator.errors.count, "error") %>.
+    <ul>
+      <% @administrator.errors.full_messages.each do |msg| %>
+        <li> - <%= msg %></li>
+      <% end %>
+    </ul>
+    </div>
+  <% end %>

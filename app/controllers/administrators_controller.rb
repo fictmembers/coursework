@@ -5,13 +5,17 @@ class AdministratorsController < ApplicationController
   end
 
   def index
-    @administrators = Administrator.all
+    @administrator = Administrator.all
   end
 
   def create
     @administrator = Administrator.new(administrator_params)
-    @administrator.save
-    redirect_to @administrator
+    if @administrator.save
+      sign_in @administrator
+      redirect_to @administrator
+    else
+      render "new"
+    end
   end
 
   def show
@@ -41,7 +45,7 @@ class AdministratorsController < ApplicationController
   private
 
   def administrator_params
-    params.require(:administrator).permit(:lastname, :tel, :restaurant_id)
+    params.require(:administrator).permit(:lastname, :tel, :restaurant_id, :login, :password, :password_confirmation)
   end
 
 end

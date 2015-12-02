@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130105903) do
+ActiveRecord::Schema.define(version: 20151201212608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,15 @@ ActiveRecord::Schema.define(version: 20151130105903) do
     t.string   "lastname"
     t.string   "tel"
     t.integer  "restaurant_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "login"
+    t.string   "password_digest"
+    t.string   "remember_token"
   end
+
+  add_index "administrators", ["login"], name: "index_administrators_on_login", unique: true, using: :btree
+  add_index "administrators", ["remember_token"], name: "index_administrators_on_remember_token", using: :btree
 
   create_table "bills", force: :cascade do |t|
     t.datetime "created"
