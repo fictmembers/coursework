@@ -12,7 +12,7 @@
             <%= form_for(@table) do |f| %>
               <div class="field">
                   <%= f.number_field :visnumber,  :placeholder => "Person on it" %></br>
-                  
+
                 <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
                 <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "-Select waiter-" }, class: "browser-default" %>
               </div>
