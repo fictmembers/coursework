@@ -17,9 +17,10 @@
 
 			    <tbody>
 			    	<% @review_books.each do |review_book| %>
+						<% customer = Customer.find(review_book.customer_id) %>
 			          <tr>
 									<td><%= review_book.id %></td>
-			            <td><%= review_book.customer_id %></td>
+			            <td><%= customer.lastname %></td>
 			            <td><%= review_book.review_type %></td>
                   <td><%= review_book.review %></td>
 			            <td><%= review_book.created_at %></td>

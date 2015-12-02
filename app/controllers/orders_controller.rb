@@ -10,6 +10,8 @@ class OrdersController < ApplicationController
 
   def create
   @order = Order.new(order_params)
+  @order.save
+  redirect_to @order
   end
 
   def show

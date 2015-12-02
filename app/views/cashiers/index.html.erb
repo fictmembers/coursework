@@ -16,10 +16,11 @@
 
 			    <tbody>
 			    	<% @cashiers.each do |cashier| %>
+						<% restaurant = Restaurant.find(cashier.restaurant_id) %>
 			          <tr>
 									<td><%= cashier.id %></td>
 			            <td><%= cashier.lastname %></td>
-			            <td><%= cashier.restaurant_id %></td>
+			            <td><%= restaurant.name %></td>
 									<td><%= cashier.created_at %></td>
 			            <td><%= link_to 'Edit', edit_cashier_path(cashier) %></td>
 	    					  <td><%= link_to "Delete", cashier, method: :delete, data: { confirm: "You sure?" } %></td>

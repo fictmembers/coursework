@@ -18,9 +18,10 @@
 
 			    <tbody>
 			    	<% @tables.each do |table| %>
+						<% restaurant = Restaurant.find(table.restaurant_id) %>
 			          <tr>
 									<td><%= table.id %></td>
-			            <td><%= table.restaurant_id %></td>
+			            <td><%= restaurant.name %></td>
 									<td><%= table.waiter_id %></td>
 			            <td><%= table.visnumber %></td>
                   <td><%= table.status %></td>

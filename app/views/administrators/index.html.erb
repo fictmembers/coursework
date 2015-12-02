@@ -16,10 +16,11 @@
 
 			    <tbody>
 			    	<% @administrators.each do |administrator| %>
+						<% restaurant = Restaurant.find(administrator.restaurant_id) %>
 			          <tr>
 									<td><%= administrator.id %></td>
 			            <td><%= administrator.lastname %></td>
-			            <td><%= administrator.restaurant_id %></td>
+			            <td><%= restaurant.name %></td>
 			            <td><%= administrator.created_at %></td>
                   <td><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
 	    					  <td><%= link_to "Delete", administrator, method: :delete, data: { confirm: "You sure?" } %></td>

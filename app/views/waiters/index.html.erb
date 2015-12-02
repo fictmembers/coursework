@@ -16,9 +16,10 @@
 
 			    <tbody>
 			    	<% @waiters.each do |waiter| %>
+						<% restaurant = Restaurant.find(waiter.restaurant_id) %>
 			          <tr>
 									<td><%= waiter.id %></td>
-			            <td><%= waiter.restaurant_id %></td>
+			            <td><%= restaurant.name %></td>
 			            <td><%= waiter.lastname %></td>
 			            <td><%= waiter.created_at %></td>
                   <td><%= link_to 'Edit', edit_waiter_path(waiter) %></td>

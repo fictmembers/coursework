@@ -17,9 +17,10 @@
 
 			    <tbody>
 			    	<% @reservations.each do |reservation| %>
+						<% customer = Customer.find(reservation.customer_id) %>
 			          <tr>
 									<td><%= reservation.id %></td>
-			            <td><%= reservation.customer_id %></td>
+			            <td><%= customer.lastname %></td>
 			            <td><%= reservation.table_id %></td>
                   <td><%= reservation.reserv_time %></td>
 			            <td><%= reservation.created_at %></td>
