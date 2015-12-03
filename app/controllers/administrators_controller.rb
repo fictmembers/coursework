@@ -20,7 +20,6 @@ class AdministratorsController < ApplicationController
 
   def show
     @administrator = Administrator.find(params[:id])
-    @restaurant = Restaurant.find(@administrator.restaurant_id)
   end
 
   def edit
@@ -45,7 +44,7 @@ class AdministratorsController < ApplicationController
   private
 
   def administrator_params
-    params.require(:administrator).permit(:lastname, :tel, :restaurant_id, :login, :password, :password_confirmation)
+    params.require(:administrator).permit(:login, :password, :password_confirmation)
   end
 
 end

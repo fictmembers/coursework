@@ -1,10 +1,7 @@
 class Administrator < ActiveRecord::Base
-    belongs_to :restaurant
+  
     before_create :create_remember_token
 
-    validates :lastname, 	presence: true
-    validates :tel,       presence: true, length: { minimum: 6 }
-    validates :restaurant_id, 	presence: true
     validates :login,     presence: true
     validates :password,  presence: true, length: { minimum: 6 }
 

@@ -14,7 +14,7 @@
                 <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
                 <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "-Select waiter-" }, class: "browser-default" %>
                 <%= f.collection_select :chef_id, Chef.all, :id, :lastname, { prompt: "-Select chef-" }, class: "browser-default" %>
-                <%= f.collection_select :administrator_id, Administrator.all, :id, :lastname, { prompt: "-Select administrator-" }, class: "browser-default" %>
+                <%= f.collection_select :manager_id, Manager.all, :id, :lastname, { prompt: "-Select manager-" }, class: "browser-default" %>
           </div>
           <div class="card-action">
             <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>

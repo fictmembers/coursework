@@ -11,15 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201212608) do
+ActiveRecord::Schema.define(version: 20151203214704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "administrators", force: :cascade do |t|
-    t.string   "lastname"
-    t.string   "tel"
-    t.integer  "restaurant_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "login"
@@ -84,6 +81,14 @@ ActiveRecord::Schema.define(version: 20151201212608) do
     t.integer  "menu_id"
   end
 
+  create_table "managers", force: :cascade do |t|
+    t.string   "lastname"
+    t.string   "tel"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "menus", force: :cascade do |t|
     t.string   "cuisine"
     t.datetime "created_at", null: false
@@ -96,10 +101,10 @@ ActiveRecord::Schema.define(version: 20151201212608) do
     t.integer  "bill_id"
     t.integer  "customer_id"
     t.integer  "waiter_id"
-    t.integer  "administrator_id"
+    t.integer  "manager_id"
     t.integer  "chef_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "parts", force: :cascade do |t|

@@ -1,0 +1,24 @@
+<%= render 'layouts/header' %>
+<div class="row">
+  <div class="col s4 offset-s4">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag("administrator_new.jpg")%>
+            <span class="card-title grey-text text-lighten-2">Hello, new administrator! Join us now:</span>
+
+          </div>
+          <div class="card-content">
+            <%= form_for(@administrator) do |f| %>
+              <div class="field">
+                <%= f.text_field :lastname, class: "form-control",    :placeholder => "Lastname" %> </br>
+                <%= f.telephone_field :tel,  class: "form-control",   :placeholder => "Telephone" %> </br>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select jobplace-" }, class: "browser-default" %>
+              </div>
+          </div>
+          <div class="card-action">
+            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>

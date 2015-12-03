@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.references :bill
       t.references :customer
       t.references :waiter
-      t.references :administrator
+      t.references :manager
       t.references :chef
       t.timestamps null: false
     end
