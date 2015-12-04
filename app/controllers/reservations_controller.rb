@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.save
 
-    redirect_to @reservation
+    redirect_to reservations_path
   end
 
   def show

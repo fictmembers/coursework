@@ -11,7 +11,7 @@ class CashiersController < ApplicationController
   def create
     @cashier = Cashier.new(cashier_params)
     @cashier.save
-    redirect_to @cashier
+    redirect_to cashiers_path
   end
 
   def show

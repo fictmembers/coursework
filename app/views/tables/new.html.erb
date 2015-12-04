@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 <%= render 'layouts/header' %>
 <div class="row">
@@ -15,6 +15,7 @@
 
                 <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
                 <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "-Select waiter-" }, class: "browser-default" %>
+                <%= f.collection_select :hall_id, Hall.all, :id, :hall_type, { prompt: "-Select hall-" }, class: "browser-default" %>
               </div>
           <div class="card-action">
             <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
@@ -23,15 +24,3 @@
       </div>
     </div>
     <% end %>
-=======
-<div class="formfactor">
-  <h3>Adding table to restaurant:</h3>
-  <h4>Be a face of restaurant:</h4>
-  <%= form_for(@table) do |f| %>
-    <%= f.number_field :visnumber,  :placeholder => "Person on it" %></br>
-    <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose restaurant"%></br>
-    <%= f.select :waiter_id,     waiter_select,     class: "input-field col s4", :prompt => "Choose waiter"%></br>
-    <%= f.submit "Save information" %>
-  <% end %>
-</div>
->>>>>>> 242c028e3334782a8175586a5a8cc384c494e29f

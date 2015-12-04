@@ -8,14 +8,56 @@
 
           </div>
           <div class="card-content">
+              <% items = Item.all %>
             <%= form_for(@order) do |f| %>
               <div class="field">
                 <%= f.collection_select :bill_id, Bill.all, :id, :options, { prompt: "-Select bill-" }, class: "browser-default" %>
                 <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
                 <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "-Select waiter-" }, class: "browser-default" %>
-                <%= f.collection_select :chef_id, Chef.all, :id, :lastname, { prompt: "-Select chef-" }, class: "browser-default" %>
                 <%= f.collection_select :manager_id, Manager.all, :id, :lastname, { prompt: "-Select manager-" }, class: "browser-default" %>
+                <%= f.collection_select :chef_id, Chef.all, :id, :lastname, { prompt: "-Select chef-" }, class: "browser-default" %>
+
           </div>
+          <div class="row">
+
+
+     <div class="col s4">
+       <%= hidden_field_tag "order[item_ids][]", nil %>
+       Chinese<br>
+       <% items.each do |item| %>
+       <% menu = Menu.find(item.menu_id) %>
+    <% if menu.cuisine == "Chinese" %>
+    <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
+    <%= label_tag dom_id(item), item.description %><br>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="col s4">
+     <%= hidden_field_tag "order[item_ids][]", nil %>
+    Japanese<br>
+    <% items.each do |item| %>
+    <% menu = Menu.find(item.menu_id) %>
+ <% if menu.cuisine == "Japanese" %>
+ <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
+ <%= label_tag dom_id(item), item.description %><br>
+ <% end %>
+ <% end %>
+</div>
+
+<div class="col s4">
+   <%= hidden_field_tag "order[item_ids][]", nil %>
+  French<br>
+  <% items.each do |item| %>
+  <% menu = Menu.find(item.menu_id) %>
+<% if menu.cuisine == "French" %>
+<%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
+<%= label_tag dom_id(item), item.description %><br>
+<% end %>
+<% end %>
+</div>
+</div>
+
           <div class="card-action">
             <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
           </div>

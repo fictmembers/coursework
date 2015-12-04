@@ -12,7 +12,7 @@ class BillsController < ApplicationController
     @bill = Bill.new(bill_params)
     @bill.save
 
-    redirect_to @bill
+    redirect_to bills_path
   end
 
   def show

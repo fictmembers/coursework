@@ -18,10 +18,12 @@
 
 			    <tbody>
 			    	<% @bills.each do |bill| %>
+						<% customer = Customer.find(bill.customer_id) %>
+							<% cashier = Cashier.find(bill.cashier_id) %>
 			          <tr>
 									<td><%= bill.id %></td>
-			            <td><%= bill.customer_id %></td>
-			            <td><%= bill.cashier_id %></td>
+			            <td><%= customer.lastname %></td>
+			            <td><%= cashier.lastname %></td>
 			            <td><%= bill.summary %></td>
                   <td><%= bill.options %></td>
                   <td><%= bill.created %></td>
