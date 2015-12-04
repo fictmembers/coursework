@@ -41,6 +41,9 @@ class AdministratorsController < ApplicationController
     redirect_to :back
   end
 
+  def landing
+  end
+
   private
 
   def administrator_params

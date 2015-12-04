@@ -19,9 +19,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
 
-  root 'administrators#panel'
+  root 'administrators#landing'
 
   match '/controlpanel',       to: 'administrators#panel',            via: 'get'
   match '/authorise',          to: 'sessions#new',                    via: 'get'
-  match '/signout',            to: 'sessions#destroy',                     via: 'delete'
+  match '/signout',            to: 'sessions#destroy',                via: 'delete'
+  match '/main' ,              to: 'administrators#landing',          via: 'get'
 end
