@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20151203214704) do
   enable_extension "plpgsql"
 
   create_table "administrators", force: :cascade do |t|
+    t.string   "lastname"
+    t.string   "tel"
+    t.integer  "restaurant_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "login"
@@ -101,10 +104,10 @@ ActiveRecord::Schema.define(version: 20151203214704) do
     t.integer  "bill_id"
     t.integer  "customer_id"
     t.integer  "waiter_id"
-    t.integer  "manager_id"
+    t.integer  "administrator_id"
     t.integer  "chef_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "parts", force: :cascade do |t|

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require turbolinks
+//= require jquery.turbolinks
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
 //= require picker
