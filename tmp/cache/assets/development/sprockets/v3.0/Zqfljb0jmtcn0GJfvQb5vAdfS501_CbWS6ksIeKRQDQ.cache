@@ -1,8 +1,0 @@
-I"t(function() {
-  $('.datepicker').pickadate({
-    selectMonths: true,
-    selectYears: 15
-  });
-
-}).call(this);
-:ET

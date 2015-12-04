@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :halls
   resources :items
+  resources :managers
   resources :orders
   resources :reservations
   resources :restaurants
