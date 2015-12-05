@@ -4,7 +4,7 @@
       <%= link_to "Restaurant", root_path, class: "brand-logo headtext" %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if signed_in? %>
-          <li><a><%= current_administrator.login.capitalize %></a></li>
+          <li><%= link_to current_administrator.login.capitalize, controlpanel_path %></li>
           <li class="active"><%= link_to "Sign out", signout_path, method: "delete" %></li>
         <% else %>
           <li class="active"><%= link_to "Login",  authorise_path %></li>

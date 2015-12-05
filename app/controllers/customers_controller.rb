@@ -11,8 +11,11 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     @customer.save
-
-    redirect_to customers_path
+    if signed_in?
+      redirect_to customers_path
+    else
+      redirect_to new_order_path
+    end
   end
 
   def show

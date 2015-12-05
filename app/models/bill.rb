@@ -1,7 +1,7 @@
 class Bill < ActiveRecord::Base
     belongs_to :cashier
     belongs_to :customer
-    has_many :orders
+    belongs_to :order
 
     validates :created, 	      presence: true
     validates :options, 	      presence: true

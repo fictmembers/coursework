@@ -9,10 +9,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-<%= link_to "Back to main page", root_path %>
-
-
+  <% if signed_in? %>
+    <%= yield %>
+  <% else %>
+    <% case request.env['PATH_INFO'] %>
+    <% when "/" %>
+      <%= yield %>
+    <% when "/orders/new" %>
+      <%= yield %>
+    <% when "/orders/complete" %>
+      <%= yield %>
+    <% when "/customers/new" %>
+      <%= yield %>
+    <% when "/authorise" %>
+      <%= yield %>
+    <% else %>
+      <h3>You have no permissions to be there!</h3>
+    <% end %>
+  <% end %>
 </body>
 </html>

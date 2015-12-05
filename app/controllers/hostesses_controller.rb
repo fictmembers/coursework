@@ -12,7 +12,7 @@ class HostessesController < ApplicationController
     @hostess = Hostess.new(hostess_params)
     @hostess.save
 
-    redirect_to hostesss_path
+    redirect_to @hostess
   end
 
   def show

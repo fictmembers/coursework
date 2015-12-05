@@ -1,5 +1,4 @@
 class AdministratorsController < ApplicationController
-
   def new
     @administrator = Administrator.new()
   end
@@ -43,8 +42,6 @@ class AdministratorsController < ApplicationController
 
   def landing
   end
-
-
 
   private
 

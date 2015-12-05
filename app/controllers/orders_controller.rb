@@ -9,9 +9,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.save
+  @order = Order.new(order_params)
+  @order.save
+
+  if signed_in?
     redirect_to orders_path
+  else
+    redirect_to complete_path
+  end
   end
 
 
@@ -38,10 +43,13 @@ class OrdersController < ApplicationController
   redirect_to :back
   end
 
+  def complete
+  end
+
   private
 
   def order_params
-  params.require(:order).permit(:restaurant_id, :bill_id, :customer_id, :waiter_id, :manager_id, :chef_id,{:item_ids => []})
+    params.require(:order).permit(:restaurant_id, :bill_id, :customer_id, :waiter_id, :manager_id, :chef_id,{:item_ids => []})
   end
 
 end
