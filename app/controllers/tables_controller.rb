@@ -42,6 +42,6 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:visnumber, :status, :restaurant_id, :waiter_id)
+    params.require(:table).permit(:visnumber, :status, :restaurant_id, :waiter_id, :hall_id)
   end
 end
