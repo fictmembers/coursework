@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-    belongs_to :bill
+    has_one :bill
     belongs_to :customer
     belongs_to :waiter
     belongs_to :manager

@@ -6,7 +6,6 @@
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
-			              <th data-field="bill">Bill</th>
 			              <th data-field="customer">Customer</th>
                     <th data-field="waiter">Waiter</th>
                     <th data-field="manager">Manager</th>
@@ -19,7 +18,6 @@
 
 			    <tbody>
 			    	<% @orders.each do |order| %>
-						<% bill = Bill.find(order.bill_id) %>
 						<% customer = Customer.find(order.customer_id) %>
 						<% waiter = Waiter.find(order.waiter_id) %>
 						<% manager = Manager.find(order.manager_id) %>
@@ -27,7 +25,6 @@
 
 			          <tr>
 									<td><%= order.id %></td>
-			            <td><%= bill.options %></td>
 			            <td><%= customer.lastname %></td>
                   <td><%= waiter.lastname %></td>
 									<td><%= manager.lastname %></td>
