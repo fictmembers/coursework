@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   match '/authorise',          to: 'sessions#new',                    via: 'get'
   match '/signout',            to: 'sessions#destroy',                via: 'delete'
   match '/main' ,              to: 'administrators#landing',          via: 'get'
+  match '/customers/:id/order' , to: 'customers#order',               via: 'get'
 end

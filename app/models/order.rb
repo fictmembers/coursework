@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+    belongs_to :restaurant
     belongs_to :bill
     belongs_to :customer
     belongs_to :waiter

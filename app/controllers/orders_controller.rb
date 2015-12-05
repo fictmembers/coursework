@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  
+
   def show
   @order = Order.find(params[:id])
   end
@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-  params.require(:order).permit(:bill_id, :customer_id, :waiter_id, :manager_id, :chef_id,{:item_ids => []})
+  params.require(:order).permit(:restaurant_id, :bill_id, :customer_id, :waiter_id, :manager_id, :chef_id,{:item_ids => []})
   end
 
 end

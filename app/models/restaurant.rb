@@ -6,6 +6,7 @@ class Restaurant < ActiveRecord::Base
     has_many :hostesses
     has_many :chefs
     has_many :tables
+    has_many :orders
 
     validates :name, 	  	presence: true
     validates :address, 	presence: true
