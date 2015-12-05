@@ -11,7 +11,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
     @menu.save
 
-    redirect_to @menu
+    redirect_to menus_path
   end
 
   def show

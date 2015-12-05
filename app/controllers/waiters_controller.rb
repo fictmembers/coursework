@@ -12,7 +12,7 @@ class WaitersController < ApplicationController
     @waiter = Waiter.new(waiter_params)
     @waiter.save
 
-    redirect_to @waiter
+    redirect_to waiters_path
   end
 
   def show

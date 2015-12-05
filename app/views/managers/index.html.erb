@@ -2,7 +2,7 @@
 
 	<div class="row">
 		<div class="col s10 offset-s1">
-			<table id="administrator">
+			<table id="manager">
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
@@ -15,15 +15,15 @@
 			    </thead>
 
 			    <tbody>
-			    	<% @administrators.each do |administrator| %>
-						<% restaurant = Restaurant.find(administrator.restaurant_id) %>
+			    	<% @managers.each do |manager| %>
+						<% restaurant = Restaurant.find(manager.restaurant_id) %>
 			          <tr>
-									<td><%= administrator.id %></td>
-			            <td><%= administrator.lastname %></td>
+									<td><%= manager.id %></td>
+			            <td><%= manager.lastname %></td>
 			            <td><%= restaurant.name %></td>
-			            <td><%= administrator.created_at %></td>
-                  <td><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
-	    					  <td><%= link_to "Delete", administrator, method: :delete, data: { confirm: "You sure?" } %></td>
+			            <td><%= manager.created_at %></td>
+                  <td><%= link_to 'Edit', edit_manager_path(manager) %></td>
+	    					  <td><%= link_to "Delete", manager, method: :delete, data: { confirm: "You sure?" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

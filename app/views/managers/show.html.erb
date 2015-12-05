@@ -1,8 +1,8 @@
 <div class="formfactor">
-    <h4><%= @administrator.lastname %></h4>
-    Personal id: <%= @administrator.id %></br>
-    Contact phone: <%= @administrator.tel %></br>
-    Works at <%= @restaurant.name %> since <%= @administrator.created_at.strftime("%d.%b.%Y") %> </br>
+    <h4><%= @manager.lastname %></h4>
+    Personal id: <%= @manager.id %></br>
+    Contact phone: <%= @manager.tel %></br>
+    Works at <%= @restaurant.name %> since <%= @manager.created_at.strftime("%d.%b.%Y") %> </br>
     <% if signed_in? %>
       <%= link_to "Sign out", signout_path, method: "delete" %>
     <% else %>

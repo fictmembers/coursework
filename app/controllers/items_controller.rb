@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.save
 
-    redirect_to @item
+    redirect_to items_path
 
   end
 

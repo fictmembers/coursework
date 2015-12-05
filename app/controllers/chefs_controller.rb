@@ -12,7 +12,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     @chef.save
 
-    redirect_to @chef
+    redirect_to chefs_path
   end
 
   def show

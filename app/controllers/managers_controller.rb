@@ -5,14 +5,13 @@ class ManagersController < ApplicationController
   end
 
   def index
-    @manager = Manager.all
+    @managers = Manager.all
   end
 
   def create
     @manager = Manager.new(manager_params)
     if @manager.save
-      sign_in @manager
-      redirect_to @manager
+        redirect_to @manager
     else
       render "new"
     end

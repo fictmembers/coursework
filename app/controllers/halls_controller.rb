@@ -12,7 +12,7 @@ class HallsController < ApplicationController
     @hall = Hall.new(hall_params)
     @hall.save
 
-    redirect_to @hall
+    redirect_to halls_path
   end
 
   def show

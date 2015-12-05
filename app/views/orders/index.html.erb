@@ -9,7 +9,7 @@
 			              <th data-field="bill">Bill</th>
 			              <th data-field="customer">Customer</th>
                     <th data-field="waiter">Waiter</th>
-                    <th data-field="administrator">Administrator</th>
+                    <th data-field="manager">Manager</th>
                     <th data-field="chef">Chef</th>
 			              <th data-field="created_at">Created at</th>
 				            <th data-field="edit">Edit</th>
@@ -22,14 +22,15 @@
 						<% bill = Bill.find(order.bill_id) %>
 						<% customer = Customer.find(order.customer_id) %>
 						<% waiter = Waiter.find(order.waiter_id) %>
-						<% administrator = Administrator.find(order.administrator_id) %>
+						<% manager = Manager.find(order.manager_id) %>
 						<% chef = Chef.find(order.chef_id) %>
+
 			          <tr>
 									<td><%= order.id %></td>
 			            <td><%= bill.options %></td>
 			            <td><%= customer.lastname %></td>
                   <td><%= waiter.lastname %></td>
-                  <td><%= administrator.lastname %></td>
+									<td><%= manager.lastname %></td>
                   <td><%= chef.lastname %></td>
 			            <td><%= order.created_at %></td>
                   <td><%= link_to 'Edit', edit_order_path(order) %></td>

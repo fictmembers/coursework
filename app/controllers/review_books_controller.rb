@@ -11,7 +11,7 @@ class ReviewBooksController < ApplicationController
     @review_book = ReviewBook.new(review_book_params)
     @review_book.save
 
-    redirect_to @review_book
+    redirect_to review_books_path
   end
 
   def show

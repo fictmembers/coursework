@@ -9,9 +9,10 @@ class OrdersController < ApplicationController
   end
 
   def create
+
   @order = Order.new(order_params)
   @order.save
-  redirect_to @order
+  redirect_to orders_path
   end
 
   def show
@@ -40,7 +41,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-  params.require(:order).permit(:bill_id, :customer_id, :waiter_id, :administrator_id, :chef_id)
+  params.require(:order).permit(:bill_id, :customer_id, :waiter_id, :manager_id, :chef_id,{:item_ids => []})
   end
 
 end

@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     @customer.save
 
-    redirect_to @customer
+    redirect_to customers_path
   end
 
   def show

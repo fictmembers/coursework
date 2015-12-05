@@ -11,7 +11,7 @@ class TablesController < ApplicationController
     @table = Table.new(table_params)
     @table.save
 
-    redirect_to @table
+    redirect_to tables_path
   end
 
   def show

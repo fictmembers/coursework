@@ -5,6 +5,7 @@ class CreateTables < ActiveRecord::Migration
       t.boolean :status, default: true
       t.references :restaurant
       t.references :reservation
+      t.references :hall
       t.references :waiter
       t.timestamps null: false
     end
