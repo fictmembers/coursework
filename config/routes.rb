@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   root 'administrators#landing'
 
+  match '/order',       to: 'administrators#order',            via: 'get'
   match '/controlpanel',       to: 'administrators#panel',            via: 'get'
   match '/authorise',          to: 'sessions#new',                    via: 'get'
   match '/signout',            to: 'sessions#destroy',                via: 'delete'

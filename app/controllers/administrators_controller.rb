@@ -44,6 +44,10 @@ class AdministratorsController < ApplicationController
   def landing
   end
 
+  def order
+    @menus = Menu.all
+  end
+
   private
 
   def administrator_params
