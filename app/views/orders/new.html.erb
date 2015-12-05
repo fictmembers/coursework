@@ -18,45 +18,22 @@
                 <%= f.collection_select :chef_id, Chef.all, :id, :lastname, { prompt: "-Select chef-" }, class: "browser-default" %>
 
           </div>
+
           <div class="row">
+            <% Menu.all.each do |f| %>
+            <div class="col s4">
+              <%= hidden_field_tag "order[item_ids][]", nil %>
+            <h5> <%= f.cuisine %></h5>
+            <% current_cuisine = Item.where(menu_id: f.id) %>
+            <% current_cuisine.each do |item| %>
+            <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
+            <%= label_tag dom_id(item), item.description %><br>
+            <% end %>
+            </br></br>
+            </div>
+          <% end %>
+          </div>
 
-
-     <div class="col s4">
-       <%= hidden_field_tag "order[item_ids][]", nil %>
-       Chinese<br>
-       <% items.each do |item| %>
-       <% menu = Menu.find(item.menu_id) %>
-    <% if menu.cuisine == "Chinese" %>
-    <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
-    <%= label_tag dom_id(item), item.description %><br>
-    <% end %>
-    <% end %>
-  </div>
-
-  <div class="col s4">
-     <%= hidden_field_tag "order[item_ids][]", nil %>
-    Japanese<br>
-    <% items.each do |item| %>
-    <% menu = Menu.find(item.menu_id) %>
- <% if menu.cuisine == "Japanese" %>
- <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
- <%= label_tag dom_id(item), item.description %><br>
- <% end %>
- <% end %>
-</div>
-
-<div class="col s4">
-   <%= hidden_field_tag "order[item_ids][]", nil %>
-  French<br>
-  <% items.each do |item| %>
-  <% menu = Menu.find(item.menu_id) %>
-<% if menu.cuisine == "French" %>
-<%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
-<%= label_tag dom_id(item), item.description %><br>
-<% end %>
-<% end %>
-</div>
-</div>
 
           <div class="card-action">
             <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>

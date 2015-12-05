@@ -9,12 +9,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-
-  @order = Order.new(order_params)
-  @order.save
-  redirect_to orders_path
+    @order = Order.new(order_params)
+    @order.save
+    redirect_to orders_path
   end
 
+  
   def show
   @order = Order.find(params[:id])
   end

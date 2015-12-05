@@ -1,8 +1,0 @@
-<% @menus.each do |f| %>
-  <h3>Cuisine <%= f.cuisine %></h3>
-  <% current_cuisine = Item.where(menu_id: f.id) %>
-  <% current_cuisine.each do |item| %>
-    <%= item.description %>
-  <% end %>
-  </br></br>
-<% end %>
