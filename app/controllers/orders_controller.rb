@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-
   @order = Order.new(order_params)
   @order.save
 
@@ -19,6 +18,7 @@ class OrdersController < ApplicationController
     redirect_to complete_path
   end
   end
+
 
   def show
   @order = Order.find(params[:id])

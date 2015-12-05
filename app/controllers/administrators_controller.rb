@@ -43,9 +43,6 @@ class AdministratorsController < ApplicationController
   def landing
   end
 
-  def guest_check
-  end
-
   private
 
   def administrator_params
