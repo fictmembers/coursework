@@ -22,9 +22,15 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  def order
+  def restaurant
       @customer = Customer.find(params[:id])
       @order = Order.new()
+      @order.save
+  end
+
+  def order
+      @order = Order.new()
+      @customer = Customer.find(params[:id])
       @order.customer_id = @customer.id
       @order.save
   end

@@ -6,6 +6,7 @@
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
+										<th data-field="id">Restaurant</th>
 			              <th data-field="description">Description</th>
 			              <th data-field="price">Price</th>
                     <th data-field="menu">Cuisine</th>
@@ -18,10 +19,12 @@
 			    <tbody>
 			    	<% @items.each do |item| %>
 						<% menu = Menu.find(item.menu_id) %>
+						<% restaurant = Restaurant.find(item.restaurant_id) %>
 			          <tr>
 									<td><%= item.id %></td>
+									<td><%= restaurant.name %></td>
 			            <td><%= item.description %></td>
-			            <td><%= item.price %></td>
+			            <td><%= item.price %> €</td>
                   <td><%= menu.cuisine %></td>
 									<td><%= item.created_at %></td>
 			            <td><%= link_to 'Edit', edit_item_path(item) %></td>

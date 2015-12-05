@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.integer :price
       t.string :description
+      t.references :restaurant
       t.timestamps null: false
     end
   end
