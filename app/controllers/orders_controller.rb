@@ -12,7 +12,12 @@ class OrdersController < ApplicationController
 
   @order = Order.new(order_params)
   @order.save
-  redirect_to orders_path
+
+  if signed_in?
+    redirect_to orders_path
+  else
+    redirect_to complete_path
+  end
   end
 
   def show
@@ -36,6 +41,9 @@ class OrdersController < ApplicationController
   def destroy
   Order.find(params[:id]).destroy
   redirect_to :back
+  end
+
+  def complete
   end
 
   private

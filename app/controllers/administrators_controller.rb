@@ -1,5 +1,4 @@
 class AdministratorsController < ApplicationController
-
   def new
     @administrator = Administrator.new()
   end
@@ -44,8 +43,7 @@ class AdministratorsController < ApplicationController
   def landing
   end
 
-  def order
-    @menus = Menu.all
+  def guest_check
   end
 
   private

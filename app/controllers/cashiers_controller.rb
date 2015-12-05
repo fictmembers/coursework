@@ -1,5 +1,4 @@
 class CashiersController < ApplicationController
-
   def new
     @cashier = Cashier.new()
   end
