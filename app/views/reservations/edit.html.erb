@@ -7,16 +7,26 @@
             <span class="card-title grey-text text-lighten-2">Reserve a table for your company! Just fill this fields:</span>
           </div>
           <div class="card-content">
-            <%= form_for(@reservation) do |f| %>
-              <div class="field">
-                <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
-                <%= f.collection_select :table_id, Table.all, :id, :visnumber, { prompt: "-Select table-" }, class: "browser-default" %>
-                <%= f.text_field :reserv_time , type: "date", class: "datepicker"%>
-              </div>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+              <%= form_for(@reservation) do |f| %>
+                <div class="field">
+                  <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
+                  <div class="row">
+                    <div class="col s8">
+                      <div class="input-field col s10">
+                        <i class="material-icons prefix">schedule</i>
+                        <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
+                      </div>
+                    </div>
+                    <div class="col s4">
+                      <%= f.select :from, time_select, :placeholder => "Select time" %>
+                    </div>
+                </div>
+                <div class="card-action">
+                  <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
-      </div>
     </div>
-    <% end %>
+  </div>
+</div>

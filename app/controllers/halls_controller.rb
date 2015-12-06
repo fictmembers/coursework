@@ -17,7 +17,10 @@ class HallsController < ApplicationController
 
   def show
     @hall = Hall.find(params[:id])
-    @restaurant = Restaurant.find(@hall.restaurant_id)
+    session.delete(:hall)
+    session[:hall] = @hall.id
+    @restaurant = Restaurant.find(session[:restaurant])
+    @tables = Table.where("hall_id = ?", params[:id])
   end
 
   def edit

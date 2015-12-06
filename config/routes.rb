@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   match '/customers/:id/restaurant',to: 'customers#restaurant',             via: 'get'
   match '/complete',                to: 'orders#complete',                  via: 'get'
   match '/resivefeed',              to: 'review_books#resivefeed',          via: 'get'
+
+  match '/allrestaurants',          to: 'restaurants#restaurants',          via: 'get'
+  match '/reservationcomplete',     to: 'reservations#completereservation', via: 'get'
 end

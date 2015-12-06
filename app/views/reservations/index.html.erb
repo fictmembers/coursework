@@ -22,7 +22,7 @@
 									<td><%= reservation.id %></td>
 			            <td><%= customer.lastname %></td>
 			            <td><%= reservation.table_id %></td>
-                  <td><%= reservation.reserv_time %></td>
+                  <td><b><%= reservation.from %>:00</b> <%= reservation.reserv_time.to_date %></td>
 			            <td><%= reservation.created_at %></td>
                   <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
 	    					  <td><%= link_to "Delete", reservation, method: :delete, data: { confirm: "You sure?" } %></td>

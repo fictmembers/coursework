@@ -1,5 +1,28 @@
 <%= render 'layouts/header' %>
-<div class="formfactor">
-  <h4><%= @hall.hall_type %></h4>
-  Located in <%= @restaurant.name %>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag "table.jpg" %>
+        <span class="card-title white-text"><b><%= @restaurant.name %></b> - <%= @hall.hall_type %></span>
+      </div>
+      <div class="card-content">
+        <div class="row">
+          <% @tables.each do |f| %>
+            <div class="col s3">
+              <div class="card">
+                <div class="card-action">
+                  <p class="pushed"><b>Table #<%= f.id %></b></p>
+                  <p class="pushed">Persons on it: <%= f.visnumber %></p>
+                  <%= link_to "View", f %></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-action">
+        <%= link_to "Back to main page", root_path %>
+      </div>
+    </div>
+  </div>
 </div>

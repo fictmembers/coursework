@@ -20,6 +20,9 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @halls = Hall.where("restaurant_id = ?", params[:id])
+    session.delete(:restaurant)
+    session[:restaurant] = @restaurant.id
   end
 
   def edit
@@ -39,6 +42,10 @@ class RestaurantsController < ApplicationController
   def destroy
     Restaurant.find(params[:id]).destroy
     redirect_to :back
+  end
+
+  def restaurants
+    @restaurants = Restaurant.all
   end
 
   private

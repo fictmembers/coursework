@@ -13,4 +13,13 @@ module ReservationsHelper
     end
     s.html_safe
   end
+
+  def time_select
+    @time = 07..17
+    s = ''
+    @time.each do |hour|
+      s << "<option value=#{hour}>#{hour}:00</option>"
+    end
+    s.html_safe
+  end
 end

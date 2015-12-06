@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s4 offset-s4">
@@ -8,30 +7,38 @@
             <span class="card-title grey-text text-lighten-2">Reserve a table for your company! Just fill this fields:</span>
           </div>
           <div class="card-content">
-            <%= form_for(@reservation) do |f| %>
-              <div class="field">
-                <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
-                <%= f.collection_select :table_id, Table.all, :id, :visnumber, { prompt: "-Select table-" }, class: "browser-default" %>
-                <%= f.text_field :reserv_time , type: "date", class: "datepicker"%>
-              </div>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
-          </div>
+            <% if session[:table] != nil %>
+              <% @table = Table.find(session[:table]) %>
+              <% @hall  = Hall.find(@table.hall_id) %>
+              <% @restaurant = Restaurant.find(@table.restaurant_id) %>
+              <% @waiter = Waiter.find(@table.waiter_id) %>
+              <ul>
+                  <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
+                  <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
+                  <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
+              </ul>
+              <%= form_for(@reservation) do |f| %>
+                <div class="field">
+                  <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
+                  <div class="row">
+                    <div class="col s8">
+                      <div class="input-field col s10">
+                        <i class="material-icons prefix">schedule</i>
+                        <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
+                      </div>
+                    </div>
+                    <div class="col s4">
+                      <%= f.select :from, time_select, :placeholder => "Select time" %>
+                    </div>
+                </div>
+                <div class="card-action">
+                  <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+                </div>
+              <% end %>
+            <% else %>
+              <span class="card-title">You should make reservation from table's page!</span>
+            <% end %>
         </div>
       </div>
     </div>
-    <% end %>
-=======
-<div class="formfactor">
-  <h3>Reserve a table for your company!</h3>
-  <h4>Just fill this fields:</h4>
-  <%= form_for(@reservation) do |f| %>
-    <%= f.label "Select user" %>
-    <%= f.select :customer_id, customer_select, :prompt => "-Select guest-", class: "input-field col s4" %></br>
-    <%= f.label "Select table" %>
-    <%= f.select :table_id,    table_select,    class: "input-field col s4", :prompt => "-Select table-" %></br>
-    <%= f.datetime_field :reserv_time, type: "date", class: "datepicker col s4" %>
-    <%= f.submit "Save information" %>
-  <% end %>
 </div>
->>>>>>> 242c028e3334782a8175586a5a8cc384c494e29f

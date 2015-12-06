@@ -5,14 +5,29 @@ class ReservationsController < ApplicationController
   end
 
   def index
+    session.delete(:table)
+    session.delete(:hall)
+    session.delete(:restaurant)
     @reservations = Reservation.all
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.table_id = session[:table]
     @reservation.save
 
-    redirect_to reservations_path
+    redirect_to reservationcomplete_path
+
+  end
+
+  def completereservation
+    @table = Table.find(session[:table])
+    @hall = Hall.find(session[:hall])
+    @restaurant = Restaurant.find(session[:restaurant])
+
+    session.delete(:table)
+    session.delete(:hall)
+    session.delete(:restaurant)
   end
 
   def show
@@ -53,7 +68,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:reserv_time, :table_id, :customer_id)
+    params.require(:reservation).permit(:reserv_time, :table_id, :customer_id, :from)
   end
 
 end
