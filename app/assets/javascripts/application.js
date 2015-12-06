@@ -27,4 +27,5 @@ $(document).ready(function() {
     $('.datepicker').pickadate({});
     $('select').material_select();
     $('.slider').slider({full_width: true});
+    $('.collapsible').collapsible({accordion : false});
 });

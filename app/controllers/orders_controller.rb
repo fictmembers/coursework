@@ -19,9 +19,23 @@ class OrdersController < ApplicationController
   end
   end
 
-
   def show
-  @order = Order.find(params[:id])
+    @order = Order.find(params[:id])
+    @restaurant = Restaurant.find(@order.restaurant_id)
+    @customer   = Customer.find(@order.customer_id)
+    @waiter     = Waiter.find(@order.waiter_id)
+    @manager    = Manager.find(@order.manager_id)
+    @chef       = Chef.find(@order.chef_id)
+    @items = Item.find_by_sql(["
+    SELECT ITEMS.*
+      FROM ITEMS
+      INNER JOIN PARTS
+      ON PARTS.ITEM_ID = ITEMS.ID AND PARTS.ORDER_ID = ?
+      ", @order.id])
+    @cost = 0
+    @items.each do |f|
+      @cost += f.price
+    end
   end
 
   def edit

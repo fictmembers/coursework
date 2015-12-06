@@ -25,6 +25,10 @@
       <%= yield %>
     <% when "/complete" %>
       <%= yield %>
+    <% when "/review_books/new" %>
+      <%= yield %>
+    <% when "/resivefeed" %>
+        <%= yield %>
     <% else %>
       <h3>You have no permissions to be there!</h3>
     <% end %>

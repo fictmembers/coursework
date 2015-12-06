@@ -8,5 +8,4 @@ class Order < ActiveRecord::Base
     has_one :bill
     has_many :parts
     has_many :items, through: :parts
-    
 end

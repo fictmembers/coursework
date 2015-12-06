@@ -10,7 +10,6 @@
             <%= form_for(@hall) do |f| %>
               <div class="field">
                 <%= f.text_field :hall_type,  class: "form-control",    :placeholder => "Name of hall and its type" %> </br>
-                <%= f.number_field :capacity, class: "form-control",    :placeholder => "Max number of customers" %> </br>
                 <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
               </div>
           <div class="card-action">

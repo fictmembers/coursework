@@ -11,7 +11,7 @@ class ReviewBooksController < ApplicationController
     @review_book = ReviewBook.new(review_book_params)
     @review_book.save
 
-    redirect_to review_books_path
+    redirect_to resivefeed_path
   end
 
   def show
@@ -31,6 +31,9 @@ class ReviewBooksController < ApplicationController
     else
         render 'edit'
     end
+  end
+
+  def resivefeed
   end
 
   def destroy

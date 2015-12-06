@@ -27,20 +27,16 @@
         </div>
         <div class="card-action">
           <div class="row">
-            <div class="col s6">
-              <div class="row">
-                <div class="col s4 offset-s3">
-                  <%= button_to "Make order", new_order_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get%>
-                </div>
-              </div>
+            <div class="col s3 offset-s1">
+                <%= button_to "Feedback", new_review_book_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
             </div>
-            <div class="col s6">
-              <div class="row">
-                <div class="col s4 offset-s3">
-                  <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
-                </div>
-              </div>
+            <div class="col s3 offset-s1">
+                  <%= button_to "Make order", new_order_path, class: "btn btn-big waves-effect waves-light cyan darken-4", :method => :get%>
             </div>
+            <div class="col s3">
+                <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

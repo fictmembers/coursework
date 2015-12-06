@@ -42,7 +42,7 @@ class HallsController < ApplicationController
   private
 
   def hall_params
-    params.require(:hall).permit(:hall_type, :capacity, :restaurant_id)
+    params.require(:hall).permit(:hall_type, :restaurant_id)
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205182847) do
+ActiveRecord::Schema.define(version: 20151206101404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,6 @@ ActiveRecord::Schema.define(version: 20151205182847) do
   add_index "administrators", ["remember_token"], name: "index_administrators_on_remember_token", using: :btree
 
   create_table "bills", force: :cascade do |t|
-    t.datetime "created"
-    t.string   "options"
     t.integer  "summary"
     t.integer  "cashier_id"
     t.integer  "customer_id"
@@ -60,7 +58,6 @@ ActiveRecord::Schema.define(version: 20151205182847) do
 
   create_table "halls", force: :cascade do |t|
     t.string   "hall_type"
-    t.integer  "capacity"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
