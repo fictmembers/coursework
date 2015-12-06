@@ -23,6 +23,8 @@
       <%= yield %>
     <% when "/authorise" %>
       <%= yield %>
+    <% when "/complete" %>
+      <%= yield %>
     <% else %>
       <h3>You have no permissions to be there!</h3>
     <% end %>
