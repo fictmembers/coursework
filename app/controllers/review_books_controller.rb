@@ -1,6 +1,6 @@
 class ReviewBooksController < ApplicationController
   def new
-    @review_book = ReviewBook.new()
+    @review_book = ReviewBook.new
   end
 
   def index
@@ -16,7 +16,6 @@ class ReviewBooksController < ApplicationController
 
   def show
     @review_book = ReviewBook.find(params[:id])
-    @customer = Customer.find(@review_book.customer_id)
   end
 
   def edit
@@ -29,7 +28,7 @@ class ReviewBooksController < ApplicationController
     if @review_book.update_attributes(review_book_params)
       redirect_to review_books_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -44,6 +43,6 @@ class ReviewBooksController < ApplicationController
   private
 
   def review_book_params
-    params.require(:review_book).permit(:review, :customer_id, :review_type)
+    params.require(:review_book).permit(:review, :customer, :review_type, :restaurant_id)
   end
 end

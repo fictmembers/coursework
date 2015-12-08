@@ -1,7 +1,6 @@
 class BillsController < ApplicationController
-
   def new
-    @bill = Bill.new()
+    @bill = Bill.new
   end
 
   def index
@@ -32,7 +31,7 @@ class BillsController < ApplicationController
     if @bill.update_attributes(bill_params)
       redirect_to bills_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -44,7 +43,6 @@ class BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bill).permit(:created, :options, :summary, :customer_id, :cashier_id)
+    params.require(:bill).permit(:customer_id, :cashier_id, :order_id)
   end
-
 end

@@ -1,0 +1,10 @@
+<% if @reservation.errors.any? %>
+  <div class="card-action red-text">
+  The form contains <%= pluralize(@reservation.errors.count, "error") %>.
+  <ul>
+    <% @reservation.errors.full_messages.each do |msg| %>
+      <li> - <%= msg %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>

@@ -8,10 +8,9 @@
 
           </div>
           <div class="card-content">
-            <%= form_for(@administrator) do |f| %>
+            <%= form_for(@manager) do |f| %>
               <div class="field">
                 <%= f.text_field :lastname, class: "form-control",    :placeholder => "Lastname" %> </br>
-                <%= f.telephone_field :tel,  class: "form-control",   :placeholder => "Telephone" %> </br>
                 <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select jobplace-" }, class: "browser-default" %>
               </div>
           </div>

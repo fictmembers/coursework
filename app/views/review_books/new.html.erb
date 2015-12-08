@@ -4,19 +4,26 @@
         <div class="card">
           <div class="card-image">
             <%= image_tag("administrator_new.jpg")%>
-            <span class="card-title grey-text text-lighten-2">New review:</span>
+            <span class="card-title grey-text text-lighten-2">Edit review</span>
           </div>
           <div class="card-content">
             <%= form_for(@review_book) do |f| %>
-              <div class="field">
-                <%= f.select :customer_id, customer_select, prompt: "-Select customer-", class: "input-field col s4" %>
+              <div class="input-field">
+                <i class="material-icons prefix">perm_identity</i>
+                <%= f.text_field :customer,        :placeholder => "First and Lastname", id: "icon_prefix" %>
+              </div>
+              <div class="input-field">
+                <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose Restaurant"%>
+              </div>
+              <div class="input-field">
                 <%= f.select :review_type, options_for_select([["commendation (+)", "commendation"], ["complaint (-)", "complaint"]]), :prompt => "Review Type", class: "input-field col s4" %></br>
                 <%= f.text_area :review, :placeholder => "Text" %></br>
               </div>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
-          </div>
-        </div>
+            </div>
+            <div class="card-action">
+              <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+            </div>
       </div>
     </div>
-    <% end %>
+  <% end %>
+</div>

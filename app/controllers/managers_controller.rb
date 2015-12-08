@@ -1,7 +1,6 @@
 class ManagersController < ApplicationController
-
   def new
-    @manager = Manager.new()
+    @manager = Manager.new
   end
 
   def index
@@ -11,9 +10,9 @@ class ManagersController < ApplicationController
   def create
     @manager = Manager.new(manager_params)
     if @manager.save
-        redirect_to @manager
+      redirect_to @manager
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -32,7 +31,7 @@ class ManagersController < ApplicationController
     if @manager.update_attributes(manager_params)
       redirect_to managers_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -44,7 +43,6 @@ class ManagersController < ApplicationController
   private
 
   def manager_params
-    params.require(:manager).permit(:lastname, :tel, :restaurant_id)
+    params.require(:manager).permit(:lastname, :restaurant_id)
   end
-
 end

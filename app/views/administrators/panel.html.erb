@@ -12,7 +12,7 @@
           <h5>Control panel</h5>
           <b><%= link_to "Add Restaurant", new_restaurant_path %></b>
           </br><%= link_to "Add Administrator", new_administrator_path %>
-        </br><%= link_to "View Statistic", root_path %>
+        </br><%= link_to "Top kitchen's workers", topwaiters_path %>
         </div>
         <div class="card-action">
           <%= link_to "Sign out", signout_path, method: "delete" %>
@@ -28,7 +28,7 @@
 
     <div class="row">
       <div class="col s12">
-        <h2>Enrolling</h2>
+        <h2>Enrolling & Controlling</h2>
       </div>
     </div>
 
@@ -99,15 +99,68 @@
           </div>
         </div>
       </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-action">
+              <%= link_to "View all Managers", managers_path%>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-action">
+            <%= link_to "View all hostesses", hostesses_path%>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-action">
+            <%= link_to "View all waiters", waiters_path%>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-action">
+            <%= link_to "View all chefs", chefs_path%>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-action">
+            <%= link_to "View all cashiers", cashiers_path%>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-action">
+            <%= link_to "View all admins", administrators_path%>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="row">
       <div class="col s12">
-        <h2>Customers</h2>
+        <h2>Customers & Orders</h2>
       </div>
     </div>
 
-    <div class="row">
+  <div class="row">
       <div class="col s2">
         <div class="card">
           <div class="card-image">
@@ -151,11 +204,66 @@
           </div>
         </div>
       </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag 'customers/bill.png' %>
+          </div>
+          <div class="card-action">
+            <%= link_to "View bills", bills_path %>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Guests", customers_path %>
+        </div>
+      </div>
     </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Reservs", reservations_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Reviews", review_books_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Orders", orders_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Bills", bills_path %>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <div class="row">
     <div class="col s12">
-      <h2>Equipment</h2>
+      <h2>Equipment & Food</h2>
     </div>
   </div>
 
@@ -203,5 +311,41 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Halls", halls_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Tables", tables_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Menus", menus_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Items", items_path %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

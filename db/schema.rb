@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206101404) do
+ActiveRecord::Schema.define(version: 20151208201535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20151206101404) do
   add_index "administrators", ["remember_token"], name: "index_administrators_on_remember_token", using: :btree
 
   create_table "bills", force: :cascade do |t|
-    t.integer  "summary"
     t.integer  "cashier_id"
     t.integer  "customer_id"
     t.datetime "created_at",  null: false
@@ -82,7 +81,6 @@ ActiveRecord::Schema.define(version: 20151206101404) do
 
   create_table "managers", force: :cascade do |t|
     t.string   "lastname"
-    t.string   "tel"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -90,8 +88,9 @@ ActiveRecord::Schema.define(version: 20151206101404) do
 
   create_table "menus", force: :cascade do |t|
     t.string   "cuisine"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "restaurant_id"
   end
 
   add_index "menus", ["cuisine"], name: "index_menus_on_cuisine", unique: true, using: :btree
@@ -119,12 +118,13 @@ ActiveRecord::Schema.define(version: 20151206101404) do
   create_table "reservations", force: :cascade do |t|
     t.datetime "reserv_time"
     t.integer  "from"
-    t.integer  "to"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "table_id"
     t.integer  "customer_id"
   end
+
+  add_index "reservations", ["table_id", "reserv_time", "from"], name: "index_reservations_on_table_id_and_reserv_time_and_from", unique: true, using: :btree
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
@@ -136,10 +136,11 @@ ActiveRecord::Schema.define(version: 20151206101404) do
 
   create_table "review_books", force: :cascade do |t|
     t.string   "review"
-    t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "review_type"
+    t.integer  "restaurant_id"
+    t.string   "customer"
   end
 
   create_table "tables", force: :cascade do |t|

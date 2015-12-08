@@ -1,33 +1,28 @@
 class ReservationsController < ApplicationController
-
   def new
-    @reservation = Reservation.new()
+    @reservation = Reservation.new
   end
 
   def index
-    session.delete(:table)
-    session.delete(:hall)
-    session.delete(:restaurant)
+    clean_session
     @reservations = Reservation.all
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.table_id = session[:table]
-    @reservation.save
-
-    redirect_to reservationcomplete_path
-
+    if @reservation.save
+      redirect_to reservationcomplete_path
+    else
+      render 'new'
+    end
   end
 
   def completereservation
     @table = Table.find(session[:table])
     @hall = Hall.find(session[:hall])
     @restaurant = Restaurant.find(session[:restaurant])
-
-    session.delete(:table)
-    session.delete(:hall)
-    session.delete(:restaurant)
+    clean_session
   end
 
   def show
@@ -56,7 +51,7 @@ class ReservationsController < ApplicationController
     if @reservation.update_attributes(reservation_params)
       redirect_to reservations_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -70,5 +65,4 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:reserv_time, :table_id, :customer_id, :from)
   end
-
 end

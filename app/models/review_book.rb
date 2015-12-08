@@ -1,8 +1,8 @@
 class ReviewBook < ActiveRecord::Base
-    belongs_to :customer
+  belongs_to :restaurants
 
-    validates :review, 	      presence: true
-    validates :review_type,   presence: true
-    validates :customer_id, 	presence: true
-
+  validates :restaurant_id, presence: true
+  validates :review, presence: true
+  validates :review_type, presence: true
+  validates :customer,	presence: true
 end

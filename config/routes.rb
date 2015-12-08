@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :administrators
   resources :bills
   resources :cashiers
@@ -23,12 +22,14 @@ Rails.application.routes.draw do
   match '/controlpanel',            to: 'administrators#panel',             via: 'get'
   match '/authorise',               to: 'sessions#new',                     via: 'get'
   match '/signout',                 to: 'sessions#destroy',                 via: 'delete'
-  match '/main' ,                   to: 'administrators#landing',           via: 'get'
-  match '/customers/:id/order' ,    to: 'customers#order',                  via: 'get'
-  match '/customers/:id/restaurant',to: 'customers#restaurant',             via: 'get'
+  match '/main',                    to: 'administrators#landing',           via: 'get'
+  match '/customers/:id/order',     to: 'customers#order',                  via: 'get'
+  match '/customers/:id/restaurant', to: 'customers#restaurant',            via: 'get'
   match '/complete',                to: 'orders#complete',                  via: 'get'
   match '/resivefeed',              to: 'review_books#resivefeed',          via: 'get'
 
   match '/allrestaurants',          to: 'restaurants#restaurants',          via: 'get'
   match '/reservationcomplete',     to: 'reservations#completereservation', via: 'get'
+
+  match '/topwaiters',              to: 'administrators#topwaiters',        via: 'get'
 end

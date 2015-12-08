@@ -10,6 +10,7 @@
             <%= form_for(@menu) do |f| %>
               <div class="field">
                 <%= f.text_field :cuisine, class: "form-control", :placeholder => "New cuisine" %> </br>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select Restaurant-" }, class: "browser-default" %>
               </div>
           <div class="card-action">
             <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>

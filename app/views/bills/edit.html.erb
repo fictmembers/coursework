@@ -12,14 +12,8 @@
               <div class="field">
                 <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select guest-" }, class: "browser-default" %>
                 <%= f.collection_select :cashier_id, Cashier.all, :id, :lastname, { prompt: "-Select cashier-" }, class: "browser-default" %>
-                <%= f.number_field :summary, class: "form-control", :placeholder => "Summary in $", :value => "1", :step => "any"%>
-                <%= f.text_area :options, class: "form-control",  :placeholder => "Additional options" %> </br>
-                <%= f.label :name, class: "form-control", 'Specify a date' %>
-                <%= f.text_field :created ,  type: "date", class: "datepicker"%>
-                  <input type="date" class="datepicker">
-
-          </div>
-          <div class="card-action">
+              </div>
+              <div class="card-action">
             <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
           </div>
         </div>

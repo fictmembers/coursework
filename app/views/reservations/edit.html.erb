@@ -8,6 +8,7 @@
           </div>
           <div class="card-content">
               <%= form_for(@reservation) do |f| %>
+                <%= render 'shared/error_reservation_adding' %>
                 <div class="field">
                   <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
                   <div class="row">

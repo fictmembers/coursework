@@ -19,7 +19,7 @@
 			    <tbody>
 			    	<% @items.each do |item| %>
 						<% menu = Menu.find(item.menu_id) %>
-						<% restaurant = Restaurant.find(item.restaurant_id) %>
+						<% restaurant = Restaurant.find(menu.restaurant_id) %>
 			          <tr>
 									<td><%= item.id %></td>
 									<td><%= restaurant.name %></td>

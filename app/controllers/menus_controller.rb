@@ -1,6 +1,6 @@
 class MenusController < ApplicationController
   def new
-    @menu = Menu.new()
+    @menu = Menu.new
   end
 
   def index
@@ -28,7 +28,7 @@ class MenusController < ApplicationController
     if @menu.update_attributes(menu_params)
       redirect_to menus_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -38,7 +38,8 @@ class MenusController < ApplicationController
   end
 
   private
+
   def menu_params
-    params.require(:menu).permit(:cuisine)
+    params.require(:menu).permit(:cuisine, :restaurant_id)
   end
 end

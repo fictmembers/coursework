@@ -8,6 +8,7 @@
           </div>
           <div class="card-content">
             <% if session[:table] != nil %>
+              <%= render 'shared/error_reservation_adding' %>
               <% @table = Table.find(session[:table]) %>
               <% @hall  = Hall.find(@table.hall_id) %>
               <% @restaurant = Restaurant.find(@table.restaurant_id) %>
