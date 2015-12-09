@@ -8,7 +8,12 @@
   <link href='https://fonts.googleapis.com/css?family=Pinyon+Script'   rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
-  <body>
+  <% if current_page?('/customers/new')%>
+    <body class="customer_background">
+  <% else %>
+    <body>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>
