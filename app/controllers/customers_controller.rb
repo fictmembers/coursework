@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
     if signed_in?
       redirect_to customers_path
     else
-      redirect_to new_order_path
+      redirect_to root_path
     end
   end
 

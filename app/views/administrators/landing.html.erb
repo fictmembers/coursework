@@ -6,17 +6,22 @@
     <div class=" col s10 offset-s1 white-text">
       <p>
         <% if session[:customer].nil? %>
+
         <h4>Hi, dear customer!</h4>
         Please, authorise before your reservation and ordering.
         <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light blue-grey darken-4 btn-large authorise", :method => :get %>
 
+
         <% elsif !session[:customer].nil? and session[:reservation_id].nil? %>
+
           <h4>Plesure to see yo again, <%= session[:customer] %>!</h4>
           <i><%= link_to "Not you?", new_customer_path %></i>
           It's time to make a reservation!
-          <%= button_to "Reservation", allrestaurants_path, class: "btn waves-effect waves-light blue-grey darken-4 btn-large button", :method => :get %>
-        <% elsif !session[:reservation_id].nil? %>
 
+          <%= button_to "Reservation", allrestaurants_path, class: "btn waves-effect waves-light blue-grey darken-3 btn-large button", :method => :get %>
+
+
+        <% elsif !session[:reservation_id].nil? %>
           <% reservation = Reservation.find(session[:reservation_id]) %>
           <% table = Table.find(reservation.table_id) %>
           <% restaurant = Restaurant.find(table.restaurant_id) %>
@@ -24,11 +29,14 @@
           <h4>Thank you for reservation, <%= session[:customer] %>!</h4>
           <i><%= link_to "Not you?", new_customer_path %></i> or <i><%= link_to "Wrong reservation?", allrestaurants_path %></i></br>
           Now you can make order!
-         <%= button_to "Make order", new_order_path, class: "btn waves-effect waves-light blue-grey darken-4 btn-large makeorder", :method => :get %> 
+
+         <%= button_to "Make order", new_order_path, class: "btn waves-effect waves-light blue-grey darken-4 btn-large makeorder", :method => :get %>
+
+
+
         <% end %>
       </p>
     </div>
   </div>
 </div>
-
-          <% button_to "Feedback", new_review_book_path, class: " btn waves-effect waves-light  blue-grey darken-4 btn-large button" , :method => :get %>
+<%= render 'layouts/footer' %>

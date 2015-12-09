@@ -6,6 +6,10 @@ module SessionsHelper
     self.current_administrator = administrator
   end
 
+  def all_information_grabbed
+    session[:reservation_id].nil?
+  end
+
   def sign_out
     current_administrator.update_attribute(:remember_token,
                                            Administrator.encrypt(Administrator.new_remember_token))
