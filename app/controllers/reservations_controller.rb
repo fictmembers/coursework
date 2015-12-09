@@ -22,8 +22,7 @@ class ReservationsController < ApplicationController
     @table = Table.find(session[:table])
     @hall = Hall.find(session[:hall])
     @restaurant = Restaurant.find(session[:restaurant])
-    clean_session
-  end
+    end
 
   def show
     @reservation = Reservation.find(params[:id])

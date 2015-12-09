@@ -1,48 +1,4 @@
 <%= render 'layouts/header' %>
 
-<div class="hide-on-large-only">
-  <%= render 'layouts/slider' %>
-  <%= button_to "Make order", new_order_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get%>
-  <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
-</div>
 
-<div class="hide-on-med-and-down">
-  <div class="row">
-    <div class="col s8 offset-s2">
-      <div class="card">
-        <div class="card-image">
-          <%= render 'layouts/slider' %>
-        </div>
-        <div class="card-content">
-          <h3>Access thoundes of delicious, cooked by our chefs with love</h3>
-          <div class="row">
-            <div class="col s7 offset-s2">
-              <div class="input-field">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">First Name</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-action">
-          <div class="row">
-            <div class="col s3">
-                <%= button_to "Feedback", new_review_book_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
-            </div>
-            <div class="col s3">
-                <%= button_to "Reservation", allrestaurants_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
-            </div>
-            <div class="col s3">
-                  <%= button_to "Make order", new_order_path, class: "btn btn-big waves-effect waves-light cyan darken-4", :method => :get%>
-            </div>
-            <div class="col s3">
-                <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light cyan darken-4", :method => :get %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+      <%= render 'layouts/slider' %>

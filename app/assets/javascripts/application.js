@@ -26,6 +26,6 @@ $(document).ready(function() {
     $('.dropdown-button').dropdown();
     $('.datepicker').pickadate({});
     $('select').material_select();
-    $('.slider').slider({full_width: true});
+    $('.slider').slider({full_width: true} );
     $('.collapsible').collapsible({accordion : false});
 });

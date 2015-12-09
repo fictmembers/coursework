@@ -22,6 +22,7 @@
  @import 'picker/default.date';
  @import 'picker/default.time';
 
+$moderntimes: #1c101a;
 
 
 .formfactor {
@@ -41,4 +42,29 @@
 
 .fixed-div {
   position:fixed;
+}
+
+.header {
+  background-color: #1c101a;
+}
+
+
+.caption{
+  -webkit-text-stroke: 2px black;
+ font-size: 700%;
+ line-height: normal;
+}
+
+.layer
+{
+  position: absolute;
+   z-index: 21;
+    bottom: 10%;
+     margin-left: 32.5%;
+}
+.button
+{
+  width:100%;
+  margin-left: 35%;
+
 }
