@@ -1,71 +1,52 @@
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s6 offset-s3">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag("administrator_new.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Make order:</span>
-
-          </div>
-          <div class="card-content">
-              <% items = Item.all %>
-            <%= form_for(@order) do |f| %>
-              <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                  <div class="collapsible-header"><i class="material-icons">person_pin</i>Set restaurant option</div>
-                  <div class="collapsible-body">
-                    <div class="field">
-
-                      <% if !session[:restaurant].nil? %>
-                        <% @waiter = Waiter.where("restaurant_id = ?", session[:restaurant]) %>
-                        <% @manager = Manager.where("restaurant_id = ?", session[:restaurant]) %>
-                        <% @chef = Chef.where("restaurant_id = ?", session[:restaurant]) %>
-                        <%= f.hidden_field :restaurant_id, :value => session[:restaurant] %>
-                      <% else %>
-                        <% @waiter = Waiter.all %>
-                        <% @manager = Manager.all %>
-                        <% @chef = Manager.all %>
-                        <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
-                      <% end %>
-
-                      <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
-                      <%= f.collection_select :waiter_id, @waiter, :id, :lastname, { prompt: "-Select waiter-" }, class: "browser-default" %>
-                      <%= f.collection_select :manager_id, @manager, :id, :lastname, { prompt: "-Select manager-" }, class: "browser-default" %>
-                      <%= f.collection_select :chef_id, @chef, :id, :lastname, { prompt: "-Select chef-" }, class: "browser-default" %>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="collapsible-header active"><i class="material-icons">settings</i>Customize order</div>
-                  <div class="collapsible-body">
-                    <div class="row">
-                      <div class="col s11 offset-s1">
-                        <% if !session[:restaurant].nil? %>
-                          <% restaurant = Restaurant.find(session[:restaurant]) %>
-                          <h5>Menu of <b><%= restaurant.name %></b></h5>
-                          <% @menu = Menu.where('restaurant_id = ?', session[:restaurant]) %>
-                        <% else %>
-                          <% @menu = Menu.all %>
-                        <% end %>
-                        <% @menu.each do |f| %>
-                            <%= hidden_field_tag "order[item_ids][]", nil %>
-                            <h5> <%= f.cuisine %></h5>
-                            <% current_cuisine = Item.where(menu_id: f.id) %>
-                            <p>
-                              <% current_cuisine.each do |item| %>
-                                <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
-                                <%= label_tag dom_id(item), item.description+' '+item.price.to_s+'€' %><br>
-                              <% end %>
-                            </p>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("administrator_new.jpg")%>
+        <span class="card-title grey-text text-lighten-2">Make order:</span>
       </div>
+      <div class="card-content">
+        <%= form_for(@order) do |f| %>
+            <% reservation = Reservation.find(session[:reservation_id]) %>
+            <% table = Table.find(reservation.table_id) %>
+            <% waiter = Waiter.find(table.waiter.id) %>
+            <% restaurant = Restaurant.find(waiter.restaurant_id) %>
+            <% @menu = Menu.where("restaurant_id = ?", restaurant.id)%>
+
+            <h4>For: <%= session[:customer] %></h4>
+            <ul>
+              <li class="pushed">At: <%= restaurant.name %> </li>
+              <li class="pushed">Table <b>#<%= table.id %></b></li>
+              <li class="pushed">
+                Date and Time: <%= reservation.from %>:00
+                               <%= reservation.reserv_time.to_date %>
+              </li>
+              <li class="pushed">Your waiter: <%= waiter.lastname %> </li>
+            </ul>
+            <i><%= link_to "Is something wrong? Correct it!", root_path %></i>
+            </div>
+
+            <div class="card-action">
+              <ul>
+                <% @menu.each do |f| %>
+                  <%= hidden_field_tag "order[item_ids][]", nil %>
+                  <h5> <%= f.cuisine %></h5>
+                  <% current_cuisine = Item.where(menu_id: f.id) %>
+                    <% current_cuisine.each do |item| %>
+                    <li class="pushed">
+                      <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
+                      <%= label_tag dom_id(item), item.description+' '+item.price.to_s+'€' %><br>
+                    </li>
+                    <% end %>
+                  </p>
+                <% end %>
+             </ul>
+           </div>
+           <div class="card-action">
+              <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+           </div>
+        <% end %>
     </div>
-  <% end %>
+  </div>
+</div>
