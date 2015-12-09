@@ -22,7 +22,6 @@
  @import 'picker/default.date';
  @import 'picker/default.time';
 
-$moderntimes: #1c101a;
 
 
 .formfactor {
@@ -58,6 +57,7 @@ $moderntimes: #1c101a;
  line-height: normal;
 }
 
+
 .layer {
   position: absolute;
   z-index: 21;
@@ -68,7 +68,7 @@ $moderntimes: #1c101a;
 
 .button {
   width:100%;
-  left: 50%;
+  left: 80%;
 }
 
 .layer-top {

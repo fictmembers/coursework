@@ -1,5 +1,8 @@
 <%= render 'layouts/header' %>
+
+<div class="pannel">
 <div class="row">
+
   <div class="col s6 offset-s3">
     <div class="card">
       <div class="card-image">
@@ -14,6 +17,7 @@
             <% restaurant = Restaurant.find(waiter.restaurant_id) %>
             <% @menu = Menu.where("restaurant_id = ?", restaurant.id)%>
 
+
             <h4>For: <%= session[:customer] %></h4>
             <ul>
               <li class="pushed">At: <%= restaurant.name %> </li>
@@ -26,6 +30,8 @@
             </ul>
             <i><%= link_to "Is something wrong? Correct it!", root_path %></i>
             </div>
+
+
 
             <div class="card-action">
               <ul>
@@ -47,6 +53,7 @@
               <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
            </div>
         <% end %>
+
     </div>
   </div>
 </div>

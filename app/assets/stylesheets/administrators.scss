@@ -23,10 +23,29 @@ div.td {
   display: table-cell;
 }
 
+
+.panel {
+  background-color: #e0e0e0;
+}
+
 .button {
   background-color: #3E453E;
 }
 
 .card {
   vertical-align: middle;
+}
+
+.authorise{
+
+  margin-left: 200%;
+    margin-right: 50%;
+  width: 200%;
+}
+
+.makeorder{
+
+  margin-left: 65%;
+    margin-right: 100%;
+  width: 50%;
 }
