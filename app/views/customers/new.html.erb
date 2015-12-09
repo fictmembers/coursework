@@ -1,21 +1,24 @@
 <%= render 'layouts/header' %>
 <div class="row">
+
+  <div class="textvalign caption center-align light grey-text text-lighten-3">
+    Hello, Guest!
+    <h1 class="light grey-text text-lighten-3">Welcome to restaurant!</h1>
+  </div>
+  <div class="valign">
   <div class="col s4 offset-s4">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag("administrator_new.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Hello, Guest! Welcome to restaurant!</span>
-          </div>
-          <div class="card-content">
+
+
             <%= form_for(@customer) do |f| %>
-              <div class="field">
-                <%= f.text_field :lastname,     :placeholder => "Your name and lastname" %> </br>
+              <div class="field center-align blue-text text-darken-2">
+                                <%= f.text_field :lastname,     :placeholder => "Your name and lastname" , class: "blue-text text-darken-2" %> </br>
               </div>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
-          </div>
-        </div>
-      </div>
+<div class="col s8 offset-s4">
+            <button class=" center-align btn waves-effect waves-light  blue-grey darken-4" type="submit" name="action">Save information</button>
+</div>
+
+
     </div>
+  </div>
     <% end %>
 </div>
