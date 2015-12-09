@@ -1,9 +1,10 @@
 // Place all the styles related to the Customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-   background: url('customer.jpg');
-   background-color: #3E453E;
+.customer_background{
+  background: url('customer.jpg');
+  position: relative;
+  height: 100%;
 }
 
 .valign
