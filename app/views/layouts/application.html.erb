@@ -8,30 +8,7 @@
   <link href='https://fonts.googleapis.com/css?family=Pinyon+Script'   rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <% if signed_in? %>
+  <body>
     <%= yield %>
-  <% else %>
-    <% case request.env['PATH_INFO'] %>
-    <% when "/" %>
-      <%= yield %>
-    <% when "/orders/new" %>
-      <%= yield %>
-    <% when "/orders/complete" %>
-      <%= yield %>
-    <% when "/customers/new" %>
-      <%= yield %>
-    <% when "/authorise" %>
-      <%= yield %>
-    <% when "/complete" %>
-      <%= yield %>
-    <% when "/review_books/new" %>
-      <%= yield %>
-    <% when "/resivefeed" %>
-        <%= yield %>
-    <% else %>
-      <h3>You have no permissions to be there!</h3>
-    <% end %>
-  <% end %>
-</body>
+  </body>
 </html>

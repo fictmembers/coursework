@@ -1,7 +1,8 @@
 class HallsController < ApplicationController
-
+  before_action :signed_in_administrator, only:
+          [:new, :edit, :update, :destory]
   def new
-    @hall = Hall.new()
+    @hall = Hall.new
   end
 
   def index
@@ -20,7 +21,7 @@ class HallsController < ApplicationController
     session.delete(:hall)
     session[:hall] = @hall.id
     @restaurant = Restaurant.find(session[:restaurant])
-    @tables = Table.where("hall_id = ?", params[:id])
+    @tables = Table.where('hall_id = ?', params[:id])
   end
 
   def edit
@@ -33,7 +34,7 @@ class HallsController < ApplicationController
     if @hall.update_attributes(hall_params)
       redirect_to halls_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -47,5 +48,4 @@ class HallsController < ApplicationController
   def hall_params
     params.require(:hall).permit(:hall_type, :restaurant_id)
   end
-
 end

@@ -5,6 +5,5 @@ class Reservation < ActiveRecord::Base
   validates :reserv_time, presence: true
   validates :table_id, presence: true
   validates :from, presence: true
-  validates :customer_id, presence: true
   validates :table_id, uniqueness: { scope: [:reserv_time, :from], message: "Its' already reserved table!" }
 end

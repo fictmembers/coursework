@@ -1,17 +1,21 @@
 class ReservationsController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:edit, :update, :destory]
+
   def new
     @reservation = Reservation.new
   end
 
   def index
-    clean_session
     @reservations = Reservation.all
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.table_id = session[:table]
+    @reservation.customer_id = session[:customer_id]
     if @reservation.save
+      session[:reservation_id] = @reservation.id
       redirect_to reservationcomplete_path
     else
       render 'new'
@@ -19,10 +23,13 @@ class ReservationsController < ApplicationController
   end
 
   def completereservation
-    @table = Table.find(session[:table])
-    @hall = Hall.find(session[:hall])
-    @restaurant = Restaurant.find(session[:restaurant])
-    end
+    clean_useless_session
+    @reservation = Reservation.find(session[:reservation_id])
+    @table = Table.find(@reservation.table_id)
+    @hall = Hall.find(@table.hall_id)
+    @restaurant = Restaurant.find(@hall.restaurant_id)
+    @customer = Customer.find(session[:customer_id])
+  end
 
   def show
     @reservation = Reservation.find(params[:id])

@@ -1,6 +1,8 @@
 class CashiersController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
   def new
-    @cashier = Cashier.new()
+    @cashier = Cashier.new
   end
 
   def index
@@ -28,7 +30,7 @@ class CashiersController < ApplicationController
     if @cashier.update_attributes(cashier_params)
       redirect_to cashiers_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 

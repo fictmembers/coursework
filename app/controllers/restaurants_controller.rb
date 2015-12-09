@@ -1,7 +1,9 @@
 class RestaurantsController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
 
   def new
-    @restaurant = Restaurant.new()
+    @restaurant = Restaurant.new
   end
 
   def index
@@ -10,17 +12,16 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    if
-    @restaurant.save
-    redirect_to restaurants_path
+    if @restaurant.save
+      redirect_to restaurants_path
     else
       render 'new'
-  end
+    end
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @halls = Hall.where("restaurant_id = ?", params[:id])
+    @halls = Hall.where('restaurant_id = ?', params[:id])
     session.delete(:restaurant)
     session[:restaurant] = @restaurant.id
   end
@@ -35,7 +36,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.update_attributes(restaurant_params)
       redirect_to restaurants_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -53,5 +54,4 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :tel)
   end
-
 end

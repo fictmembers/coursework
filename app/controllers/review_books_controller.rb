@@ -1,4 +1,6 @@
 class ReviewBooksController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:index, :edit, :update, :destory, :show]
   def new
     @review_book = ReviewBook.new
   end

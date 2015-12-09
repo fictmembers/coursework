@@ -8,9 +8,16 @@ module SessionsHelper
 
   def sign_out
     current_administrator.update_attribute(:remember_token,
-                                  Administrator.encrypt(Administrator.new_remember_token))
+                                           Administrator.encrypt(Administrator.new_remember_token))
     cookies.delete(:remember_token)
     self.current_administrator = nil
+  end
+
+  def signed_in_administrator
+    unless signed_in?
+      store_location
+      redirect_to authorise_path
+    end
   end
 
   def current_administrator=(administrator)

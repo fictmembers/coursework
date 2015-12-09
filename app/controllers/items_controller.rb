@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
 
   def new
-    @item = Item.new()
+    @item = Item.new
   end
 
   def index
@@ -13,7 +15,6 @@ class ItemsController < ApplicationController
     @item.save
 
     redirect_to items_path
-
   end
 
   def show
@@ -31,7 +32,7 @@ class ItemsController < ApplicationController
     if @item.update_attributes(item_params)
       redirect_to items_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -45,5 +46,4 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:price, :description, :menu_id, :restaurant_id)
   end
-
 end

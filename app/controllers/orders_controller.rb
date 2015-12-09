@@ -1,18 +1,18 @@
 class OrdersController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:index, :edit, :update, :destory]
+
   def new
     @order = Order.new
   end
 
   def index
-    clean_session
     @orders = Order.all
   end
 
   def create
     @order = Order.new(order_params)
     @order.save
-
-    clean_session
 
     if signed_in?
       redirect_to orders_path
@@ -60,7 +60,6 @@ class OrdersController < ApplicationController
   end
 
   def complete
-    clean_session
   end
 
   private

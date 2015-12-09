@@ -8,7 +8,9 @@
           <span class="card-title black-text">Thank you for reservation!</span>
       </div>
       <div class="card-content">
+          <h4>For: <%= @customer.lastname %> </h4>
           <ul>
+            <li class="pushed">Reservation #<b><%= @reservation.id %></b></li>
             <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
             <li class="pushed">Hall: <%= @hall.hall_type %></li>
             <li class="pushed">Table #<%= @table.id %></li>

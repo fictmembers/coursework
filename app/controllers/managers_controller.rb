@@ -1,4 +1,7 @@
 class ManagersController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
+
   def new
     @manager = Manager.new
   end

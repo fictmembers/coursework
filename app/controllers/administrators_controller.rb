@@ -1,4 +1,6 @@
 class AdministratorsController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :show, :edit, :update, :topwaiters, :panel, :destory]
   def new
     @administrator = Administrator.new
   end
@@ -11,7 +13,7 @@ class AdministratorsController < ApplicationController
     @administrator = Administrator.new(administrator_params)
     if @administrator.save
       sign_in @administrator
-      redirect_to @administrator
+      redirect_to controlpanel_path
     else
       render 'new'
     end
@@ -62,7 +64,6 @@ class AdministratorsController < ApplicationController
   end
 
   def panel
-    clean_session
   end
 
   def destroy
@@ -71,7 +72,6 @@ class AdministratorsController < ApplicationController
   end
 
   def landing
-    clean_session
   end
 
   private

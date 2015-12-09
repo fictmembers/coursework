@@ -1,7 +1,8 @@
 class ChefsController < ApplicationController
-
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
   def new
-    @chef = Chef.new()
+    @chef = Chef.new
   end
 
   def index
@@ -30,7 +31,7 @@ class ChefsController < ApplicationController
     if @chef.update_attributes(chef_params)
       redirect_to chefs_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -44,5 +45,4 @@ class ChefsController < ApplicationController
   def chef_params
     params.require(:chef).permit(:lastname, :restaurant_id)
   end
-
 end

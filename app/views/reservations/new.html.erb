@@ -1,45 +1,43 @@
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s4 offset-s4">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag("administrator_new.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Reserve a table for your company! Just fill this fields:</span>
-          </div>
-          <div class="card-content">
-            <% if session[:table] != nil %>
-              <%= render 'shared/error_reservation_adding' %>
-              <% @table = Table.find(session[:table]) %>
-              <% @hall  = Hall.find(@table.hall_id) %>
-              <% @restaurant = Restaurant.find(@table.restaurant_id) %>
-              <% @waiter = Waiter.find(@table.waiter_id) %>
-              <ul>
-                  <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
-                  <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
-                  <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
-              </ul>
-              <%= form_for(@reservation) do |f| %>
-                <div class="field">
-                  <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select customer-" }, class: "browser-default" %>
-                  <div class="row">
-                    <div class="col s8">
-                      <div class="input-field col s10">
-                        <i class="material-icons prefix">schedule</i>
-                        <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
-                      </div>
-                    </div>
-                    <div class="col s4">
-                      <%= f.select :from, time_select, :placeholder => "Select time" %>
-                    </div>
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("administrator_new.jpg")%>
+        <span class="card-title grey-text text-lighten-2">Reserve a table for your company! Just fill this fields:</span>
+      </div>
+      <div class="card-content">
+        <%= render 'shared/error_reservation_adding' %>
+        <% @table = Table.find(session[:table]) %>
+        <% @hall  = Hall.find(@table.hall_id) %>
+        <% @restaurant = Restaurant.find(@table.restaurant_id) %>
+        <% @waiter = Waiter.find(@table.waiter_id) %>
+        <h5>For: <%= session[:customer] %></h5>
+        <%= link_to "Not you?", root_path %>
+          <ul>
+            <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
+            <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
+            <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
+          </ul>
+          <%= form_for(@reservation) do |f| %>
+            <div class="row">
+              <div class="field">
+                <div class="col s8">
+                  <div class="input-field col s10">
+                    <i class="material-icons prefix">schedule</i>
+                      <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
+                  </div>
                 </div>
-                <div class="card-action">
-                  <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+                <div class="col s4">
+                  <%= f.select :from, time_select, :placeholder => "Select time" %>
                 </div>
-              <% end %>
-            <% else %>
-              <span class="card-title">You should make reservation from table's page!</span>
-            <% end %>
-        </div>
+              </div>
+            </div>
+            <div class="card-action">
+              <button class="btn waves-effect waves-light cyan darken-4" type="submit" name="action">Save information</button>
+            </div>
+          <% end %>
       </div>
     </div>
+  </div>
 </div>

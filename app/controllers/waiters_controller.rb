@@ -1,7 +1,9 @@
 class WaitersController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
 
   def new
-    @waiter = Waiter.new()
+    @waiter = Waiter.new
   end
 
   def index
@@ -30,7 +32,7 @@ class WaitersController < ApplicationController
     if @waiter.update_attributes(waiter_params)
       redirect_to waiters_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -44,5 +46,4 @@ class WaitersController < ApplicationController
   def waiter_params
     params.require(:waiter).permit(:lastname, :restaurant_id)
 end
-
 end

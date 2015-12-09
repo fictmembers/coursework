@@ -1,6 +1,9 @@
 class TablesController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :edit, :update, :destory]
+
   def new
-    @table = Table.new()
+    @table = Table.new
   end
 
   def index
@@ -17,13 +20,15 @@ class TablesController < ApplicationController
   def show
     @table = Table.find(params[:id])
     @waiter = Waiter.find(@table.waiter_id)
+
     session.delete(:table)
     session[:table] = @table.id
+
     @hall = Hall.find(@table.hall_id)
-    @hostess = Hostess.where("hall_id = ?", @hall.id)
+    @hostess = Hostess.where('hall_id = ?', @hall.id)
     @restaurant = Restaurant.find(@hall.restaurant_id)
-    @today = Reservation.where("reserv_time = ? and table_id = ?", Date.today.to_s, @table.id)
-    @tommorow = Reservation.where("reserv_time = ? and table_id = ?", Date.current.tomorrow.to_s, @table.id)
+    @today = Reservation.where('reserv_time = ? and table_id = ?', Date.today.to_s, @table.id)
+    @tommorow = Reservation.where('reserv_time = ? and table_id = ?', Date.current.tomorrow.to_s, @table.id)
   end
 
   def edit
@@ -36,7 +41,7 @@ class TablesController < ApplicationController
     if @table.update_attributes(table_params)
       redirect_to tables_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 

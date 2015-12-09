@@ -1,4 +1,6 @@
 class BillsController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory, :show]
   def new
     @bill = Bill.new
   end

@@ -1,7 +1,9 @@
 class HostessesController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:new, :index, :edit, :update, :destory]
 
   def new
-    @hostess = Hostess.new()
+    @hostess = Hostess.new
   end
 
   def index
@@ -31,7 +33,7 @@ class HostessesController < ApplicationController
     if @hostess.update_attributes(hostess_params)
       redirect_to hostesss_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -45,5 +47,4 @@ class HostessesController < ApplicationController
   def hostess_params
     params.require(:hostess).permit(:lastname, :restaurant_id, :hall_id)
   end
-
 end

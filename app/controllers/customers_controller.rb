@@ -1,7 +1,9 @@
 class CustomersController < ApplicationController
+  before_action :signed_in_administrator, only:
+          [:index, :edit, :update, :destory]
 
   def new
-    @customer = Customer.new()
+    @customer = Customer.new
   end
 
   def index
@@ -11,6 +13,10 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     @customer.save
+
+    session[:customer] = @customer.lastname
+    session[:customer_id] = @customer.id
+
     if signed_in?
       redirect_to customers_path
     else
@@ -23,16 +29,16 @@ class CustomersController < ApplicationController
   end
 
   def restaurant
-      @customer = Customer.find(params[:id])
-      @order = Order.new()
-      @order.save
+    @customer = Customer.find(params[:id])
+    @order = Order.new
+    @order.save
   end
 
   def order
-      @order = Order.new()
-      @customer = Customer.find(params[:id])
-      @order.customer_id = @customer.id
-      @order.save
+    @order = Order.new
+    @customer = Customer.find(params[:id])
+    @order.customer_id = @customer.id
+    @order.save
   end
 
   def edit
@@ -45,7 +51,7 @@ class CustomersController < ApplicationController
     if @customer.update_attributes(customer_params)
       redirect_to customers_path
     else
-        render 'edit'
+      render 'edit'
     end
   end
 
@@ -59,5 +65,4 @@ class CustomersController < ApplicationController
   def customer_params
     params.require(:customer).permit(:lastname)
   end
-
 end
