@@ -33,4 +33,5 @@ Rails.application.routes.draw do
 
   match '/topwaiters',              to: 'administrators#topwaiters',        via: 'get'
   match '/lastweektop',             to: 'administrators#lastweektop',       via: 'get'
+  match '/alldayslong',             to: 'administrators#alldayslong',       via: 'get'
 end

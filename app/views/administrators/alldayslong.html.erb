@@ -1,0 +1,48 @@
+<%= render 'layouts/header' %>
+
+	<div class="row">
+		<div class="col s6 offset-s3">
+      <div class="card">
+        <div class="card-content">
+    			<table id="alldayslong">
+    			    <thead>
+    			          <tr>
+    										<th data-field="day">
+                            Day
+                        </th>
+    			              <th data-field="restaurant">
+                            Restaurant
+                        </th>
+    		    				    <th data-field="reservations">
+                            Reservations
+                        </th>
+    			          </tr>
+    			    </thead>
+
+    			    <tbody>
+    			    	<% @rating.each do |row| %>
+
+    			          <tr>
+    									<td>
+                        <center>
+                          <%= Date::DAYNAMES[row.restday] %>
+                        </center>
+                      </td>
+    			            <td>
+                        <center>
+                          <%= row.restname %>
+                        </center>
+                      </td>
+    			            <td>
+                        <center>
+                        <%= row.total.to_i %> Res.
+                        </center>
+                      </td>
+    			          </tr>
+    			        <% end %>
+    			    <tbody>
+    			</table>
+        </div>
+        </div>
+		</div>
+	</div>
