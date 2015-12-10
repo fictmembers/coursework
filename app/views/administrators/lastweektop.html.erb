@@ -23,63 +23,43 @@
   <div class="col s8 offset-s2">
     <div class="card">
       <div class="card-content blue-grey darken-4">
-        <span class="card-title white-text">TOP KITCHENS' WORKERS</span>
+        <span class="card-title white-text">Top dishes for last week and profit</span>
       </div>
 
       <div class="card-content">
-      <p><h4>Top waiters and chefs by number of orders</h4></p>
+      <p>
+        <h4>Date from <i><%= DateTime.now.to_date - 7.days%></i> to <i><%= DateTime.now.to_date %></i> </h4>
+        <h5>Total profit for last 7 days is <%= @cost %> &#8364; </h5>
+      </p>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s8">
           <table>
 			      <thead>
               <tr>
-                <th>Waiter</th>
-                <th>Number of orders</th>
+                <th>Dish</th>
+                <th>Number of sold</th>
+                <th>Profit</th>
               </tr>
             </thead>
             <tbody>
-              <% @waiters.each do |f| %>
+              <% @top.each do |f| %>
                 <tr>
                   <td>
-                    <% if f != @waiters.first %>
-                      <i><%= f.lastname %></i>
+                    <% if f != @top.first %>
+                      <i><%= f.itemdesc %></i>
                     <% else %>
-                      <b><%= f.lastname %></b>
+                      <b><%= f.itemdesc %></b>
                     <% end %>
                   </td>
                   <td>
                     <div class="center">
-                      <i><%= f.orders_number %></i>
+                      <i><%= f.val %> pcs</i>
                     </div>
                   </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="col s6">
-          <table>
-            <thead>
-              <tr>
-                <th>Chef</th>
-                <th>Number cooked dishes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @chefs.each do |f| %>
-                <tr>
-                  <td>
-                    <% if f != @chefs.first %>
-                      <i><%= f.lastname %></i>
-                    <% else %>
-                      <b><%= f.lastname %></b>
-                    <% end %>
-                  </td>
                   <td>
                     <div class="center">
-                      <i><%= f.orders_pcs %></i>
+                      <i><%= f.profit %> &#8364;</i>
                     </div>
                   </td>
                 </tr>
@@ -88,7 +68,6 @@
           </table>
         </div>
       </div>
-
       <div class="card-action">
         <%= link_to "Back to administrator page", controlpanel_path %>
       </div>

@@ -1,6 +1,6 @@
 class AdministratorsController < ApplicationController
   before_action :signed_in_administrator, only:
-          [:new, :index, :show, :edit, :update, :topwaiters, :panel, :destory]
+          [:new, :index, :show, :edit, :update, :topwaiters, :panel, :destory, :lastweektop]
   def new
     @administrator = Administrator.new
   end
@@ -72,6 +72,26 @@ class AdministratorsController < ApplicationController
   end
 
   def landing
+  end
+
+  def lastweektop
+    @top = Item.find_by_sql(["
+      SELECT ITEMS.DESCRIPTION AS ITEMDESC,
+             RAWDATA.NUMBER_OF_PARTS AS VAL,
+             (ITEMS.PRICE * RAWDATA.NUMBER_OF_PARTS) AS PROFIT
+      FROM ITEMS
+      INNER JOIN
+        (SELECT PARTS.ITEM_ID AS ITEM_ORDERED,
+                COUNT(PARTS.ID) AS NUMBER_OF_PARTS
+         FROM PARTS
+         WHERE PARTS.CREATED_AT::DATE BETWEEN NOW()::DATE - 7 AND NOW()::DATE
+         GROUP BY PARTS.ITEM_ID
+         ORDER BY NUMBER_OF_PARTS DESC) AS RAWDATA ON RAWDATA.ITEM_ORDERED = ITEMS.ID
+      "])
+    @cost = 0
+    @top.each do |f|
+      @cost += f.profit
+    end
   end
 
   private

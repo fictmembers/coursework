@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   match '/reservationcomplete',     to: 'reservations#completereservation', via: 'get'
 
   match '/topwaiters',              to: 'administrators#topwaiters',        via: 'get'
+  match '/lastweektop',             to: 'administrators#lastweektop',       via: 'get'
 end
