@@ -8,7 +8,7 @@
         <% if session[:customer].nil? %>
         <h4>Hi, dear customer!</h4>
         <p>Please, authorise before your reservation and ordering.</p>
-        <div class=" col s12 offset-s5 white-text">
+        <div class=" col s12 offset-s0 white-text">
         <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light blue-grey darken-3 btn-large authorise", :method => :get %>
 </div>
         <% elsif !session[:customer].nil? and session[:reservation_id].nil? %>
@@ -26,11 +26,11 @@
           <% restaurant = Restaurant.find(table.restaurant_id) %>
 
           <h4>Thank you for reservation, <%= session[:customer] %>!</h4>
-          <i><%= link_to "Not you?", new_customer_path %></i> or <i><%= link_to "Wrong reservation?", allrestaurants_path %></i></br>
+          <i><%= link_to "Not you?", new_customer_path %></i> or <i><%= link_to "Wrong reservation?", allrestaurants_path %></i>
           Now you can make order!
-
+  <div class=" col s8 offset-s0 white-text">
          <%= button_to "Make order", new_order_path, class: "btn waves-effect waves-light blue-grey darken-4 btn-large makeorder", :method => :get %>
-
+</div>
 
 
         <% end %>

@@ -56,11 +56,7 @@ class OrdersController < ApplicationController
 
     @order.save
 
-    if signed_in?
-      redirect_to orders_path
-    else
-      redirect_to @order
-    end
+    redirect_to @order
   end
 
   def show
@@ -80,6 +76,10 @@ class OrdersController < ApplicationController
     @items.each do |f|
       @cost += f.price
     end
+
+    session.delete(:customer)
+    session.delete(:customer_id)
+    session.delete(:reservation_id)
   end
 
   def edit
