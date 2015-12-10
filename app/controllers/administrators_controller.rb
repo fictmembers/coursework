@@ -1,6 +1,6 @@
 class AdministratorsController < ApplicationController
   before_action :signed_in_administrator, only:
-          [:new, :index, :show, :edit, :update, :topwaiters, :panel, :destory, :lastweektop]
+          [:new, :index, :show, :edit, :update, :topwaiters, :panel, :destory, :lastweektop, :alldayslong]
   def new
     @administrator = Administrator.new
   end

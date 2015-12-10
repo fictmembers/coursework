@@ -38529,3 +38529,366 @@ Started GET "/assets/application.self-4fd64622b88ab39efcdff7bd818bc16f38ee8dd248
 
 
 Started GET "/assets/dataTables/sort_both-624f0a471a2535c4754e1f6974b0e64ee70d6907738346e2a11d0bff20258b8c.png" for 127.0.0.1 at 2015-12-10 17:45:28 +0200
+
+
+Started GET "/lastweektop" for 127.0.0.1 at 2015-12-10 17:56:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AdministratorsController#lastweektop as HTML
+  [1m[35mAdministrator Load (0.4ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  [1m[36mItem Load (1.4ms)[0m  [1m
+      SELECT ITEMS.DESCRIPTION AS ITEMDESC,
+             RAWDATA.NUMBER_OF_PARTS AS VAL,
+             (ITEMS.PRICE * RAWDATA.NUMBER_OF_PARTS) AS PROFIT
+      FROM ITEMS
+      INNER JOIN
+        (SELECT PARTS.ITEM_ID AS ITEM_ORDERED,
+                COUNT(PARTS.ID) AS NUMBER_OF_PARTS
+         FROM PARTS
+         WHERE PARTS.CREATED_AT::DATE BETWEEN NOW()::DATE - 7 AND NOW()::DATE
+         GROUP BY PARTS.ITEM_ID
+         ORDER BY NUMBER_OF_PARTS DESC) AS RAWDATA ON RAWDATA.ITEM_ORDERED = ITEMS.ID
+      [0m
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered administrators/lastweektop.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 697ms (Views: 653.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/lastweektop" for 127.0.0.1 at 2015-12-10 17:56:03 +0200
+Processing by AdministratorsController#lastweektop as HTML
+  [1m[35mAdministrator Load (0.6ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  [1m[36mItem Load (1.5ms)[0m  [1m
+      SELECT ITEMS.DESCRIPTION AS ITEMDESC,
+             RAWDATA.NUMBER_OF_PARTS AS VAL,
+             (ITEMS.PRICE * RAWDATA.NUMBER_OF_PARTS) AS PROFIT
+      FROM ITEMS
+      INNER JOIN
+        (SELECT PARTS.ITEM_ID AS ITEM_ORDERED,
+                COUNT(PARTS.ID) AS NUMBER_OF_PARTS
+         FROM PARTS
+         WHERE PARTS.CREATED_AT::DATE BETWEEN NOW()::DATE - 7 AND NOW()::DATE
+         GROUP BY PARTS.ITEM_ID
+         ORDER BY NUMBER_OF_PARTS DESC) AS RAWDATA ON RAWDATA.ITEM_ORDERED = ITEMS.ID
+      [0m
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered administrators/lastweektop.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 499ms (Views: 495.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-10 17:56:09 +0200
+Processing by AdministratorsController#landing as HTML
+  [1m[35mAdministrator Load (0.4ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_slider.html.erb (6.0ms)
+  [1m[36mReservation Load (0.4ms)[0m  [1mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mTable Load (0.4ms)[0m  SELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered administrators/landing.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 539ms (Views: 531.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/allrestaurants" for 127.0.0.1 at 2015-12-10 17:56:23 +0200
+Processing by RestaurantsController#restaurants as HTML
+  [1m[35mAdministrator Load (0.4ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/restaurants.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 511ms (Views: 508.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants/1" for 127.0.0.1 at 2015-12-10 17:56:25 +0200
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAdministrator Load (0.4ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.3ms)
+  [1m[35mHall Load (0.6ms)[0m  SELECT "halls".* FROM "halls" WHERE (restaurant_id = '1')
+  Rendered restaurants/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 570ms (Views: 562.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/controlpanel" for 127.0.0.1 at 2015-12-10 17:56:57 +0200
+Processing by AdministratorsController#panel as HTML
+  [1m[36mAdministrator Load (0.5ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered administrators/panel.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 584ms (Views: 581.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2015-12-10 17:57:02 +0200
+Processing by OrdersController#index as HTML
+  [1m[35mAdministrator Load (0.5ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  [1m[36mOrder Load (1.5ms)[0m  [1mSELECT "orders".* FROM "orders"[0m
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRestaurant Load (0.8ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  Rendered orders/index.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 548ms (Views: 529.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/orders/19" for 127.0.0.1 at 2015-12-10 17:57:07 +0200
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mOrder Load (0.5ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mRestaurant Load (0.6ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWaiter Load (0.2ms)[0m  [1mSELECT  "waiters".* FROM "waiters" WHERE "waiters"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mManager Load (0.3ms)[0m  SELECT  "managers".* FROM "managers" WHERE "managers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mChef Load (0.3ms)[0m  [1mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.4ms)[0m  
+    SELECT ITEMS.*
+      FROM ITEMS
+      INNER JOIN PARTS
+      ON PARTS.ITEM_ID = ITEMS.ID AND PARTS.ORDER_ID = 19
+      
+  [1m[36mAdministrator Load (0.2ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered orders/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 526ms (Views: 481.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-10 18:03:47 +0200
+Processing by AdministratorsController#landing as HTML
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_slider.html.erb (5.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered administrators/landing.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 508ms (Views: 507.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/controlpanel" for 127.0.0.1 at 2015-12-10 18:03:50 +0200
+Processing by AdministratorsController#panel as HTML
+  [1m[36mAdministrator Load (0.4ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered administrators/panel.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 561ms (Views: 559.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2015-12-10 18:03:55 +0200
+Processing by ReservationsController#index as HTML
+  [1m[35mAdministrator Load (0.2ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  [1m[36mReservation Load (0.4ms)[0m  [1mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 21]]
+  Rendered reservations/index.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 512ms (Views: 507.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/reservations/19" for 127.0.0.1 at 2015-12-10 18:04:03 +0200
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mReservation Load (0.4ms)[0m  [1mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mRestaurant Load (0.7ms)[0m  
+    SELECT RESTAURANTS.*
+      FROM RESTAURANTS
+      INNER JOIN TABLES
+      ON RESTAURANTS.ID = TABLES.RESTAURANT_ID AND TABLES.id = (
+        SELECT TABLES.id
+          FROM TABLES
+          INNER JOIN RESERVATIONS
+          ON TABLES.ID = RESERVATIONS.TABLE_ID AND RESERVATIONS.ID = 19)
+    
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered reservations/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 547ms (Views: 542.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-10 18:05:13 +0200
+Processing by AdministratorsController#landing as HTML
+  [1m[36mAdministrator Load (0.3ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_slider.html.erb (7.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered administrators/landing.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 488ms (Views: 487.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/controlpanel" for 127.0.0.1 at 2015-12-10 18:05:15 +0200
+Processing by AdministratorsController#panel as HTML
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered administrators/panel.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 569ms (Views: 567.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2015-12-10 18:05:26 +0200
+Processing by BillsController#index as HTML
+  [1m[36mAdministrator Load (0.2ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "075d267b1bbe140cf9fc3ec2b8427570569639f6"]]
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[35mBill Load (0.5ms)[0m  SELECT "bills".* FROM "bills"
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCashier Load (0.3ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCashier Load (0.2ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.4ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 29]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.1ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 32]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 33]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.1ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 34]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 35]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.1ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 37]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 39]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 40]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 41]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 42]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 43]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrder Load (0.1ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1  [["id", 44]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "cashiers".* FROM "cashiers" WHERE "cashiers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  Rendered bills/index.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 555ms (Views: 537.5ms | ActiveRecord: 13.4ms)
