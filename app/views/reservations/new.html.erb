@@ -8,18 +8,28 @@
       </div>
       <div class="card-content">
         <%= render 'shared/error_reservation_adding' %>
-        <% @table = Table.find(session[:table]) %>
-        <% @hall  = Hall.find(@table.hall_id) %>
-        <% @restaurant = Restaurant.find(@table.restaurant_id) %>
-        <% @waiter = Waiter.find(@table.waiter_id) %>
-        <h5>For: <%= session[:customer] %></h5>
-        <%= link_to "Not you?", root_path %>
-          <ul>
-            <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
-            <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
-            <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
-          </ul>
-          <%= form_for(@reservation) do |f| %>
+        <%= form_for(@reservation) do |f| %>
+        <% if signed_in? %>
+          <h5>Choose customer and table:</h5>
+            <div class="input-field col s10">
+              <%= f.select :customer_id, customer_select, :placeholder => "Choose customer" %>
+            </div>
+            <div class="input-field col s10">
+              <%= f.select :table_id, table_select, :placeholder => "Table in restaurant" %>
+            </div>
+        <% else  %>
+          <h5>For: <%= session[:customer] %></h5>
+          <%= link_to "Not you?", root_path %>
+          <% @table = Table.find(session[:table]) %>
+          <% @hall  = Hall.find(@table.hall_id) %>
+          <% @restaurant = Restaurant.find(@table.restaurant_id) %>
+          <% @waiter = Waiter.find(@table.waiter_id) %>
+            <ul>
+              <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
+              <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
+              <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
+            </ul>
+        <% end %>
             <div class="row">
               <div class="field">
                 <div class="col s8">

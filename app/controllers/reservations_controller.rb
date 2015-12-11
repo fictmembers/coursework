@@ -12,8 +12,12 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.table_id = session[:table]
-    @reservation.customer_id = session[:customer_id]
+
+    unless signed_in?
+      @reservation.customer_id = session[:customer_id]
+      @reservation.table_id = session[:table]
+    end
+
     if @reservation.save
       session[:reservation_id] = @reservation.id
       redirect_to reservationcomplete_path
