@@ -13,7 +13,7 @@
 </div>
         <% elsif !session[:customer].nil? and session[:reservation_id].nil? %>
 
-          <h4>Plesure to see yo again, <%= session[:customer] %>!</h4>
+          <h4>Plesure to see you again, <%= session[:customer] %>!</h4>
           <i><%= link_to "Not you?", new_customer_path %></i>
           It's time to make a reservation!
   <div class=" col s8 offset-s0 white-text">
