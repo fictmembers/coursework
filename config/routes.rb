@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :review_books
   resources :tables
   resources :waiters
+  resources :messages
   resources :menus
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -34,4 +35,8 @@ Rails.application.routes.draw do
   match '/topwaiters',              to: 'administrators#topwaiters',        via: 'get'
   match '/lastweektop',             to: 'administrators#lastweektop',       via: 'get'
   match '/alldayslong',             to: 'administrators#alldayslong',       via: 'get'
+
+  match '/sendmessage',             to: 'messages#new',                     via: 'get'
+  match '/im',                      to: 'messages#im',                      via: 'get'
+  match '/imsended',                to: 'messages#imsended',                via: 'get'
 end

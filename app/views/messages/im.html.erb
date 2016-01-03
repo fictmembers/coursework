@@ -1,0 +1,22 @@
+<%= render 'layouts/header' %>
+<div class="row">
+  <%= render 'administrators/leftmenu' %>
+  <div class="col s10 offset-s2">
+    <div class="card">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>My recived messages</h4></li>
+        <% @messages.each do |message| %>
+        <li class="collection-item">
+          <div><%= link_to message.theme.capitalize , message %>
+            <% if !message.viewed %>
+              <%= link_to message, {class: "secondary-content"} do %>
+                <i class="material-icons">comment</i>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

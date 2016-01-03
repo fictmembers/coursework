@@ -31,7 +31,7 @@ class HostessesController < ApplicationController
     @hostess = Hostess.find(params[:id])
 
     if @hostess.update_attributes(hostess_params)
-      redirect_to hostesss_path
+      redirect_to hostess_path
     else
       render 'edit'
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208201535) do
+ActiveRecord::Schema.define(version: 20160103180319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,16 @@ ActiveRecord::Schema.define(version: 20151208201535) do
   end
 
   add_index "menus", ["cuisine"], name: "index_menus_on_cuisine", unique: true, using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "from_member"
+    t.integer  "to_member"
+    t.string   "theme"
+    t.string   "text"
+    t.boolean  "viewed",      default: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer  "restaurant_id"

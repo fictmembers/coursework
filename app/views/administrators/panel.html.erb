@@ -2,28 +2,7 @@
 <div class="panel">
 <!-- MAIN CONTAINER-->
 <div class="row">
-
-  <!-- Left nav bar-->
-  <div class="col s2 hide-on-med-and-down">
-    <div class="fixed-div">
-      <div class="card">
-        <div class="card-content ">
-          <h4><%= current_administrator.login.capitalize %></h4>
-          <h5>Control panel</h5>
-          <b><%= link_to "Add Restaurant", new_restaurant_path %></b>
-          </br><%= link_to "Add Administrator", new_administrator_path %>
-          </br><%= link_to "Top kitchen's workers", topwaiters_path %>
-          </br><%= link_to "View top dishes", lastweektop_path %>
-          </br><%= link_to "Days Statistic", alldayslong_path %>
-        </div>
-        <div class="card-action">
-          <%= link_to "Sign out", signout_path, method: "delete" %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End left nav bar -->
-
+  <%= render 'administrators/leftmenu' %>
   <!-- Right container -->
   <div class="col s10 m10 offset-s2">
     <!-- Put other rows there! -->
