@@ -2,22 +2,21 @@
 <%= render 'layouts/slider' %>
 
 <div class="layer">
-  <div class="row">
-    <div class=" col s12 offset-s4 white-text">
+    <div class="white-text">
       <p>
         <% if session[:customer].nil? %>
-        <h4>Hi, dear customer!</h4>
+        <h2>Hi, dear customer!</h2>
         <p>Please, authorise before your reservation and ordering.</p>
-        <div class=" col s12 offset-s0 white-text">
-        <%= button_to "Authorise", new_customer_path, class: "btn waves-effect waves-light blue-grey darken-3 btn-large authorise", :method => :get %>
+        <div class="white-text">
+        <%= button_to "Authorise", new_customer_path, class: "btn blue-grey darken-3", :method => :get %>
 </div>
         <% elsif !session[:customer].nil? and session[:reservation_id].nil? %>
 
-          <h4>Plesure to see you again, <%= session[:customer] %>!</h4>
+          <h2>Plesure to see you, <%= session[:customer] %>!</h2>
           <i><%= link_to "Not you?", new_customer_path %></i>
           It's time to make a reservation!
-  <div class=" col s8 offset-s0 white-text">
-          <%= button_to "Reservation", allrestaurants_path, class: "btn waves-effect waves-light blue-grey darken-3 btn-large reservation", :method => :get %>
+  <div class="white-text">
+          <%= button_to "Reservation", allrestaurants_path, class: "btn blue-grey darken-3", :method => :get %>
 </div>
 
         <% elsif !session[:reservation_id].nil? %>
@@ -25,17 +24,16 @@
           <% table = Table.find(reservation.table_id) %>
           <% restaurant = Restaurant.find(table.restaurant_id) %>
 
-          <h4>Thank you for reservation, <%= session[:customer] %>!</h4>
+          <h2>Thank you for reservation, <%= session[:customer] %>!</h2>
           <i><%= link_to "Not you?", new_customer_path %></i> or <i><%= link_to "Wrong reservation?", allrestaurants_path %></i>
           Now you can make order!
-  <div class=" col s8 offset-s0 white-text">
-         <%= button_to "Make order", new_order_path, class: "btn waves-effect waves-light blue-grey darken-4 btn-large makeorder", :method => :get %>
+  <div class="white-text">
+         <%= button_to "Make order", new_order_path, class: "btn blue-grey darken-4", :method => :get %>
 </div>
 
 
         <% end %>
       </p>
     </div>
-  </div>
 </div>
 <%= render 'layouts/footer' %>
