@@ -2,12 +2,27 @@
   <nav>
     <div class="nav-wrapper header">
       <%= link_to "Restaurant", root_path, class: "brand-logo headtext" %>
+      <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if signed_in? %>
           <li><%= link_to current_administrator.login.capitalize, controlpanel_path %></li>
           <li class="active"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+        <% elsif signed_in_user? %>
+          <li><%= link_to current_user.lastname, current_user %></li>
+          <li class="active"><%= link_to "Sign out", user_signout_path, method: "delete" %></li>
         <% else %>
-          <li class="active"><%= link_to "Login",  authorise_path %></li>
+          <li class="active"><%= link_to "Login",  user_signin_path %></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-menu">
+        <% if signed_in? %>
+          <li><b><%= link_to current_administrator.login.capitalize, controlpanel_path %></b></li>
+          <li class="active"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+        <% elsif signed_in_user? %>
+          <li><%= link_to current_user.lastname, current_user %></li>
+          <li class="active"><%= link_to "Sign out", user_signout_path, method: "delete" %></li>
+        <% else %>
+          <li class="active"><%= link_to "Login",  user_signin_path %></li>
         <% end %>
       </ul>
     </div>

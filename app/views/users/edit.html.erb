@@ -1,0 +1,104 @@
+<%= render 'layouts/header' %>
+
+<div class="row">
+<% if signed_in_user? %>
+  <%= render 'users/usersleftbar' %>
+<% else %>
+  <%= render 'administrators/leftmenu' %>
+<% end %>
+</div>
+
+<div class="row hide-on-med-and-down">
+  <div class="col s7 offset-s3">
+    <div class="card">
+      <%= form_for(@user) do |f| %>
+      <div class="card-content">
+        <div class="row">
+          <div class="col s12 l7 ">
+            <h4>Edit profile</h4>
+            <div class="field">
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">perm_identity</i>
+                  <%= f.text_field  :lastname, placeholder: "Yor name and lastname", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">mail_outline</i>
+                  <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">lock_open</i>
+                  <%= f.password_field  :password, placeholder: "Password", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">lock_outline</i>
+                  <%= f.password_field  :password_confirmation, placeholder: "Password confirmation", class: "validate", id: "icon_prefix" %>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+              <center>
+                <%= image_tag @user.photo, size: "200x200", class: "responsive-img circle" %>
+              </center>
+              <div class="field">
+                <div class="input-field col s10 offset-s1">
+                  <i class="material-icons prefix">photo</i>
+                    <%= f.label  :photo, "Change photo" %>
+                    <%= f.text_field  :photo, placeholder: "URL to new photo", class: "validate", id: "icon_prefix" %>
+                </div>
+              </div>
+              <%= render 'shared/errors_user_registration' %>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <%= f.submit "Save changes", class: "btn blue-grey darken-4" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-large-only">
+  <div class="col s12">
+    <div class="card">
+      <%= form_for(@user) do |f| %>
+      <div class="card-content">
+        <h4>Edit profile</h4>
+        <center>
+          <%= image_tag @user.photo, size: "200x200", class: "responsive-img circle" %>
+        </center>
+        <div class="field">
+          <div class="input-field">
+            <i class="material-icons prefix">photo</i>
+              <%= f.label  :photo, "Change photo" %>
+              <%= f.text_field  :photo, placeholder: "URL to new photo", class: "validate", id: "icon_prefix" %>
+          </div>
+        </div>
+
+        <%= render 'shared/errors_user_registration' %>
+        <div class="field">
+          <div class="input-field">
+            <i class="material-icons prefix">perm_identity</i>
+              <%= f.text_field  :lastname, placeholder: "Yor name and lastname", class: "validate", id: "icon_prefix" %>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">mail_outline</i>
+              <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">lock_open</i>
+              <%= f.password_field  :password, placeholder: "Password", class: "validate", id: "icon_prefix" %>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">lock_outline</i>
+              <%= f.password_field  :password_confirmation, placeholder: "Password confirmation", class: "validate", id: "icon_prefix" %>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <%= f.submit "Save changes", class: "btn blue-grey darken-4" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

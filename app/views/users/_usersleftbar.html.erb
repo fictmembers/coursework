@@ -1,0 +1,29 @@
+<div class="col s2 hide-on-med-and-down">
+  <div class="fixed-div">
+    <div class="card">
+      <div class="card-content ">
+        <center>
+          <%= image_tag @user.photo, class: "responsive-img circle", size: "250x250" %>
+        </center>
+        <h5><%= @user.lastname %></h5>
+        <% if signed_in? %>
+          <ul>
+            <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
+            <li><%= link_to "Users Orders",  root_path %></li>
+            <li><%= link_to "Delete User", @user, method: :delete, data: { confirm: "You sure?" } %></li>
+          </ul>
+        <% elsif current_user == @user %>
+          <ul>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+            <li><%= link_to "My Orders",  root_path %></li>
+          </ul>
+        <% else %>
+          <%= link_to "Back to my account", current_user %>
+        <% end %>
+      </div>
+      <div class="card-action">
+        <%= link_to "Sign out", user_signout_path, method: "delete" %>
+      </div>
+    </div>
+  </div>
+</div>

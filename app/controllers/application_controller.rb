@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   include SessionsHelper
+  include UsersessionsHelper
 
   def clean_useless_session
     session.delete(:restaurant)
