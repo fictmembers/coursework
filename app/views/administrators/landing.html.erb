@@ -1,6 +1,11 @@
 <%= render 'layouts/header' %>
 <%= render 'layouts/slider' %>
 
+<% if signed_in_user? %>
+  <% session[:customer_id] = current_user.customer_id %>
+  <% session[:customer]    = current_user.lastname %>
+<% end %>
+
 <div class="layer">
     <div class="white-text">
       <p>

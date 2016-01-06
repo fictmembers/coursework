@@ -1,0 +1,33 @@
+<%= render 'layouts/header' %>
+
+<div class="row">
+	<div class="col s10 offset-s1">
+		<table id="table">
+			  <thead>
+			        <tr>
+								<th data-field="id">ID</th>
+                <th data-field="lastname">Lastname</th>
+								<th data-field="customer_id">Customer ID</th>
+								<% if signed_in? %>
+				          <th data-field="edit">Edit</th>
+		    				  <th data-field="delete">Delete</th>
+								<% end %>
+			        </tr>
+			  </thead>
+
+			  <tbody>
+			  	<% @users.each do |user| %>
+			        <tr>
+								<td><%= user.id %></td>
+			          <td><%= link_to user.lastname, user %></td>
+								<td><%= user.customer_id %></td>
+								<% if signed_in? %>
+                	<td><%= link_to 'Edit', edit_user_path(user) %></td>
+	    				  	<td><%= link_to "Delete", user, method: :delete, data: { confirm: "You sure?" } %></td>
+								<% end %>
+			        </tr>
+			      <% end %>
+			  </tbody>
+		</table>
+	</div>
+</div>

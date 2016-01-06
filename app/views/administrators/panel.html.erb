@@ -145,6 +145,17 @@
       <div class="col s2">
         <div class="card">
           <div class="card-image">
+            <%= image_tag 'customers/user.png' %>
+          </div>
+          <div class="card-action">
+            <%= link_to "Add User", new_user_path %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
             <%= image_tag 'customers/guest.png' %>
           </div>
           <div class="card-action">
@@ -200,6 +211,14 @@
   </div>
 
   <div class="row">
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Users", users_path %>
+        </div>
+      </div>
+    </div>
+
     <div class="col s2">
       <div class="card">
         <div class="card-action">

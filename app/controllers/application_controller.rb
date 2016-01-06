@@ -6,8 +6,11 @@ class ApplicationController < ActionController::Base
   include UsersessionsHelper
 
   def clean_useless_session
+    session.delete(:customer)
+    session.delete(:customer_id)
     session.delete(:restaurant)
     session.delete(:hall)
     session.delete(:table)
+    session.delete(:reservation_id)
   end
 end
