@@ -1,7 +1,7 @@
 <%= render 'layouts/header' %>
 
 <div class="row">
-  <div class="col s10 offset-s1">
+  <div class="col s10 offset-s1 hide-on-med-and-down">
     <div class="card">
       <div class="card-content blue-grey darken-4">
         <span class="card-title white-text">All restaurants in our network</span>
@@ -23,5 +23,15 @@
         <%= link_to "Back to main page", root_path %>
       </div>
     </div>
+  </div>
+
+  <div class="col s12 hide-on-large-only">
+    <% @restaurants.each do |f| %>
+      <div class="card">
+        <span class="card-title pushed"><%= f.name %></span>
+        <div class="content pushed">Tel. <%= link_to f.tel, "tel:" + f.tel %></div>
+        <div class="card-action"><%= link_to f.address, f %></div>
+      </div>
+    <% end %>
   </div>
 </div>

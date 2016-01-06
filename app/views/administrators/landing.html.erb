@@ -10,14 +10,14 @@
     <div class="white-text">
       <p>
         <% if session[:customer].nil? %>
-        <h2><%=t :hi_dear %></h2>
+        <h3><%=t :hi_dear %></h3>
         <p><%=t :please %></p>
         <div class="white-text">
         <%= button_to  "#{t('authorise')}", new_customer_path, class: "btn blue-grey darken-3", :method => :get %>
 </div>
         <% elsif !session[:customer].nil? and session[:reservation_id].nil? %>
 
-          <h2> <%=t :pleasure %><%= session[:customer] %>!</h2>
+          <h3> <%=t :pleasure %><%= session[:customer] %>!</h3>
           <i> <%= link_to "#{t('not_you')}", new_customer_path %></i>
           <%=t :reserv_time %>
   <div class="white-text">
@@ -29,7 +29,7 @@
           <% table = Table.find(reservation.table_id) %>
           <% restaurant = Restaurant.find(table.restaurant_id) %>
 
-          <h2> <%=t :thank %> <%= session[:customer] %>!</h2>
+          <h3> <%=t :thank %> <%= session[:customer] %>!</h3>
           <i> <%= link_to "#{t('not_you')}", new_customer_path %></i> or <i><%= link_to "Wrong reservation?", allrestaurants_path %></i>
           <%=t :can_make_order %>
   <div class="white-text">

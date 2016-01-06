@@ -29,7 +29,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @orders = Order.where('customer_id = ?', @user.customer_id).paginate(page: params[:page], per_page: 5)
+    @orders = Order.where('customer_id = ?', @user.customer_id).paginate(page: params[:orders_page], per_page: 5)
+    @reservations = Reservation.where('customer_id = ?', @user.customer_id).paginate(page: params[:reservation_page], per_page: 2)
   end
 
   def edit
