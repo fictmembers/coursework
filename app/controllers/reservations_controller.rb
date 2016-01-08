@@ -27,12 +27,11 @@ class ReservationsController < ApplicationController
   end
 
   def completereservation
-    clean_useless_session
     @reservation = Reservation.find(session[:reservation_id])
     @table = Table.find(@reservation.table_id)
     @hall = Hall.find(@table.hall_id)
     @restaurant = Restaurant.find(@hall.restaurant_id)
-    @customer = Customer.find(session[:customer_id])
+    @customer = Customer.find(@reservation.customer_id)
   end
 
   def show

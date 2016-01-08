@@ -1,10 +1,9 @@
 <%= render 'layouts/header' %>
 <div class="row">
-  <div class="col s4 offset-s4">
+  <div class="col s4 offset-s4 hide-on-med-and-down">
     <div class="card">
       <div class="card-image">
         <%= image_tag("reservation.jpg")%>
-        <span class="card-title grey-text text-lighten-2">Reserve a table for your company! Just fill this fields:</span>
       </div>
       <div class="card-content">
         <%= render 'shared/error_reservation_adding' %>
@@ -47,6 +46,56 @@
               <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
             </div>
           <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 hide-on-large-only">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("reservation.jpg")%>
+      </div>
+      <div class="card-content">
+        <%= render 'shared/error_reservation_adding' %>
+        <%= form_for(@reservation) do |f| %>
+        <% if signed_in? %>
+          <h5>Choose customer and table:</h5>
+            <div class="input-field col s10">
+              <%= f.select :customer_id, customer_select, :placeholder => "Choose customer" %>
+            </div>
+            <div class="input-field col s10">
+              <%= f.select :table_id, table_select, :placeholder => "Table in restaurant" %>
+            </div>
+        <% else %>
+
+            <% @table = Table.find(session[:table]) %>
+            <% @hall  = Hall.find(@table.hall_id) %>
+            <% @restaurant = Restaurant.find(@table.restaurant_id) %>
+            <% @waiter = Waiter.find(@table.waiter_id) %>
+
+            <h5>For: <%= session[:customer] %></h5>
+              <%= link_to "Not you?", root_path %>
+
+            <ul>
+              <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
+              <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
+              <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
+            </ul>
+        <% end %>
+          <div class="field">
+            <div class="input-field">
+              <i class="material-icons prefix black-text">schedule</i>
+              <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
+            </div>
+            <div class="input-field col s10 offset-s1">
+              <%= f.select :from, time_select, :placeholder => "Select time" %>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>

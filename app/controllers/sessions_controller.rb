@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
   def create
     administrator = Administrator.find_by(login: params[:session][:login])
     if administrator && administrator.authenticate(params[:session][:password])
+      clean_useless_session
       sign_in administrator
       redirect_to controlpanel_path
     else
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+    clean_useless_session
     redirect_to root_url
   end
 end

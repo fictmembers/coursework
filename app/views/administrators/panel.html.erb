@@ -2,7 +2,7 @@
 <div class="panel">
 <!-- MAIN CONTAINER-->
 <div class="row">
-  <%= render 'administrators/leftmenu' %>
+  <%= render 'administrators/administratorsleftmenu' %>
   <!-- Right container -->
   <div class="col s10 m10 offset-s2">
     <!-- Put other rows there! -->
@@ -145,6 +145,17 @@
       <div class="col s2">
         <div class="card">
           <div class="card-image">
+            <%= image_tag 'customers/user.png' %>
+          </div>
+          <div class="card-action">
+            <%= link_to "Add User", new_user_path %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
             <%= image_tag 'customers/guest.png' %>
           </div>
           <div class="card-action">
@@ -186,14 +197,31 @@
         </div>
       </div>
 
-
+      <div class="col s2">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag 'customers/bill.png' %>
+          </div>
+          <div class="card-action">
+            <%= link_to "All bills", bills_path %>
+          </div>
+        </div>
+      </div>
   </div>
 
   <div class="row">
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Guests", customers_path %>
+          <%= link_to "All Users", users_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s2">
+      <div class="card">
+        <div class="card-action">
+          <%= link_to "All Guests", customers_path %>
         </div>
       </div>
     </div>
