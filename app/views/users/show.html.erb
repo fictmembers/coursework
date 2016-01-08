@@ -9,60 +9,82 @@
           <div class="col s4">
             <center>
               <%= link_to root_path do %>
-                <%= image_tag "equipment/item.png", class: "responsive-img", size: "256x256" %>
-                <p class="promo-caption"><h3>Make new order</h3></p>
+              <%= image_tag "equipment/item.png", class: "responsive-img", size: "256x256" %>
+              <p class="promo-caption">
+                <h3>
+                  <%=t :make_new_order %></h3>
+              </p>
               <% end %>
-              <p class="light center">Our best restaurants and their cuisins are presented in our catalouge.</p>
+              <p class="light center">
+                <%=t :best_rastaurants %></p>
             </center>
           </div>
           <% if current_user != @user %>
           <div class="col s8">
             <center>
               <%= link_to root_path do %>
-                <%= image_tag "equipment/menu.png", class: "responsive-img", size: "256x256" %>
-                <p class="promo-caption"><h3>View your last orders</h3></p>
+              <%= image_tag "equipment/menu.png", class: "responsive-img", size: "256x256" %>
+              <p class="promo-caption">
+                <h3>
+                  <%=t :last_orders %></h3>
+              </p>
               <% end %>
-              <p class="light center">List of your last ordered dishes that are made from this account.</p>
+              <p class="light center">
+                <%=t :last_dishes %></p>
             </center>
           </div>
-          <% else %>
-            <div class="col s8">
-              <div class="row">
-                <ul class="collection with-header">
-                  <li class="collection-header"><h4>My orders</h4></li>
-                  <% @orders.each do |order| %>
-                  <li class="collection-item">
-                    <div>
-                      <%= link_to "Order ##{order.id}" , order %> - Ordered <%= time_ago_in_words(order.created_at) %> ago
-                      <%= link_to order, {class: "secondary-content"} do %>
-                          <i class="material-icons">assignment</i>
-                      <% end %>
-                    </div>
-                  </li>
-                  <% end %>
-                  </ul>
-                  <center>
-                    <%= will_paginate @orders, :param_name => 'orders_page' %>
-                  </center>
-              </div>
-              <div class="row">
-                <ul class="collection with-header">
-                  <li class="collection-header"><h4>My reservations</h4></li>
-                  <% @reservations.each do |reservation| %>
-                    <% table = Table.find(reservation.table_id) %>
-                    <% restaurant = Restaurant.find(table.restaurant_id) %>
-                  <li class="collection-item">
-                      <%= link_to restaurant.name, reservation %> on
-                      <b><%= reservation.from %>:00</b>
-                      <%= reservation.reserv_time.to_date %> (Table #<%= reservation.table_id %>)
-                  </li>
-                  <% end %>
-                  </ul>
-                  <center>
-                    <%= will_paginate @reservations, :param_name => 'reservation_page' %>
-                  </center>
-              </div>
+        <% else %>
+          <div class="col s8">
+            <div class="row">
+              <ul class="collection with-header">
+                <li class="collection-header">
+                  <h4>
+                    <%=t :my_orders %></h4>
+                </li>
+                <% @orders.each do |order| %>
+                <li class="collection-item">
+                  <div>
+                    <%= link_to "Order ##{order.id}" , order %>
+                    -
+                    <%=t :ordered %>
+                    <%= time_ago_in_words(order.created_at) %>
+                    <%=t :ago %>
+                    <%= link_to order, {class: "secondary-content"} do %>
+                    <i class="material-icons">assignment</i>
+                    <% end %>
+                  </div>
+                </li>
+                <% end %>
+              </ul>
+              <center>
+                <%= will_paginate @orders, :param_name => 'orders_page' %>
+              </center>
             </div>
+            <div class="row">
+              <ul class="collection with-header">
+                <li class="collection-header">
+                  <h4>
+                    <%=t :my_reservations %></h4>
+                </li>
+                <% @reservations.each do |reservation| %>
+                <% table = Table.find(reservation.table_id) %>
+                <% restaurant = Restaurant.find(table.restaurant_id) %>
+                <li class="collection-item">
+                  <%= link_to restaurant.name, reservation %>
+                  on
+                  <b>
+                    <%= reservation.from %>:00</b>
+                  <%= reservation.reserv_time.to_date %>
+                  (<%=t :table %>
+                  #<%= reservation.table_id %>)
+                </li>
+                <% end %>
+              </ul>
+              <center>
+                <%= will_paginate @reservations, :param_name => 'reservation_page' %>
+              </center>
+            </div>
+          </div>
           <% end %>
         </div>
       </div>
@@ -77,46 +99,63 @@
           <%= image_tag @user.photo, class: "responsive-img circle" %>
         </center>
         <ul class="collection with-header">
-          <li class="collection-header"><h4><%= @user.lastname %></h4></li>
+          <li class="collection-header">
+            <h4>
+              <%= @user.lastname %></h4>
+          </li>
           <% if current_user == @user or signed_in? %>
-            <li class="collection-item"><%= link_to "Edit Profile", edit_user_path(@user) %></li>
-            <li class="collection-item"><%= link_to "Orders",  root_path %></li>
-          <% else %>
-            <%= link_to "Back to my account", current_user %>
+          <li class="collection-item">
+            <%= link_to "#{t('edit_profile')}", edit_user_path(@user) %></li>
+          <li class="collection-item">
+            <%= link_to "#{t('orders')}",  root_path %></li>
+        <% else %>
+          <%= link_to "#{t('back_to_account')}", current_user %>
           <% end %>
         </ul>
         <% if current_user == @user %>
-          <ul class="collection with-header">
-            <li class="collection-header"><h4>My orders</h4></li>
-            <% @orders.each do |order| %>
-            <li class="collection-item">
-              <div>
-                <%= link_to "Order ##{order.id}" , order %>
-                <%= link_to order, {class: "secondary-content"} do %>
-                    <i class="material-icons">assignment</i>
-                <% end %>
-              </div>
-            </li>
-            <% end %>
-            <li class="collection-header"><%= will_paginate @orders %></li>
-          </ul>
-          <ul class="collection with-header">
-            <li class="collection-header"><h4>My reservations</h4></li>
-            <% @reservations.each do |reservation| %>
-              <% table = Table.find(reservation.table_id) %>
-              <% restaurant = Restaurant.find(table.restaurant_id) %>
-              <li class="collection-item">
-                <%= link_to restaurant.name, reservation %> on
-                <b><%= reservation.from %>:00</b>
-                <%= reservation.reserv_time.to_date %> (Table #<%= reservation.table_id %>)
-              </li>
-            <% end %>
-            <li class="collection-header"><%= will_paginate @reservations, :param_name => 'reservation_page' %></li>
-            </ul>
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <h4>
+              <%=t :my_orders %></h4>
+          </li>
+          <% @orders.each do |order| %>
+          <li class="collection-item">
+            <div>
+              <%= link_to "Order ##{order.id}" , order %>
+              <%= link_to order, {class: "secondary-content"} do %>
+              <i class="material-icons">assignment</i>
+              <% end %>
+            </div>
+          </li>
+          <% end %>
+          <li class="collection-header">
+            <%= will_paginate @orders %></li>
+        </ul>
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <h4>
+              <%=t :my_reservations %></h4>
+          </li>
+          <% @reservations.each do |reservation| %>
+          <% table = Table.find(reservation.table_id) %>
+          <% restaurant = Restaurant.find(table.restaurant_id) %>
+          <li class="collection-item">
+            <%= link_to restaurant.name, reservation %>
+            on
+            <b>
+              <%= reservation.from %>:00</b>
+            <%= reservation.reserv_time.to_date %>
+            (<%=t :table %>
+            #<%= reservation.table_id %>)
+          </li>
+          <% end %>
+          <li class="collection-header">
+            <%= will_paginate @reservations, :param_name => 'reservation_page' %></li>
+        </ul>
         <% end %>
       </div>
       <div class="card-action">
-        <%= link_to "Sign out", user_signout_path, method: "delete" %>
+        <%= link_to "#{t('signout')}", user_signout_path, method: "delete" %>
       </div>
     </div>
   </div>

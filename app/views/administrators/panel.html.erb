@@ -9,7 +9,7 @@
 
     <div class="row">
       <div class="col s12">
-        <h2>Enrolling & Controlling</h2>
+        <h2> <%=t :enroling %> </h2>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
             <%= image_tag 'employers/manager.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add Manager", new_manager_path %>
+            <%= link_to "#{t('add_manager')}", new_manager_path %>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
             <%= image_tag 'employers/hostess.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add Hostess", new_hostess_path %>
+            <%= link_to "#{t('add_hostess')}", new_hostess_path %>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
               <%= image_tag 'employers/waiter.png' %>
             </div>
             <div class="card-action">
-              <%= link_to "Add Waiter", new_waiter_path %>
+              <%= link_to "#{t('add_waiter')}", new_waiter_path %>
             </div>
           </div>
       </div>
@@ -54,7 +54,7 @@
               <%= image_tag 'employers/chef.png' %>
             </div>
             <div class="card-action">
-              <%= link_to "Add Cheff", new_chef_path %>
+              <%= link_to "#{t('add_chef')}", new_chef_path %>
             </div>
           </div>
       </div>
@@ -65,7 +65,7 @@
             <%= image_tag 'employers/cashier.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add Cashier", new_cashier_path %>
+            <%= link_to "#{t('add_cashier')}", new_cashier_path %>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
             <%= image_tag 'employers/administrator.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add admin", new_administrator_path %>
+            <%= link_to "#{t('add_admin')}", new_administrator_path %>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
       <div class="col s2">
         <div class="card">
           <div class="card-action">
-              <%= link_to "View all Managers", managers_path%>
+              <%= link_to "#{t('view_manager')}", managers_path%>
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@
       <div class="col s2">
         <div class="card">
           <div class="card-action">
-            <%= link_to "View all hostesses", hostesses_path%>
+            <%= link_to "#{t('view_hostess')}", hostesses_path%>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
       <div class="col s2">
         <div class="card">
           <div class="card-action">
-            <%= link_to "View all waiters", waiters_path%>
+            <%= link_to "#{t('view_waiter')}", waiters_path%>
           </div>
         </div>
       </div>
@@ -112,7 +112,7 @@
       <div class="col s2">
         <div class="card">
           <div class="card-action">
-            <%= link_to "View all chefs", chefs_path%>
+            <%= link_to "#{t('view_chef')}", chefs_path%>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@
       <div class="col s2">
         <div class="card">
           <div class="card-action">
-            <%= link_to "View all cashiers", cashiers_path%>
+            <%= link_to "#{t('view_cashier')}", cashiers_path%>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
       <div class="col s2">
         <div class="card">
           <div class="card-action">
-            <%= link_to "View all admins", administrators_path%>
+            <%= link_to "#{t('view_admin')}", administrators_path%>
           </div>
         </div>
       </div>
@@ -137,7 +137,7 @@
 
     <div class="row">
       <div class="col s12">
-        <h2>Customers & Orders</h2>
+        <h2> <%=t :customers %></h2>
       </div>
     </div>
 
@@ -148,7 +148,7 @@
             <%= image_tag 'customers/user.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add User", new_user_path %>
+            <%= link_to "#{t('add_user')}", new_user_path %>
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@
             <%= image_tag 'customers/guest.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add Guest", new_customer_path %>
+            <%= link_to "#{t('add_guest')}", new_customer_path %>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@
             <%= image_tag 'customers/reservation.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add reservations", new_reservation_path %>
+            <%= link_to "#{t('add_reservation')}", new_reservation_path %>
           </div>
         </div>
       </div>
@@ -181,7 +181,7 @@
             <%= image_tag 'customers/review_book.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add Review", new_review_book_path %>
+            <%= link_to "#{t('add_review')}", new_review_book_path %>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
             <%= image_tag 'customers/order.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "Add Order", new_order_path %>
+            <%= link_to "#{t('add_order')}", new_order_path %>
           </div>
         </div>
       </div>
@@ -203,7 +203,7 @@
             <%= image_tag 'customers/bill.png' %>
           </div>
           <div class="card-action">
-            <%= link_to "All bills", bills_path %>
+            <%= link_to "#{t('view_bill')}", bills_path %>
           </div>
         </div>
       </div>
@@ -213,7 +213,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "All Users", users_path %>
+          <%= link_to "#{t('view_user')}", users_path %>
         </div>
       </div>
     </div>
@@ -221,7 +221,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "All Guests", customers_path %>
+          <%= link_to "#{t('view_guest')}", customers_path %>
         </div>
       </div>
     </div>
@@ -229,7 +229,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Reservs", reservations_path %>
+          <%= link_to "#{t('view_reservation')}", reservations_path %>
         </div>
       </div>
     </div>
@@ -237,7 +237,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Reviews", review_books_path %>
+          <%= link_to "#{t('view_review')}", review_books_path %>
         </div>
       </div>
     </div>
@@ -245,7 +245,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Orders", orders_path %>
+          <%= link_to "#{t('view_order')}", orders_path %>
         </div>
       </div>
     </div>
@@ -253,7 +253,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Bills", bills_path %>
+          <%= link_to "#{t('view_bill')}", bills_path %>
         </div>
       </div>
     </div>
@@ -262,7 +262,7 @@
 
   <div class="row">
     <div class="col s12">
-      <h2>Equipment & Food</h2>
+      <h2> <%=t :equipment %></h2>
     </div>
   </div>
 
@@ -273,7 +273,7 @@
           <%= image_tag 'equipment/hall.png' %>
         </div>
         <div class="card-action">
-          <%= link_to "Add Hall", new_hall_path %>
+          <%= link_to "#{t('add_hall')}", new_hall_path %>
         </div>
       </div>
     </div>
@@ -284,7 +284,7 @@
           <%= image_tag 'equipment/table.png' %>
         </div>
         <div class="card-action">
-          <%= link_to "Add Table", new_table_path %>
+          <%= link_to "#{t('add_table')}", new_table_path %>
         </div>
       </div>
     </div>
@@ -295,7 +295,7 @@
           <%= image_tag 'equipment/menu.png' %>
         </div>
         <div class="card-action">
-          <%= link_to "Add Cuisine", new_menu_path %>
+          <%= link_to "#{t('add_cuisine')}", new_menu_path %>
         </div>
       </div>
     </div>
@@ -306,7 +306,7 @@
           <%= image_tag 'equipment/item.png' %>
         </div>
         <div class="card-action">
-          <%= link_to "Add item", new_item_path %>
+          <%= link_to "#{t('add_item')}", new_item_path %>
         </div>
       </div>
     </div>
@@ -317,7 +317,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Halls", halls_path %>
+          <%= link_to "#{t('view_hall')}", halls_path %>
         </div>
       </div>
     </div>
@@ -325,7 +325,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Tables", tables_path %>
+          <%= link_to "#{t('view_table')}", tables_path %>
         </div>
       </div>
     </div>
@@ -333,7 +333,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Cuisines", menus_path %>
+          <%= link_to "#{t('view_cuisine')}", menus_path %>
         </div>
       </div>
     </div>
@@ -341,7 +341,7 @@
     <div class="col s2">
       <div class="card">
         <div class="card-action">
-          <%= link_to "View all Items", items_path %>
+          <%= link_to "#{t('view_item')}", items_path %>
         </div>
       </div>
     </div>

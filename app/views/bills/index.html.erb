@@ -6,12 +6,12 @@
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
-			              <th data-field="customer">Customer</th>
-			              <th data-field="cashier">Cashier</th>
-										<th data-field="deatails">Details</th>
-                    <th data-field="date">Created at</th>
-				            <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+			              <th data-field="customer">  <%=t :customer %></th>
+			              <th data-field="cashier">  <%=t :cashier %></th>
+										<th data-field="deatails">  <%=t :detail %></th>
+                    <th data-field="date">  <%=t :created %></th>
+				            <th data-field="edit">  <%=t :edit %></th>
+		    				    <th data-field="delete">  <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
@@ -21,13 +21,13 @@
 						<% cashier = Cashier.find(bill.cashier_id) %>
 						<% order = Order.find(bill.order_id) %>
 			          <tr>
-									<td><%= bill.id %></td>
-			            <td><%= customer.lastname %></td>
-			            <td><%= cashier.lastname %></td>
-									<td><%= link_to "Order details", order %></td>
-                  <td><%= bill.created_at %></td>
-                  <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-	    					  <td><%= link_to "Delete", bill, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= bill.id %></td>
+			            <td> <%= customer.lastname %></td>
+			            <td> <%= cashier.lastname %></td>
+									<td> <%= link_to "#{t('detail')}", order %></td>
+                  <td> <%= bill.created_at %></td>
+                  <td> <%= link_to "#{t('edit')}", edit_bill_path(bill) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", bill, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

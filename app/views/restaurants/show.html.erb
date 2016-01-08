@@ -4,21 +4,21 @@
     <div class="card">
       <div class="card-image">
         <%= image_tag "hall.jpg" %>
-        <span class="card-title white-text"><%= @restaurant.name %></span>
+        <span class="card-title white-text"> <%= @restaurant.name %></span>
       </div>
       <div class="card-content">
         <div class="row">
           <% @halls.each do |f| %>
-            <div class="col s6">
-              <div class="card">
-                <div class="card-action"><%= link_to f.hall_type, f %></div>
-              </div>
+          <div class="col s6">
+            <div class="card">
+              <div class="card-action"> <%= link_to f.hall_type, f %></div>
             </div>
+          </div>
           <% end %>
         </div>
       </div>
       <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
       </div>
     </div>
   </div>
@@ -27,20 +27,20 @@
     <div class="card">
       <div class="card-image">
         <%= image_tag "hall.jpg" %>
-        <span class="card-title white-text"><%= @restaurant.name %></span>
+        <span class="card-title white-text"> <%= @restaurant.name %></span>
       </div>
       <div class="card-content">
-        <h4>Choose prefered hall</h4>
+        <h4>  <%=t :choose_prefered%></p> </h4>
         <p>
           <% @halls.each do |f| %>
-            <div class="card">
-              <div class="card-action"><%= link_to f.hall_type, f %></div>
-            </div>
+          <div class="card">
+            <div class="card-action"><%= link_to f.hall_type, f %></div>
+          </div>
           <% end %>
         </p>
       </div>
       <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
       </div>
+    </div>
   </div>
-</div>

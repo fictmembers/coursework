@@ -1,12 +1,18 @@
 <%= render 'layouts/header' %>
 <div class="formfactor">
-  <h4>Request № <%= @reservation.id %></h4>
-  Guest: <%= @guest.lastname%></br>
-  For table №<%= @reservation.table_id %></br>
-  Time: <%= @reservation.reserv_time %></br>
-  <% @restaurant.each do |f| %>
-    At: <%= f.name%></br>
-    Located at:    <%= f.address %></br>
-    Contact phone: <%= f.tel %>
-  <% end %>
+  <h4> <%=t :request %> #
+    <%= @reservation.id %></h4>
+    <%=t :customer %>:
+  <%= @guest.lastname%></br>
+  <%=t :table %> №<%= @reservation.table_id %></br>
+  <%=t :date_time %>:
+<%= @reservation.reserv_time %></br>
+<% @restaurant.each do |f| %>
+<%=t :at %>:
+<%= f.name%></br>
+<%=t :address %>:
+<%= f.address %></br>
+<%=t :tel %>:
+<%= f.tel %>
+<% end %>
 </div>

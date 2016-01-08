@@ -4,34 +4,40 @@
   <div class="col s10 offset-s1 hide-on-med-and-down">
     <div class="card">
       <div class="card-content blue-grey darken-4">
-        <span class="card-title white-text">All restaurants in our network</span>
+        <span class="card-title white-text">
+          <%=t :restaurant_network %></span>
       </div>
       <div class="card-content">
         <div class="row">
           <% @restaurants.each do |f| %>
-            <div class="col s4">
-              <div class="card">
-                <span class="card-title pushed"><%= f.name %></span>
-                <div class="content pushed">Tel. <%= f.tel %></div>
-                <div class="card-action"><%= link_to f.address, f %></div>
-              </div>
+          <div class="col s4">
+            <div class="card">
+              <span class="card-title pushed">
+                <%= f.name %></span>
+              <div class="content pushed">
+                <%=t :tel %>
+                <%= f.tel %></div>
+              <div class="card-action">
+                <%= link_to f.address, f %></div>
             </div>
+          </div>
           <% end %>
         </div>
       </div>
       <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
       </div>
     </div>
   </div>
 
   <div class="col s12 hide-on-large-only">
     <% @restaurants.each do |f| %>
-      <div class="card">
-        <span class="card-title pushed"><%= f.name %></span>
-        <div class="content pushed">Tel. <%= link_to f.tel, "tel:" + f.tel %></div>
-        <div class="card-action"><%= link_to f.address, f %></div>
-      </div>
+    <div class="card">
+      <span class="card-title pushed"> <%= f.name %></span>
+      <div class="content pushed"> <%=t :tel %>
+        <%= link_to f.tel, "tel:" + f.tel %></div>
+      <div class="card-action"><%= link_to f.address, f %></div>
+    </div>
     <% end %>
   </div>
 </div>

@@ -5,13 +5,13 @@
 			<table id="review_book">
 			    <thead>
 			          <tr>
-										<th data-field="id">ID</th>
-										<th data-field="restaurant">Restaurant</th>
-			              <th data-field="customer">Customer</th>
-                    <th data-field="review_type">Review type</th>
-			              <th data-field="created_at">Created at</th>
-				            <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+										<th data-field="id"> ID</th>
+										<th data-field="restaurant"> <%=t :restaurant %></th>
+			              <th data-field="customer"> <%=t :customer %></th>
+                    <th data-field="review_type"> <%=t :review_type %></th>
+			              <th data-field="created_at"> <%=t :created %></th>
+				            <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
@@ -19,13 +19,13 @@
 			    	<% @review_books.each do |review_book| %>
 							<% restaurant = Restaurant.find(review_book.restaurant_id) %>
 			          <tr>
-									<td><%= review_book.id %></td>
-									<td><%= restaurant.name%></td>
-			            <td><%= review_book.customer %></td>
-			            <td><%= review_book.review_type %></td>
-			            <td><%= review_book.created_at %></td>
-                  <td><%= link_to 'Edit', edit_review_book_path(review_book) %></td>
-	    					  <td><%= link_to "Delete", review_book, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= review_book.id %></td>
+									<td> <%= restaurant.name%></td>
+			            <td> <%= review_book.customer %></td>
+			            <td> <%= review_book.review_type %></td>
+			            <td> <%= review_book.created_at %></td>
+                  <td> <%= link_to "#{t('edit')}", edit_review_book_path(review_book) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", review_book, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

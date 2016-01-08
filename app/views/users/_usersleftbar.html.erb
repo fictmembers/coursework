@@ -5,24 +5,30 @@
         <center>
           <%= image_tag @user.photo, class: "circle", size: "250x250" %>
         </center>
-        <h5><%= @user.lastname %></h5>
+        <h5>
+          <%= @user.lastname %></h5>
         <% if signed_in? %>
-          <ul>
-            <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
-            <li><%= link_to "Users Orders",  root_path %></li>
-            <li><%= link_to "Delete User", @user, method: :delete, data: { confirm: "You sure?" } %></li>
-          </ul>
+        <ul>
+          <li>
+            <%= link_to "#{t('edit_profile')}", edit_user_path(@user) %></li>
+          <li>
+            <%= link_to "#{t('user_orders')}",  root_path %></li>
+          <li>
+            <%= link_to "#{t('delete_user')}", @user, method: :delete, data: { confirm: "You sure?" } %></li>
+        </ul>
         <% elsif current_user == @user %>
-          <ul>
-            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-            <li><%= link_to "My Orders",  current_user %></li>
-          </ul>
-        <% else %>
-          <%= link_to "Back to my account", current_user %>
+        <ul>
+          <li>
+            <%= link_to "#{t('edit_profile')}", edit_user_path(current_user) %></li>
+          <li>
+            <%= link_to "#{t('my_orders')}",  current_user %></li>
+        </ul>
+      <% else %>
+        <%= link_to "#{t('back_to_account')}", current_user %>
         <% end %>
       </div>
       <div class="card-action">
-        <%= link_to "Sign out", user_signout_path, method: "delete" %>
+        <%= link_to "#{t('signout')}", user_signout_path, method: "delete" %>
       </div>
     </div>
   </div>

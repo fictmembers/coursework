@@ -1,29 +1,29 @@
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s12 m6 offset-m3">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag("review.jpg")%>
-          </div>
-          <div class="card-content">
-            <h4>New review</h4>
-            <%= form_for(@review_book) do |f| %>
-              <div class="input-field">
-                <i class="material-icons prefix">perm_identity</i>
-                <%= f.text_field :customer,        :placeholder => "First and Lastname", id: "icon_prefix" %>
-              </div>
-              <div class="input-field">
-                <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "Choose Restaurant"%>
-              </div>
-              <div class="input-field">
-                <%= f.select :review_type, options_for_select([["commendation (+)", "commendation"], ["complaint (-)", "complaint"]]), :prompt => "Review Type", class: "input-field col s4" %></br>
-                <%= f.text_area :review, :placeholder => "Text" %></br>
-              </div>
-            </div>
-            <div class="card-action">
-              <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
-            </div>
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("review.jpg")%>
       </div>
+      <div class="card-content">
+        <h4> <%=t :hello_review %></h4>
+        <%= form_for(@review_book) do |f| %>
+        <div class="input-field">
+          <i class="material-icons prefix">perm_identity</i>
+          <%= f.text_field :customer,        :placeholder => "#{t('name_lastname')}", id: "icon_prefix" %>
+        </div>
+        <div class="input-field">
+          <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "#{t('select_rest')}"%>
+        </div>
+        <div class="input-field">
+          <%= f.select :review_type, options_for_select([["commendation (+)", "commendation"], ["complaint (-)", "complaint"]]), :prompt => "#{t('review_type')}", class: "input-field col s4" %></br>
+        <%= f.text_area :review, :placeholder => "#{t('text')}" %></br>
     </div>
-  <% end %>
+  </div>
+  <div class="card-action">
+    <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>
+  </div>
+</div>
+</div>
+<% end %>
 </div>

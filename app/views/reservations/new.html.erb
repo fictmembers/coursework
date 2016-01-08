@@ -9,43 +9,56 @@
         <%= render 'shared/error_reservation_adding' %>
         <%= form_for(@reservation) do |f| %>
         <% if signed_in? %>
-          <h5>Choose customer and table:</h5>
-            <div class="input-field col s10">
-              <%= f.select :customer_id, customer_select, :placeholder => "Choose customer" %>
-            </div>
-            <div class="input-field col s10">
-              <%= f.select :table_id, table_select, :placeholder => "Table in restaurant" %>
-            </div>
-        <% else  %>
-          <h5>For: <%= session[:customer] %></h5>
-          <%= link_to "Not you?", root_path %>
-          <% @table = Table.find(session[:table]) %>
-          <% @hall  = Hall.find(@table.hall_id) %>
-          <% @restaurant = Restaurant.find(@table.restaurant_id) %>
-          <% @waiter = Waiter.find(@table.waiter_id) %>
-            <ul>
-              <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
-              <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
-              <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
-            </ul>
+        <h5>
+          <%=t :customer_and_table %>
+          :</h5>
+        <div class="input-field col s10">
+          <%= f.select :customer_id, customer_select, :placeholder => "#{t('select_customer')}" %>
+        </div>
+        <div class="input-field col s10">
+          <%= f.select :table_id, table_select, :placeholder => "#{t('table_in_rest')}" %>
+        </div>
+      <% else  %>
+        <h5>
+          <%=t :order_for %>
+          <%= session[:customer] %></h5>
+        <%= link_to "#{t('not_you')}", root_path %>
+        <% @table = Table.find(session[:table]) %>
+        <% @hall  = Hall.find(@table.hall_id) %>
+        <% @restaurant = Restaurant.find(@table.restaurant_id) %>
+        <% @waiter = Waiter.find(@table.waiter_id) %>
+        <ul>
+          <li class="pushed">
+            <%=t :restaurant %>:
+            <b><%= @restaurant.name %></b>
+          </li>
+          <li class="pushed">
+            <%=t :hall %>:
+            <i><%= @hall.hall_type %></i>
+          </li>
+          <li class="pushed">
+            <%=t :waiter %>:
+            <%= link_to @waiter.lastname, @waiter %></li>
+        </ul>
         <% end %>
-            <div class="row">
-              <div class="field">
-                <div class="col s8">
-                  <div class="input-field col s10">
-                    <i class="material-icons prefix">schedule</i>
-                      <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
-                  </div>
-                </div>
-                <div class="col s4">
-                  <%= f.select :from, time_select, :placeholder => "Select time" %>
-                </div>
+        <div class="row">
+          <div class="field">
+            <div class="col s8">
+              <div class="input-field col s10">
+                <i class="material-icons prefix">schedule</i>
+                <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "#{t('select_date')}"%>
               </div>
             </div>
-            <div class="card-action">
-              <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
+            <div class="col s4">
+              <%= f.select :from, time_select, :placeholder => "#{t('select_time')}" %>
             </div>
-          <% end %>
+          </div>
+        </div>
+        <div class="card-action">
+          <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">
+            <%=t :save_info %></button>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -59,44 +72,55 @@
         <%= render 'shared/error_reservation_adding' %>
         <%= form_for(@reservation) do |f| %>
         <% if signed_in? %>
-          <h5>Choose customer and table:</h5>
-            <div class="input-field col s10">
-              <%= f.select :customer_id, customer_select, :placeholder => "Choose customer" %>
-            </div>
-            <div class="input-field col s10">
-              <%= f.select :table_id, table_select, :placeholder => "Table in restaurant" %>
-            </div>
-        <% else %>
+        <h5>
+          <%=t :customer_and_table %>:</h5>
+        <div class="input-field col s10">
+          <%= f.select :customer_id, customer_select, :placeholder => "#{t('select_customer')}" %>
+        </div>
+        <div class="input-field col s10">
+          <%= f.select :table_id, table_select, :placeholder => "#{t('table_in_rest')}" %>
+        </div>
+      <% else %>
 
-            <% @table = Table.find(session[:table]) %>
-            <% @hall  = Hall.find(@table.hall_id) %>
-            <% @restaurant = Restaurant.find(@table.restaurant_id) %>
-            <% @waiter = Waiter.find(@table.waiter_id) %>
+        <% @table = Table.find(session[:table]) %>
+        <% @hall  = Hall.find(@table.hall_id) %>
+        <% @restaurant = Restaurant.find(@table.restaurant_id) %>
+        <% @waiter = Waiter.find(@table.waiter_id) %>
 
-            <h5>For: <%= session[:customer] %></h5>
-              <%= link_to "Not you?", root_path %>
+        <h5>For:
+          <%= session[:customer] %></h5>
+        <%= link_to "#{t('not_you')}", root_path %>
 
-            <ul>
-              <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
-              <li class="pushed">Hall: <i><%= @hall.hall_type %></i></li>
-              <li class="pushed">Waiter: <%= link_to @waiter.lastname, @waiter %></li>
-            </ul>
+        <ul>
+          <li class="pushed">
+            <%=t :restaurant %>:
+            <b><%= @restaurant.name %></b>
+          </li>
+          <li class="pushed">
+            <%=t :hall %>:
+            <i><%= @hall.hall_type %></i>
+          </li>
+          <li class="pushed">
+            <%=t :waiter %>:
+            <%= link_to @waiter.lastname, @waiter %></li>
+        </ul>
         <% end %>
-          <div class="field">
-            <div class="input-field">
-              <i class="material-icons prefix black-text">schedule</i>
-              <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "Select date"%>
-            </div>
-            <div class="input-field col s10 offset-s1">
-              <%= f.select :from, time_select, :placeholder => "Select time" %>
-            </div>
+        <div class="field">
+          <div class="input-field">
+            <i class="material-icons prefix black-text">schedule</i>
+            <%= f.text_field :reserv_time , type: "date", class: "datepicker", :placeholder => "#{t('select_date')}"%>
+          </div>
+          <div class="input-field col s10 offset-s1">
+            <%= f.select :from, time_select, :placeholder => "#{t('select_time')}" %>
           </div>
         </div>
-        <div class="card-action">
-          <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
-        </div>
-      <% end %>
       </div>
+      <div class="card-action">
+        <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">
+          <%=t :save_info %></button>
+      </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>

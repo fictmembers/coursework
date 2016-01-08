@@ -6,12 +6,12 @@
       <div class="card-image">
           <%= image_tag "plate.jpg" %>
           <span class="card-title black-text">
-            Your order is being proceed!
+            <%=t :being_proceed %>
           </span>
       </div>
       <div class="card-action">
-        <%= link_to "Make new order", new_order_path %>
-        <%= link_to "Back to home page", root_path %>
+        <%= link_to "#{t('make_new_order')}", new_order_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
       </div>
     </div>
   </div>

@@ -33,15 +33,17 @@ en:
   not_you: "Not you?"
   reserv_time:   "It's time to make a reservation!"
   reservation: "Reservation"
-  thank: "Thank you for reservation,"
+  thank: "Thank you for reservation"
   wrong: "Wrong reservation?"
   can_make_order: "Now you can make order!"
   make_order: "Make order"
+  back_to_main: "Back to main page"
 
   #---------leftmenu---------#
   mailbox: "MailBox"
   sended: "Sended"
   new_message: "New message"
+  incomming: "Incomming"
   top_waiters: "Top kitchen's workers"
   top_dishes: "View top dishes"
   day_statistic: "Days Statistic"
@@ -49,7 +51,7 @@ en:
   #---------alldayslong---------#
   day: "Day"
 
-  reservation: "Reservations"
+  reservations: "Reservations"
 
   #---------edit---------#
   edit_bill: "Add a paybill!"
@@ -80,7 +82,16 @@ en:
   edit: "Edit"
   delete: "Delete"
 
+  #---------show---------#
+  personal_id: "Personal ID:"
+  db_adm: "Database administrator"
+  not_signed: "Not signed in!"
+  works_at: "Works at"
+  since: "since"
+  registred_on: "Registred on:"
+
   #---------lastweektop---------#
+  dishes_profit: "Top dishes for last week and profit"
   date_from: "Date from "
   to: "to"
   total_profit: "Total profit for last 7 days is"
@@ -131,10 +142,12 @@ en:
   view_admin : "View all Admins"
 
   customers: "Customers & Orders"
+  add_user: "Add User"
   add_guest : "Add Guest"
   add_reservation : "Add Reservation"
   add_review : "Add Review"
   add_order : "Add Order"
+  view_user : "View all Users"
   view_guest : "View all Guests"
   view_reservation : "View all Reservations"
   view_review : "View all Review"
@@ -152,8 +165,11 @@ en:
   view_item : "View all Items"
 
   #---------topwaiters---------#
+  contro_panel: "Control panel"
   orders_num: "Number  of orders"
   dish_num: "Number of cooked dishes"
+  top_kitchen: "TOP KITCHENS' WORKERS"
+  top_by_num: "Top waiters and chefs by number of orders"
 
   #---------bill---------#
   select_guest: "Select guest"
@@ -166,45 +182,101 @@ en:
   welcome: "Welcome to our restaurant"
 
   #---------hall---------#
-  hall_name: "Name of hall and it`s type"
+  hall_type: "Hall type"
+  view: "View"
 
   #---------item---------#
   item_name: "Item name and brief description"
   set_price: "Set price"
   select_cuisine: "Select cuisine"
+  description: "Description"
+  price: "Price"
 
   #---------menu---------#
   new_cuisine: "New cuisine"
 
+  #---------messages---------#
+  recived_messages: "My recived messages"
+  sended_messages: "My sended messages"
+  message: "Message"
+  message_from: "From:"
+  message_to: "To:"
+  select_adm: "Select administrator"
+  message_theme: "Theme of message"
+  text_there: "Text goes there..."
+  send_message: "Send message"
+  reply_to: "Reply to"
+  or_delete: "or delete"
+
   #---------order---------#
+  being_proceed: "Your order is being processed!"
+  make_new_order: "Make new order"
+  edit_order: "Edit order:"
+  select_chef: "Select chef"
+  select_manager: "Select manager"
+  view_details: "View details"
+  order_for: "For:"
   at: "At:"
   date_time: "Date and time"
-  yor_waiter: "Your waiter:"
+  your_waiter: "Your waiter:"
   smth_wrong: "Is something wrong? Correct it!"
+  restaurant_description: "Restaurant description"
+  customer_description: "Customer description"
+  duty_manager: "Duty manager"
+  duty_chef: "Duty chef"
+  duty_waiter: "Duty waiter"
+  order_costs: "Order costs"
+  ordered_dishes: "Ordered dishes"
 
   #---------reservation---------#
-  choose_customer: "Select customer"
+  select_customer: "Select customer"
   table_in_rest: "Table in restaurant"
+  continue: "Continue"
+  reserv_details: "Reservation details"
+  select_date: "Select date"
+  select_time: "Select time"
+  reservation_time: "Reservation time"
+  customer_and_table: "Select customer and table"
+  request: "Resuest"
+
 
   #---------restaurant---------#
-  rest_name: "Name of restaurnt"
+  rest_name: "Name of restaurant"
   address: "Address"
   tel: "Telephone"
+  restaurant_network: "All restaurants in our network"
+  choose_prefered: "Choose prefered hall"
 
   #---------review---------#
+  edit_review: "Edit review"
   review_type: "Review type"
   text: "Text"
+  rating: "Thank you for rating us!"
+  whom: "Whom"
 
   #---------table---------#
   person_on: "Person on it"
   select_waiter: "Select waiter"
   select_hall: "Select hall"
+  status: "Status"
+  current_reservations: "Current reservations"
+  today: "Today"
+  reservation_from: "Reservation from"
+  free_table_today: "Table is free for today!"
+  tommorow: "Tommorow"
+  free_table_tommorow: "Table is free for tommorow!"
+  another_date: "Need another date"
+  call_to_us: "Call to us"
+  reserve_this_table: "Reserve this table!"
+
 
   #---------user---------#
+  not_registred: "Not registred yet?"
   edit_profile: "Edit profile"
   user_orders: "User orders"
   delete_user: "Delete user"
   my_orders: "My orders"
+  my_reservations: "My reservations"
   change_photo: "Change photo"
   url_photo: "URL to new photo"
   save_changes: "Save changes"
@@ -217,4 +289,6 @@ en:
   last_orders: "View your last orders"
   last_dishes: "List of your last ordered dishes that are made from this account."
   orders: "Orders"
-  bact_to_account: "Back to my account"
+  back_to_account: "Back to my account"
+  ordered: "Ordered"
+  ago: "ago"

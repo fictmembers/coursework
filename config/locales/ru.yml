@@ -1,5 +1,6 @@
 ru:
-    hello: "Привет Мир!"
+
+  hello: "Привет Мир!"
   #---------main page---------#
   login: "Войти"
   signout: "Выйти"
@@ -9,17 +10,19 @@ ru:
   authorise: "Авторизироваться"
   pleasure: "Рады вас видеть, "
   not_you: "Не ваш профиль?"
-  reserv_time:   "Пора зарезервироавть столик!"
+  reserv_time:   "Пора зарезервировать столик!"
   reservation: "Резервирование"
   thank: "Спасибо за то, что зарезервировали столик,"
   wrong: "Не ваша резервация?"
   can_make_order: "Теперь вы можете слеоать заказ!"
   make_order: "Сделать заказ"
+  back_to_main: "Вернуться на главную страницу"
 
   #---------leftmenu---------#
   mailbox: "Почтовый ящик"
   sended: "Отправленые"
   new_message: "Новое сообщение"
+  incomming: "Входящие"
   top_waiters: "Лучшие официанты"
   top_dishes: "Самые популярные блюда"
   day_statistic: "Статистика посещений"
@@ -27,12 +30,12 @@ ru:
   #---------alldayslong---------#
   day: "День"
 
-  reservation: "Резервация"
+  reservations: "Резервация"
 
   #---------edit---------#
   edit_bill: "Сформировать счет!"
 
-  save_info: "Созранить информацию"
+  save_info: "Сохранить информацию"
   password: "Пароль"
   password_confirmation: "Подтвердите пароль"
   you_sure: "Вы уверены?"
@@ -58,7 +61,16 @@ ru:
   edit: "Редактировать"
   delete: "Удалить"
 
+  #---------show---------#
+  personal_id: "Персональный ID:"
+  db_adm: "Администратор базы данных"
+  not_signed: "Не зерегестрирован!"
+  works_at: "Работает в"
+  since: "с"
+  registred_on: "Зерегестрирован:"
+
   #---------lastweektop---------#
+  dishes_profit: "Лучшие блюда за последнюю неделю и прибыль за их продажу"
   date_from: "Время: с "
   to: "до"
   total_profit: "Общая прибыль за 7 дней"
@@ -85,8 +97,8 @@ ru:
   hello_table: "Добавить столик"
   hello_waiter: "Привет, официант! Присоединяйся к нам"
   name_lastname: "Имя и фамилия"
-  jobplace: "Выберете место работы"
-  select_rest: "Выберете ресторан"
+  jobplace: "Выберите место работы"
+  select_rest: "Выберите ресторан"
 
 
 
@@ -109,10 +121,12 @@ ru:
   view_admin : "Посмотреть всех администраторов"
 
   customers: "Клиенты и заказы"
+  add_user: "Добавить пользователя"
   add_guest : "Добавить клиента"
   add_reservation : "Добавить резервацию"
   add_review : "Добавить отзыв"
   add_order : "Добавить заказ"
+  view_user : "Посмотреть всех пользователей"
   view_guest : "Посмотреть всех клиентов"
   view_reservation : "Посмотреть все резервации"
   view_review : "Посмотреть все отзывы"
@@ -130,59 +144,116 @@ ru:
   view_item : "Посмотреть все блюда"
 
   #---------topwaiters---------#
+  contro_panel: "Панель управления"
   orders_num: "Количество заказов"
   dish_num: "Количество приготовленых блюд"
+  top_kitchen: "Лучшие работники кухни"
+  top_by_num: "Лучшие официанты и шеф-повара по колличеству заказов"
 
   #---------bill---------#
-  select_guest: "Выберете"
-  select_cashier: "Выберете кассира"
+  select_guest: "Выберите"
+  select_cashier: "Выберите кассира"
   summary_in: "Сумма в $"
   additional: "Детали"
   date_spec: "Дата"
+  price: "Цена"
 
   #---------customer---------#
   welcome: "Добро пожаловать в наш ресторан!"
 
   #---------hall---------#
-  hall_name: "Тип зала"
+  hall_type: "Тип зала"
+  view: "Посмотреть"
 
   #---------item---------#
   item_name: "Наименование блюда"
   set_price: "Определите цену"
-  select_cuisine: "Выберете раздел меню"
+  select_cuisine: "Выберите раздел меню"
+  description: "Описание"
 
   #---------menu---------#
   new_cuisine: "Новый раздел меню"
 
+  #---------messages---------#
+  recived_messages: "Принятые сообщеине"
+  sended_messages: "Отправленые сообщения"
+  message: "Сообщение"
+  message_from: "От кого:"
+  message_to: "Кому:"
+  select_adm: "Выберите администратора"
+  message_theme: "Тема сообщения"
+  text_there: "Напишите текст здесь..."
+  send_message: "Отправить сообщение"
+  reply_to: "Ответить на"
+  or_delete: "или удалить"
+
   #---------order---------#
+  being_proceed: "Ваш заказ обрабатывается"
+  make_new_order: "Сделать новый заказ"
+  edit_order: "Изменить заказ:"
+  select_chef: "Выберите шеф-повара"
+  select_manager: "Выберите менеджера"
+  view_details: "Подробнее"
+  order_for: "Для:"
   at: "В:"
   date_time: "Дата и время"
-  yor_waiter: "Ваш официант:"
+  your_waiter: "Ваш официант:"
   smth_wrong: "Что-то не так? Исправьте это!"
+  restaurant_description: "О ресторан"
+  customer_description: "О клиенте"
+  duty_manager: "Ответственный менеджер"
+  duty_chef: "Ответственный шеф-повар"
+  duty_waiter: "Ответственный официант"
+  order_costs: "Цена заказа"
+  ordered_dishes: "Заказаные блюда"
 
   #---------reservation---------#
-  choose_customer: "Выберете"
+  select_customer: "Выберите клиента"
   table_in_rest: "Столик"
+  continue: "Продолжить"
+  reserv_details: "Детали резервации"
+  select_date: "Выберите дату"
+  select_time: "Выберите время"
+  reservation_time: "Время резервации"
+  customer_and_table: "Выберите клиента и столик"
+  request: "Запрос"
 
   #---------restaurant---------#
   rest_name: "Название ресторана"
   address: "Адресс"
   tel: "Телефон"
+  restaurant_network: "Все рестораны нашей сети"
+  choose_prefered: "Выберите предпочитаемый зал"
 
   #---------review---------#
+  edit_review: "Редактировать отзыв"
   review_type: "Тип отзыва"
   text: "Текст"
+  rating: "Спасибо, что оценили нас"
+  whom: "От кого"
 
   #---------table---------#
   person_on: "Количество персон"
-  select_waiter: "Выберете официанта"
-  select_hall: "Выберете зал"
+  select_waiter: "Выберите официанта"
+  select_hall: "Выберите зал"
+  status: "Статус"
+  current_reservations: "Текущие резервации"
+  today: "Сегодня"
+  reservation_from: "Резервация с"
+  free_table_today: "Столик сегодня свободен!"
+  tommorow: "Завтра"
+  free_table_tommorow: "Столик завтра свободен!"
+  another_date: "Нужна другая дата?"
+  call_to_us: "Позвоните нам"
+  reserve_this_table: "Зарезервировать этот столик!"
 
   #---------user---------#
+  not_registred: "Еще не зарегестрированы?"
   edit_profile: "Редактировать профиль"
   user_orders: "Заказы пользователя"
   delete_user: "Удалить пользователя"
   my_orders: "Мои заказы"
+  my_reservations: "Мои резервации"
   change_photo: "Изменить фото профиля"
   url_photo: "URL ссылка на фото"
   save_changes: "Сохранить изменения"
@@ -195,4 +266,6 @@ ru:
   last_orders: "Посмотреть ваши постедние заказы"
   last_dishes: "Список последних заказаных блюд с этой учетной записи"
   orders: "Заказы"
-  bact_to_account: "Вернутся в кабинет пользователя"
+  back_to_account: "Вернутся в кабинет пользователя"
+  ordered: "Заказано"
+  ago: "назад"

@@ -7,12 +7,12 @@
   <div class="col s8 offset-s2">
     <div class="card">
       <div class="card-content blue-grey darken-4">
-        <span class="card-title white-text">Top dishes for last week and profit</span>
+        <span class="card-title white-text"> <%=t :dishes_profit %></span>
       </div>
 
       <div class="card-content">
       <p>
-        <h4>Date from <i><%= DateTime.now.to_date - 7.days%></i> to <i><%= DateTime.now.to_date %></i> </h4>
+        <h4> <%=t :date_from %> <i> <%= DateTime.now.to_date - 7.days%></i> <%=t :to %> <i><%= DateTime.now.to_date %></i> </h4>
         <h5>Total profit for last 7 days is <%= @cost %> &#8364; </h5>
       </p>
 
@@ -21,9 +21,9 @@
           <table>
 			      <thead>
               <tr>
-                <th>Dish</th>
-                <th>Number of sold</th>
-                <th>Profit</th>
+                <th> <%=t :dish %></th>
+                <th> <%=t :sold_num %></th>
+                <th> <%=t :profit %></th>
               </tr>
             </thead>
             <tbody>
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="card-action">
-        <%= link_to "Back to administrator page", controlpanel_path %>
+        <%= link_to "#{t('back_to_adm')}", controlpanel_path %>
       </div>
 
     </div>

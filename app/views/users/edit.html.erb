@@ -1,11 +1,11 @@
 <%= render 'layouts/header' %>
 
 <div class="row">
-<% if signed_in_user? %>
+  <% if signed_in_user? %>
   <%= render 'users/usersleftbar' %>
 <% else %>
   <%= render 'administrators/administratorsleftmenu' %>
-<% end %>
+  <% end %>
 </div>
 
 <div class="row hide-on-med-and-down">
@@ -15,43 +15,43 @@
       <div class="card-content">
         <div class="row">
           <div class="col s12 l7 ">
-            <h4>Edit profile</h4>
+            <h4> <%=t :edit_profile %></h4>
             <div class="field">
               <div class="input-field col s10 offset-s1">
                 <i class="material-icons prefix">perm_identity</i>
-                  <%= f.text_field  :lastname, placeholder: "Yor name and lastname", class: "validate", id: "icon_prefix" %>
+                <%= f.text_field  :lastname, placeholder: "#{t('name_lastname')}", class: "validate", id: "icon_prefix" %>
               </div>
               <div class="input-field col s10 offset-s1">
                 <i class="material-icons prefix">mail_outline</i>
-                  <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
+                <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
               </div>
               <div class="input-field col s10 offset-s1">
                 <i class="material-icons prefix">lock_open</i>
-                  <%= f.password_field  :password, placeholder: "Password", class: "validate", id: "icon_prefix" %>
+                <%= f.password_field  :password, placeholder: "#{t('password')}", class: "validate", id: "icon_prefix" %>
               </div>
               <div class="input-field col s10 offset-s1">
                 <i class="material-icons prefix">lock_outline</i>
-                  <%= f.password_field  :password_confirmation, placeholder: "Password confirmation", class: "validate", id: "icon_prefix" %>
+                <%= f.password_field  :password_confirmation, placeholder: "#{t('password_confirmation')}", class: "validate", id: "icon_prefix" %>
               </div>
             </div>
           </div>
           <div class="col s4">
-              <center>
-                <%= image_tag @user.photo, size: "200x200", class: "responsive-img circle" %>
-              </center>
-              <div class="field">
-                <div class="input-field col s10 offset-s1">
-                  <i class="material-icons prefix">photo</i>
-                    <%= f.label  :photo, "Change photo" %>
-                    <%= f.text_field  :photo, placeholder: "URL to new photo", class: "validate", id: "icon_prefix" %>
-                </div>
+            <center>
+              <%= image_tag @user.photo, size: "200x200", class: "responsive-img circle" %>
+            </center>
+            <div class="field">
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">photo</i>
+                <%= f.label  :photo, "#{t('change_photo')}" %>
+                <%= f.text_field  :photo, placeholder: "#{t('url_photo')}", class: "validate", id: "icon_prefix" %>
               </div>
-              <%= render 'shared/errors_user_registration' %>
+            </div>
+            <%= render 'shared/errors_user_registration' %>
           </div>
         </div>
       </div>
       <div class="card-action">
-        <%= f.submit "Save changes", class: "btn blue-grey darken-4" %>
+        <%= f.submit "#{t('save_changes')}", class: "btn blue-grey darken-4" %>
       </div>
       <% end %>
     </div>
@@ -63,15 +63,15 @@
     <div class="card">
       <%= form_for(@user) do |f| %>
       <div class="card-content">
-        <h4>Edit profile</h4>
+        <h4> <%=t :edit_profile %></h4>
         <center>
           <%= image_tag @user.photo, size: "200x200", class: "responsive-img circle" %>
         </center>
         <div class="field">
           <div class="input-field">
             <i class="material-icons prefix">photo</i>
-              <%= f.label  :photo, "Change photo" %>
-              <%= f.text_field  :photo, placeholder: "URL to new photo", class: "validate", id: "icon_prefix" %>
+            <%= f.label  :photo, "#{t('change_photo')}" %>
+            <%= f.text_field  :photo, placeholder: "#{t('url_photo')}", class: "validate", id: "icon_prefix" %>
           </div>
         </div>
 
@@ -79,24 +79,24 @@
         <div class="field">
           <div class="input-field">
             <i class="material-icons prefix">perm_identity</i>
-              <%= f.text_field  :lastname, placeholder: "Yor name and lastname", class: "validate", id: "icon_prefix" %>
+            <%= f.text_field  :lastname, placeholder: "#{t('name_lastname')}", class: "validate", id: "icon_prefix" %>
           </div>
           <div class="input-field">
             <i class="material-icons prefix">mail_outline</i>
-              <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
+            <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
           </div>
           <div class="input-field">
             <i class="material-icons prefix">lock_open</i>
-              <%= f.password_field  :password, placeholder: "Password", class: "validate", id: "icon_prefix" %>
+            <%= f.password_field  :password, placeholder: "#{t('Password')}", class: "validate", id: "icon_prefix" %>
           </div>
           <div class="input-field">
             <i class="material-icons prefix">lock_outline</i>
-              <%= f.password_field  :password_confirmation, placeholder: "Password confirmation", class: "validate", id: "icon_prefix" %>
+            <%= f.password_field  :password_confirmation, placeholder: "#{t('password_confirmation')}", class: "validate", id: "icon_prefix" %>
           </div>
         </div>
       </div>
       <div class="card-action">
-        <%= f.submit "Save changes", class: "btn blue-grey darken-4" %>
+        <%= f.submit "#{t('save_changes')}", class: "btn blue-grey darken-4" %>
       </div>
       <% end %>
     </div>

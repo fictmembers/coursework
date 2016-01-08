@@ -1,5 +1,10 @@
 <div class="formfactor">
   <h4><%= @waiter.lastname %></h4>
-  Personal id: <%= @waiter.id %></br>
-  In <%= @restaurant.name %> from <%= @waiter.created_at.strftime("%d.%b.%Y") %> </br>
+  <%=t :personal_id %>
+  <%= @waiter.id %></br>
+  <%=t :works_at %>
+<%= @restaurant.name %>
+<%=t :since %>
+<%= @waiter.created_at.strftime("%d.%b.%Y") %>
+</br>
 </div>

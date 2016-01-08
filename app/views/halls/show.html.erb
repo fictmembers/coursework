@@ -12,16 +12,16 @@
             <div class="col s3">
               <div class="card">
                 <div class="card-action">
-                  <p class="pushed"><b>Table #<%= f.id %></b></p>
-                  <p class="pushed">Persons on it: <%= f.visnumber %></p>
-                  <%= link_to "View", f %></div>
+                  <p class="pushed"><b> <%=t :table %> #<%= f.id %></b></p>
+                  <p class="pushed"> <%=t :person_on %>: <%= f.visnumber %></p>
+                  <%= link_to "#{t('view')}", f %></div>
               </div>
             </div>
           <% end %>
         </div>
       </div>
       <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
       </div>
     </div>
   </div>
@@ -35,9 +35,9 @@
           <% @tables.each do |f| %>
               <div class="card">
                 <div class="card-action">
-                  <p class="pushed"><b>Table #<%= f.id %></b></p>
-                  <p class="pushed">Persons on it: <%= f.visnumber %></p>
-                  <%= link_to "View", f %></div>
+                  <p class="pushed"><b> <%=t :table %> #<%= f.id %></b></p>
+                  <p class="pushed"> <%=t :person_on %>: <%= f.visnumber %></p>
+                  <%= link_to "#{t('view')}", f %></div>
             </div>
         <% end %>
       </div>

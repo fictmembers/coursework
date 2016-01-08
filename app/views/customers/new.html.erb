@@ -2,19 +2,19 @@
 <%= render 'layouts/header' %>
   <div class="row">
     <div class="textvalign caption center-align light grey-text text-lighten-3 hide-on-med-and-down">
-      Hello, Guest!
-      <h1 class="light grey-text text-lighten-3">Welcome to our restaurant!</h1>
+      <%=t :hello_customer %>
+      <h1 class="light grey-text text-lighten-3"> <%=t :welcome %></h1>
     </div>
-    
+
     <div class="valign">
         <%= form_for(@customer) do |f| %>
           <div class="col s12 m4 offset-m4 l4 offset-l4">
             <div class="input-field">
               <i class="material-icons prefix">perm_identity</i>
-                <%= f.text_field :lastname,     :placeholder => "Your name and lastname" , class: "white-text" , id: "icon_prefix" %> </br>
+                <%= f.text_field :lastname,     :placeholder => "#{t('name_lastname')}" , class: "white-text" , id: "icon_prefix" %> </br>
             </div>
             <div class="center">
-              <button class="center-align btn waves-effect waves-light  blue-grey darken-4" type="submit" name="action">Save information</button>
+              <button class="center-align btn waves-effect waves-light  blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>
             </div>
           </div>
         <% end %>

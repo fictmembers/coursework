@@ -5,12 +5,12 @@
 		<table id="table">
 			  <thead>
 			        <tr>
-								<th data-field="id">ID</th>
-                <th data-field="lastname">Lastname</th>
-								<th data-field="customer_id">Customer ID</th>
+								<th data-field="id"> ID</th>
+                <th data-field="lastname"> <%=t :name_lastname %></th>
+								<th data-field="customer_id"> <%=t :personal_id %></th>
 								<% if signed_in? %>
-				          <th data-field="edit">Edit</th>
-		    				  <th data-field="delete">Delete</th>
+				          <th data-field="edit"> <%=t :edit %></th>
+		    				  <th data-field="delete"> <%=t :delete %></th>
 								<% end %>
 			        </tr>
 			  </thead>
@@ -18,12 +18,12 @@
 			  <tbody>
 			  	<% @users.each do |user| %>
 			        <tr>
-								<td><%= user.id %></td>
-			          <td><%= link_to user.lastname, user %></td>
-								<td><%= user.customer_id %></td>
+								<td> <%= user.id %></td>
+			          <td> <%= link_to user.lastname, user %></td>
+								<td> <%= user.customer_id %></td>
 								<% if signed_in? %>
-                	<td><%= link_to 'Edit', edit_user_path(user) %></td>
-	    				  	<td><%= link_to "Delete", user, method: :delete, data: { confirm: "You sure?" } %></td>
+                	<td> <%= link_to "#{t('edit')}", edit_user_path(user) %></td>
+	    				  	<td> <%= link_to "#{t('delete')}", user, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 								<% end %>
 			        </tr>
 			      <% end %>

@@ -6,11 +6,11 @@
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
-			              <th data-field="hall_type">Hall type</th>
-                    <th data-field="restaurant">Restaurant</th>
-										<th data-field="created_at">Created at</th>
-                    <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+			              <th data-field="hall_type"> <%=t :hall_type %></th>
+                    <th data-field="restaurant"> <%=t :restaurant %></th>
+										<th data-field="created_at"> <%=t :created %></th>
+                    <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
@@ -18,12 +18,12 @@
 			    	<% @halls.each do |hall| %>
 						<% restaurant = Restaurant.find(hall.restaurant_id) %>
 			          <tr>
-									<td><%= hall.id %></td>
-			            <td><%= hall.hall_type %></td>
-                  <td><%= restaurant.name %></td>
-									<td><%= hall.created_at %></td>
-			            <td><%= link_to 'Edit', edit_hall_path(hall) %></td>
-	    					  <td><%= link_to "Delete", hall, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= hall.id %></td>
+			            <td> <%= hall.hall_type %></td>
+                  <td> <%= restaurant.name %></td>
+									<td> <%= hall.created_at %></td>
+			            <td> <%= link_to "#{t('edit')}", edit_hall_path(hall) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", hall, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>
