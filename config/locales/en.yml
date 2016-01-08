@@ -20,12 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  #---------main page---------#
 
+  hello: "Hello world"
+  #---------main page---------#
   login: "Login"
   signout: "Sign Out"
 
-  hello: "Hello world"
   hi_dear: "Hi, dear customer!"
   please: "Please, authorise before your reservation and ordering."
   authorise: "Authorise"
@@ -96,7 +96,7 @@ en:
   hello_chef: "Hello, new cheff! Join our kitchen:"
   hello_customer: "Hello, Guest!"
   hello_hall: "Adding new hall to restaurant!"
-  hello_hostess: "Hello, new administrator! Help our customers: "
+  hello_hostess: "Hello, new hostess! Help our customers: "
   hello_item: "Adding new item to menu.Tasty one:"
   hello_manager: "Hello, new manager! Join us now:"
   hello_menu: "Adding new part of menu!"
@@ -159,7 +159,7 @@ en:
   select_guest: "Select guest"
   select_cashier: "Select cashier"
   summary_in: "Summary in $"
-  additional: "Additional oprions"
+  additional: "Additional options"
   date_spec: "Specify a date"
 
   #---------customer---------#
@@ -183,7 +183,7 @@ en:
   smth_wrong: "Is something wrong? Correct it!"
 
   #---------reservation---------#
-  choose_customer: "ChooName of hall and its typese customer"
+  choose_customer: "Select customer"
   table_in_rest: "Table in restaurant"
 
   #---------restaurant---------#
@@ -199,3 +199,22 @@ en:
   person_on: "Person on it"
   select_waiter: "Select waiter"
   select_hall: "Select hall"
+
+  #---------user---------#
+  edit_profile: "Edit profile"
+  user_orders: "User orders"
+  delete_user: "Delete user"
+  my_orders: "My orders"
+  change_photo: "Change photo"
+  url_photo: "URL to new photo"
+  save_changes: "Save changes"
+  easy_way: "The easiest way to make orders"
+  covered: "This information is covered by law and cannot be presented to the third persons!"
+  registration: "Registration"
+  already_registred: "Already registred?"
+  confirm_registration: "Confirm registration"
+  best_rastaurants: "Our best restaurants and their cuisines are presented in our catalouge."
+  last_orders: "View your last orders"
+  last_dishes: "List of your last ordered dishes that are made from this account."
+  orders: "Orders"
+  bact_to_account: "Back to my account"
