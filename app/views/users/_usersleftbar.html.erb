@@ -1,10 +1,10 @@
 <div class="col s2 hide-on-med-and-down">
-  <div class="fixed-div">
+  <div class="fixed-div avatar">
     <div class="card">
+      <div class="card-image">
+          <%= image_tag @user.photo  %>
+      </div>
       <div class="card-content ">
-        <center>
-          <%= image_tag @user.photo, class: "circle", size: "250x250" %>
-        </center>
         <h5>
           <%= @user.lastname %></h5>
         <% if signed_in? %>
