@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  scope "(:locale)", :locale => /en|ru/ do
+
   resources :administrators
   resources :bills
   resources :cashiers
@@ -45,4 +47,5 @@ Rails.application.routes.draw do
   match '/user_signup',             to: 'users#new',                        via: 'get'
   match '/user_signin',             to: 'usersessions#new',                 via: 'get'
   match '/user_signout',            to: 'usersessions#destroy',             via: 'delete'
+end
 end
