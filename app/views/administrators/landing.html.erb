@@ -43,7 +43,7 @@
         <h3 class="hide-on-large-only"><%=t :thank %></br><%= session[:customer] %>!</h3>
         <i><%= link_to "#{t('not_you')}", new_customer_path %></i>
           or
-        <i><%= link_to "Wrong reservation?", allrestaurants_path %></i>
+        <i><%= link_to "#{t('wrong')}", allrestaurants_path %></i>
 
         <h3 class="center-align light grey-text text-lighten-3 hide-on-med-and-down"><%=t :can_make_order %></h3>
         <h5 class="center-align light grey-text text-lighten-3 hide-on-large-only"><%=t :can_make_order %></h5>

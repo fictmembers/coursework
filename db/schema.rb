@@ -119,9 +119,9 @@ ActiveRecord::Schema.define(version: 20160106133309) do
     t.integer  "waiter_id"
     t.integer  "manager_id"
     t.integer  "chef_id"
-    t.string   "lang"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "lang",          default: "en"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "parts", force: :cascade do |t|

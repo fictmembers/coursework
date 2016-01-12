@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration
       t.references :waiter
       t.references :manager
       t.references :chef
-      t.string :lang
+      t.string :lang, default: 'en'
       t.timestamps null: false
     end
   end
