@@ -24,9 +24,9 @@ ru:
   new_message: "Новое сообщение"
   incomming: "Входящие"
   top_waiters: "Лучшие официанты"
-  top_dishes: "Самые популярные блюда"
+  top_dishes: "Популярность блюд"
   day_statistic: "Статистика посещений"
-
+  adminstatistic: "Статистика"
   #---------alldayslong---------#
   day: "День"
 
