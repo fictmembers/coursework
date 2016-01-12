@@ -40587,3 +40587,839 @@ Processing by AdministratorsController#landing as HTML
   Rendered layouts/_footer.html.erb (0.0ms)
   Rendered administrators/landing.html.erb within layouts/application (10.7ms)
 Completed 200 OK in 479ms (Views: 477.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (39.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (48.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20151127152353)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (52.7ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying, "address" character varying, "tel" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127152353"]]
+  [1m[36m (11.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAdministrators (20151127153806)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (24.3ms)[0m  [1mCREATE TABLE "administrators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127153806"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateOrders (20151127171649)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (24.4ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "restaurant_id" integer, "bill_id" integer, "customer_id" integer, "waiter_id" integer, "manager_id" integer, "chef_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171649"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCashiers (20151127171814)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (58.3ms)[0m  [1mCREATE TABLE "cashiers" ("id" serial primary key, "lastname" character varying, "restaurant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171814"]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateWaiters (20151127171836)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (50.5ms)[0m  [1mCREATE TABLE "waiters" ("id" serial primary key, "lastname" character varying, "restaurant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171836"]]
+  [1m[36m (14.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateChefs (20151127171901)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (51.0ms)[0m  [1mCREATE TABLE "chefs" ("id" serial primary key, "lastname" character varying, "restaurant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171901"]]
+  [1m[36m (13.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCustomers (20151127171914)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (77.4ms)[0m  [1mCREATE TABLE "customers" ("id" serial primary key, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171914"]]
+  [1m[36m (12.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTables (20151127171935)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (35.6ms)[0m  [1mCREATE TABLE "tables" ("id" serial primary key, "visnumber" integer, "status" boolean DEFAULT 't', "restaurant_id" integer, "reservation_id" integer, "hall_id" integer, "waiter_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171935"]]
+  [1m[36m (12.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReservations (20151127171945)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (36.1ms)[0m  [1mCREATE TABLE "reservations" ("id" serial primary key, "reserv_time" timestamp, "from" integer, "to" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127171945"]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBills (20151127172003)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (82.9ms)[0m  [1mCREATE TABLE "bills" ("id" serial primary key, "created" timestamp, "options" character varying, "summary" integer, "cashier_id" integer, "customer_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127172003"]]
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateHalls (20151127172015)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (62.3ms)[0m  [1mCREATE TABLE "halls" ("id" serial primary key, "hall_type" character varying, "capacity" integer, "restaurant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127172015"]]
+  [1m[36m (11.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReviewBooks (20151127172024)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (62.7ms)[0m  [1mCREATE TABLE "review_books" ("id" serial primary key, "review" character varying, "customer_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127172024"]]
+  [1m[36m (10.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20151127172036)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (66.1ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "price" integer, "description" character varying, "restaurant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127172036"]]
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateHostesses (20151127172052)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (55.5ms)[0m  [1mCREATE TABLE "hostesses" ("id" serial primary key, "lastname" character varying, "restaurant_id" integer, "hall_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127172052"]]
+  [1m[36m (9.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateParts (20151127182112)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (30.7ms)[0m  [1mCREATE TABLE "parts" ("id" serial primary key, "order_id" integer, "item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (24.0ms)[0m  CREATE  INDEX  "index_parts_on_order_id" ON "parts"  ("order_id")
+  [1m[36m (24.3ms)[0m  [1mCREATE  INDEX  "index_parts_on_item_id" ON "parts"  ("item_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151127182112"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+Migrating to DropReservationOnTable (20151128163753)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "tables" DROP "reservation_id"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151128163753"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeDefaultTablesStatus (20151128165122)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "tables" ALTER COLUMN "status" TYPE boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "tables" ALTER COLUMN "status" SET DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151128165122"]]
+  [1m[35m (5.2ms)[0m  COMMIT
+Migrating to AddTableIdToReservatio (20151128171233)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "reservations" ADD "table_id" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "reservations" ADD "customer_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151128171233"]]
+  [1m[36m (39.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddRewievTypeToRewievs (20151128212620)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "review_books" ADD "review_type" character varying[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151128212620"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMenus (20151130104319)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (59.0ms)[0m  [1mCREATE TABLE "menus" ("id" serial primary key, "cuisine" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151130104319"]]
+  [1m[36m (14.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddMenuToItem (20151130105903)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "items" ADD "menu_id" integer[0m
+  [1m[35m (32.7ms)[0m  CREATE UNIQUE INDEX  "index_menus_on_cuisine" ON "menus"  ("cuisine")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151130105903"]]
+  [1m[35m (13.9ms)[0m  COMMIT
+Migrating to AddUniqueIndexToAdminName (20151201192334)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (34.5ms)[0m  ALTER TABLE "administrators" ADD "login" character varying
+  [1m[36m (38.5ms)[0m  [1mCREATE UNIQUE INDEX  "index_administrators_on_login" ON "administrators"  ("login")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "administrators" ADD "password_digest" character varying
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151201192334"]]
+  [1m[35m (6.7ms)[0m  COMMIT
+Migrating to AddRememberTokenToAdministrators (20151201212608)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "administrators" ADD "remember_token" character varying
+  [1m[36m (33.9ms)[0m  [1mCREATE  INDEX  "index_administrators_on_remember_token" ON "administrators"  ("remember_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151201212608"]]
+  [1m[36m (12.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateManagers (20151203214704)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (69.1ms)[0m  [1mCREATE TABLE "managers" ("id" serial primary key, "lastname" character varying, "tel" character varying, "restaurant_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151203214704"]]
+  [1m[36m (12.2ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeRelationship (20151205182847)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "orders" DROP "bill_id"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "bills" ADD "order_id" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151205182847"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+Migrating to DelleteFromBill (20151206101023)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "bills" DROP "options"
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "bills" DROP "created"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151206101023"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Migrating to DeleteCapacityFromHall (20151206101404)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "halls" DROP "capacity"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151206101404"]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+Migrating to DeleteSummaryFromBills (20151208141213)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "bills" DROP "summary"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151208141213"]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+Migrating to DeleteTelFromManager (20151208142432)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "managers" DROP "tel"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151208142432"]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddRestaurantToMenu (20151208170513)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "menus" ADD "restaurant_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151208170513"]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+Migrating to DeleteSenderAndTimeTo (20151208192731)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "reservations" DROP "to"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151208192731"]]
+  [1m[36m (7.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddRestaurantToReview (20151208193055)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "review_books" ADD "restaurant_id" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "review_books" DROP "customer_id"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "review_books" ADD "customer" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151208193055"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddUniqueDatetimEtoReservations (20151208201535)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (34.4ms)[0m  [1mCREATE UNIQUE INDEX  "index_reservations_on_table_id_and_reserv_time_and_from" ON "reservations"  ("table_id", "reserv_time", "from")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151208201535"]]
+  [1m[36m (12.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'administrators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'bills'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cashiers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'chefs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'customers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'halls'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'hostesses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'managers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'menus'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'orders'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'parts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reservations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'restaurants'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'review_books'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tables'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'waiters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "administrators" ("login", "password_digest", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["login", "admin"], ["password_digest", "$2a$10$MsH07Ib5e.AnuLjZFXOkb.iLvPTy/.lHeN1CzsdMZLsscycnbxGHG"], ["created_at", "2015-12-28 19:22:45.541249"], ["updated_at", "2015-12-28 19:22:45.541249"], ["remember_token", "6c0b11028ef87e2dacdd2b34c317059a1f44a7b8"]]
+  [1m[35m (6.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "restaurants" ("name", "address", "tel", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Hof Van Cleve"], ["address", "Riemegemstraat,  1, 9770 Kruishoutem, Belgium"], ["tel", "+3293835848"], ["created_at", "2015-12-28 19:22:45.559926"], ["updated_at", "2015-12-28 19:22:45.559926"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "address", "tel", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "El Celler de Can Roca"], ["address", "Calle Can Sunyer, 48, 17007 Girona, Spain"], ["tel", "+34972222157"], ["created_at", "2015-12-28 19:22:45.567405"], ["updated_at", "2015-12-28 19:22:45.567405"]]
+  [1m[35m (7.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "managers" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lastname", "Phillip Coulson"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.580288"], ["updated_at", "2015-12-28 19:22:45.580288"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "managers" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lastname", "Nick Fury"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.584024"], ["updated_at", "2015-12-28 19:22:45.584024"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cashiers" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lastname", "Bruce Banner"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.596269"], ["updated_at", "2015-12-28 19:22:45.596269"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cashiers" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lastname", "Thor"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.600777"], ["updated_at", "2015-12-28 19:22:45.600777"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chefs" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lastname", "Sam Wilson"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.612957"], ["updated_at", "2015-12-28 19:22:45.612957"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chefs" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lastname", "James Rhodes"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.617417"], ["updated_at", "2015-12-28 19:22:45.617417"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chefs" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lastname", "Pietro Maximoff"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.625915"], ["updated_at", "2015-12-28 19:22:45.625915"]]
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chefs" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lastname", "Wanda Maximoff"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.634063"], ["updated_at", "2015-12-28 19:22:45.634063"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "halls" ("hall_type", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["hall_type", "For smokers"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.646710"], ["updated_at", "2015-12-28 19:22:45.646710"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "halls" ("hall_type", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["hall_type", "For non-smokers"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.650730"], ["updated_at", "2015-12-28 19:22:45.650730"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "halls" ("hall_type", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["hall_type", "For non-smokers"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.659058"], ["updated_at", "2015-12-28 19:22:45.659058"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "halls" ("hall_type", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["hall_type", "For visitors with children"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.667401"], ["updated_at", "2015-12-28 19:22:45.667401"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "hostesses" ("lastname", "restaurant_id", "hall_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lastname", "Jarvis"], ["restaurant_id", 1], ["hall_id", 1], ["created_at", "2015-12-28 19:22:45.679754"], ["updated_at", "2015-12-28 19:22:45.679754"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "hostesses" ("lastname", "restaurant_id", "hall_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lastname", "Maria Hill"], ["restaurant_id", 1], ["hall_id", 1], ["created_at", "2015-12-28 19:22:45.684068"], ["updated_at", "2015-12-28 19:22:45.684068"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "hostesses" ("lastname", "restaurant_id", "hall_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lastname", "Vision"], ["restaurant_id", 2], ["hall_id", 3], ["created_at", "2015-12-28 19:22:45.692390"], ["updated_at", "2015-12-28 19:22:45.692390"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "hostesses" ("lastname", "restaurant_id", "hall_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lastname", "Ultron"], ["restaurant_id", 2], ["hall_id", 4], ["created_at", "2015-12-28 19:22:45.700718"], ["updated_at", "2015-12-28 19:22:45.700718"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "waiters" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lastname", "Steve Rogers"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.713382"], ["updated_at", "2015-12-28 19:22:45.713382"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "waiters" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lastname", "Bucky Barnes"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.717389"], ["updated_at", "2015-12-28 19:22:45.717389"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "waiters" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["lastname", "Tony Stark"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.725762"], ["updated_at", "2015-12-28 19:22:45.725762"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "waiters" ("lastname", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["lastname", "Natasha Romanova"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.734096"], ["updated_at", "2015-12-28 19:22:45.734096"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["visnumber", 4], ["waiter_id", 1], ["hall_id", 1], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.748340"], ["updated_at", "2015-12-28 19:22:45.748340"]]
+  [1m[36m (9.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["visnumber", 2], ["waiter_id", 2], ["hall_id", 2], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.759134"], ["updated_at", "2015-12-28 19:22:45.759134"]]
+  [1m[35m (7.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["visnumber", 6], ["waiter_id", 1], ["hall_id", 1], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.767430"], ["updated_at", "2015-12-28 19:22:45.767430"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["visnumber", 2], ["waiter_id", 2], ["hall_id", 2], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.775747"], ["updated_at", "2015-12-28 19:22:45.775747"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["visnumber", 5], ["waiter_id", 3], ["hall_id", 3], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.784086"], ["updated_at", "2015-12-28 19:22:45.784086"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["visnumber", 4], ["waiter_id", 4], ["hall_id", 4], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.792419"], ["updated_at", "2015-12-28 19:22:45.792419"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["visnumber", 2], ["waiter_id", 3], ["hall_id", 3], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.800743"], ["updated_at", "2015-12-28 19:22:45.800743"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tables" ("visnumber", "waiter_id", "hall_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["visnumber", 2], ["waiter_id", 4], ["hall_id", 4], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.809095"], ["updated_at", "2015-12-28 19:22:45.809095"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "menus" ("cuisine", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["cuisine", "Snacks"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.821726"], ["updated_at", "2015-12-28 19:22:45.821726"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "menus" ("cuisine", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cuisine", "Beverages"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.825715"], ["updated_at", "2015-12-28 19:22:45.825715"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "menus" ("cuisine", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["cuisine", "First dishes"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.834063"], ["updated_at", "2015-12-28 19:22:45.834063"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "menus" ("cuisine", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cuisine", "Main dishes"], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.842459"], ["updated_at", "2015-12-28 19:22:45.842459"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "menus" ("cuisine", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["cuisine", "Desserts"], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.850788"], ["updated_at", "2015-12-28 19:22:45.850788"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Waterzooi"], ["price", 10], ["menu_id", 1], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.864715"], ["updated_at", "2015-12-28 19:22:45.864715"]]
+  [1m[35m (9.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Blanche de Bruxelles "], ["price", 8], ["menu_id", 2], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.875848"], ["updated_at", "2015-12-28 19:22:45.875848"]]
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Mushroom cream soup"], ["price", 12], ["menu_id", 3], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.884147"], ["updated_at", "2015-12-28 19:22:45.884147"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Moules-frites"], ["price", 22], ["menu_id", 4], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.892470"], ["updated_at", "2015-12-28 19:22:45.892470"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Waffle"], ["price", 15], ["menu_id", 5], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.900805"], ["updated_at", "2015-12-28 19:22:45.900805"]]
+  [1m[35m (7.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Jamon"], ["price", 16], ["menu_id", 1], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.909147"], ["updated_at", "2015-12-28 19:22:45.909147"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Prado Enea"], ["price", 12], ["menu_id", 2], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.917462"], ["updated_at", "2015-12-28 19:22:45.917462"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Gazpacho"], ["price", 10], ["menu_id", 3], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.925916"], ["updated_at", "2015-12-28 19:22:45.925916"]]
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Paella"], ["price", 20], ["menu_id", 4], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.934146"], ["updated_at", "2015-12-28 19:22:45.934146"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Crema Catalana"], ["price", 14], ["menu_id", 5], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.942462"], ["updated_at", "2015-12-28 19:22:45.942462"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Pretzels"], ["price", 12], ["menu_id", 1], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.950776"], ["updated_at", "2015-12-28 19:22:45.950776"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Palm "], ["price", 12], ["menu_id", 2], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.959119"], ["updated_at", "2015-12-28 19:22:45.959119"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Soup with chestnuts"], ["price", 15], ["menu_id", 3], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.967471"], ["updated_at", "2015-12-28 19:22:45.967471"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Carbonade flamande"], ["price", 25], ["menu_id", 4], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.975812"], ["updated_at", "2015-12-28 19:22:45.975812"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Oliebol"], ["price", 16], ["menu_id", 5], ["restaurant_id", 1], ["created_at", "2015-12-28 19:22:45.984123"], ["updated_at", "2015-12-28 19:22:45.984123"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Empanadas"], ["price", 15], ["menu_id", 1], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:45.992433"], ["updated_at", "2015-12-28 19:22:45.992433"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Prado Enea"], ["price", 15], ["menu_id", 2], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:46.000784"], ["updated_at", "2015-12-28 19:22:46.000784"]]
+  [1m[35m (7.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Ajoblanco"], ["price", 20], ["menu_id", 3], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:46.009136"], ["updated_at", "2015-12-28 19:22:46.009136"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "Tortilla"], ["price", 25], ["menu_id", 4], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:46.017451"], ["updated_at", "2015-12-28 19:22:46.017451"]]
+  [1m[35m (7.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "items" ("description", "price", "menu_id", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["description", "Churros Con Chocolate"], ["price", 16], ["menu_id", 5], ["restaurant_id", 2], ["created_at", "2015-12-28 19:22:46.025884"], ["updated_at", "2015-12-28 19:22:46.025884"]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-28 21:24:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AdministratorsController#landing as HTML
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "da39a3ee5e6b4b0d3255bfef95601890afd80709"]]
+  Rendered layouts/_header.html.erb (12.6ms)
+  Rendered layouts/_slider.html.erb (158.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered administrators/landing.html.erb within layouts/application (174.6ms)
+Completed 200 OK in 4712ms (Views: 4704.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/dataTables/jquery.dataTables.self-883498410f38318de0b6455006380d986b974b0389fc4a7272c6ea697307bb43.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/administrators.self-5eb1ccc4ea328b6a6762b98e85d1724fbe383c78093c3f2b51053c033091af5a.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/halls.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/hostesses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/chefs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/cashiers.self-3f4587bf81be3650ad503815af9bf2e6ccdd6d02b1d42db1f3b13dac68d611a8.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/bills.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/customers.self-0d97d74dc62164d2ad93d78de989418a17c58bcfba723c9d365e886223f90b35.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/managers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/menus.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/orders.self-26daaf34cfab65662a1ea226ea2fde71cd4ba81292a6e30722e24318426c20f5.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/review_books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/tables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/waiters.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/application.self-c031e027cc1d9b4b9ca814ff5ac013769397bcad572e81bdb82d68ce34d3d40c.css?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/dataTables/jquery.dataTables.self-770bf6f5f52c93784a25c3c866719f24d091a3f864c36850a7d338b58bbed52c.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/jquery.easing.1.3.self-0170bc905fbddc075a56bdccce1be6a58f3713a14137b607ba9bd9f96fd7835f.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/animation.self-a1028b0bcf2e26331bedf7b90e81103f0707e69fdec488aa951de94b51987767.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/velocity.min.self-5adbb81af5c205a959e06198156b4b31fcd57f02c592e3fb096d7b74e8f401a6.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/hammer.min.self-bf8bdb0953b1a135f96716e362e1f7a8e64168c914fa77ca31973bb70e57a731.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/jquery.hammer.self-73fd69102f356b9abfc9ee242b19895f62454f42cfcfa1f066be71d2c8f41c7a.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/global.self-3dc204118ca81d086207bfb523a26e7ac85dad24528718e137d3478ab4b1f144.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/collapsible.self-ea24ecbc91d581daf878f51baeb84df317ecb018d6b2908775246efa57a5d672.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/dropdown.self-8e3cebfde3088a4ae6d8d7f20ec94a836e2bf031c7af583707853e243a7bd501.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/leanModal.self-4db1374f875e0a1a2ba3389d23cae8f6f0c2672e7e69aeab7645ed51d26e6915.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/materialbox.self-6c6b2ba48598681c90551b540338699c75cf2f9ada34cc4b22570c217b9292d8.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/parallax.self-7ac34f0f3dcef83deee116ea473a2770cec13e07c8e0dcce08cc2372bbe295d3.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/tabs.self-922f8a5ef8f7381c945259a9f1dcaf6d628630cda8fcbbfe182ea653091b165c.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/tooltip.self-beb7ffd88508e9cc34121291e39051362f8f530fa94b9bf0c01cc0002d472293.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/waves.self-26e9b9cfaa9ccbc292ed510f654bd279d69695f5337a14c9800b36e92f96735b.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/toasts.self-1eaa9f33c4c3b83f381997876ba6ac53899a5ca72a6b401708c32625fc553adc.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/sideNav.self-d1aa0f50b6f5d0d9a7086344d806fc133274dd021e58f837cbe39e309012045b.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/scrollspy.self-9bd8d701ac90c813a0d051ab4943150bdb536d863646d8b349c42a88edb31cf8.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/forms.self-64b20631760debacfca1650e3c493a6d5aa600b0bb33ee430139971c61d4b82f.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/slider.self-8052f7188f9e8ab3d03b246d4942a4824edb9614d0d130051d11ba1354c9c798.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/cards.self-b1de04b6f5f525d63199f556bb55d5b8bdae7170b91bfcb503958bc8ed10945b.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/chips.self-9b19ca899ba360746581059852bf2a40b3338402eef9df9a7806efd8578056dd.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/pushpin.self-3e487290a48f23142c992c158b45cbd0be9c83de7c23abbb33b195954d1883cd.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/buttons.self-ae3e49edd629c976a770c1f3b68759b65ef50796b1feabf7d0dfdf6688d97a63.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/transitions.self-c527b205edfdd1f961487c4c7beaf83c335262accb4dff964341a86eb60fd2f2.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/scrollFire.self-d38b34eac05d33baa79181ef5ba72c67b7f73714ff11cda22495d30f4469298f.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/date_picker/picker.self-f7869dc9881d3874917e009ea6e30d68817b1bd1247665fb653e0f87393fb60f.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/date_picker/picker.date.self-5924b278beda2df8570f137f72b37e2d0f516acbc11a0994d1abb74380f078ef.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/character_counter.self-f3a78940ad5b851c1b7b79d86a5d5d9bdf0dc15e0e58e2a58b3eb57d845fbd37.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/carousel.self-6f3b9002af3ab4d871a03a44d2e174370720ab31f19a4ee543c1904c32e2befa.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize-sprockets.self-b9b07dd4e7718454476f04edeb935022ae4f4d90934ab7ce913ff20c8baeb399.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize/extras/nouislider.self-92e4afc45def72b5617458b5ced44dd5161403966b008a37c9c842bf1a4e9f18.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/picker.self-90499616b42a5f29d63683bd0206fe80b7083aa326965775e65b634998032470.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/picker.time.self-784174215027af21054566a4d0c43a3db32f5a21a8a1201b90fab0b74a117942.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/picker.date.self-fc5a59e2433a5fce5270c2fdca8bddb598d4e4161d09bd9249cc28e41375c2a8.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/bills.self-4e5b1975c8d43e00d2f2ddb0664092915ef96857bb131e8e697807810319c807.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/administrators.self-ef671f9cf84e325ba4c050ce71bcd59d6e982a9e79df1e6bbafa2878cef027d8.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/cashiers.self-8ca714bf250576b0723315abc61f1e38444888cc1a75f510f4fdc7bee69bf912.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/chefs.self-175901ce597c5b926f7119aaa55358340584b999258591911e4cad4f48dc2b86.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/custom.self-b0524f8245ec23ded2a81ac786d63e482418977d527e9cca1e50789844048adc.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/customers.self-4bd8cd9478d908551d80a31816843620b818047ada4e16869961c26f3cf3b58e.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/halls.self-c4d2b7f2f62eaaa7c3d53dc498d830884143b143ff5588f9a7c1a9b7ae22ecca.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/hostesses.self-310fa08958cfc1c8bd26b9c43920071be400cb3893782004f467b91b98392d44.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/items.self-3179a9bbc84b47fa372bc8bce24bb5fe55a428087dd06302e450e28ddb4555ce.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/managers.self-2a5038b21bc9f7aaaaf948a750e505b1d6ad2395ecdf6dcb1bbc60158b846300.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/materialize_min.self-9735dafd452f36af10c6d7eaf87f5d0efe832a2a1e93066135c00d4d61ad26e9.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/menus.self-118e8efa7cfaede4cd3008e41b42c64057969234fb3470dc4c87b0a11c2d6092.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/orders.self-f0cab2975a627d3e61f1f6510fc9fbbd9773df2cea13c55b386b36d656eede6e.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/reservations.self-30e16376dbce824ecc9a468c06ceeb3b54600b6bab4024893c26003015faed74.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/restaurants.self-5a75d1525678ea00166bd8b0479e773728b2284947f55b564dcddcb70555d12a.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/review_books.self-c0549a7f248e9fc328a691b559592a843f9f10cf4aea40c6cf6a3ef992c9d2d2.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/tables.self-982a58359e038a68fdf32f08868c242ea32721f5e509e1530e44c396eb30c793.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/waiters.self-76088737ee22d28cabff782008bf562f296ee2f6bc758282aa0de933e238fb55.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/application.self-4fd64622b88ab39efcdff7bd818bc16f38ee8dd2483620cda871ed887c3a716f.js?body=1" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/restaurant/slider_1-027c90faa2246e73e89a5294d7ed471356538245927653f3a02eeaabafa3aa7b.jpg" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/restaurant/slider_2-b6d75b7e0bbb8eb7f2fd0a659ca8659058582354e503e5bdd08d47c9566ec34f.jpg" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/restaurant/slider_3-d01c72521dd69be08bf37da3399be0ec6ace88f3b44cbcaf2be6c2f92321d691.jpg" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/assets/roboto/Roboto-Regular-b5c9c23bd12593523a46d79dd0aee80e3226bbde4c9ac05fc30a95e2c1510de0.woff2" for 127.0.0.1 at 2015-12-28 21:24:37 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-28 21:24:40 +0200
+Processing by AdministratorsController#landing as HTML
+  [1m[36mAdministrator Load (0.2ms)[0m  [1mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1[0m  [["remember_token", "da39a3ee5e6b4b0d3255bfef95601890afd80709"]]
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_slider.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered administrators/landing.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 209ms (Views: 208.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/review_books/new" for 127.0.0.1 at 2015-12-28 21:24:42 +0200
+Processing by ReviewBooksController#new as HTML
+  [1m[35mAdministrator Load (0.3ms)[0m  SELECT  "administrators".* FROM "administrators" WHERE "administrators"."remember_token" = $1 LIMIT 1  [["remember_token", "da39a3ee5e6b4b0d3255bfef95601890afd80709"]]
+  Rendered layouts/_header.html.erb (0.8ms)
+  [1m[36mRestaurant Load (0.4ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered review_books/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 269ms (Views: 259.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/review-11c78edc6634c0f57ad0939c07fe53bf00dded8347d260f0ac855b8b0dd8f028.jpg" for 127.0.0.1 at 2015-12-28 21:24:42 +0200
+
+
+Started GET "/assets/material-design-icons/Material-Design-Icons-4efd86423405eefbcbe28d543fc5db242d747b47f8b201f6d8bfdd091ff3bbdd.woff2" for 127.0.0.1 at 2015-12-28 21:24:42 +0200
