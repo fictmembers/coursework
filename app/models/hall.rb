@@ -1,8 +1,9 @@
 class Hall < ActiveRecord::Base
-    belongs_to :restaurant
-    has_many :hostesses
-    has_many :tables
+  belongs_to :restaurant
+  has_many :hostesses
+  has_many :tables
 
-    validates :hall_type, 	      presence: true
-    validates :restaurant_id, 	  presence: true
+  validates :hall_type, presence: true
+  validates :restaurant_id, presence: true
+  validates :lang, presence: true
 end

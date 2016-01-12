@@ -248,6 +248,10 @@ ru:
   call_to_us: "Позвоните нам"
   reserve_this_table: "Зарезервировать этот столик!"
 
+  #---------Language-----#
+
+  choose_language: "Выберите язык"
+
   #---------user---------#
   not_registred: "Еще не зарегестрированы?"
   edit_profile: "Редактировать профиль"

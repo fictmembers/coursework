@@ -10,6 +10,7 @@
             <%= form_for(@item) do |f| %>
               <div class="field">
                 <%= f.text_field :description, :placeholder => "#{t('item_name')}"%>
+                <%= f.select :lang, options_for_select([['Russian', 'ru'], ['English', 'en']]), :prompt => "#{t('choose_language')}", class: "browser-default" %>
                 <%= f.number_field :price,     :placeholder => "#{t('set_price')}", :step => "any" %> </br>
                 <%= f.collection_select :menu_id, Menu.where(lang:I18n.locale), :id, :cuisine, { prompt: "#{t('select_cuisine')}" }, class: "browser-default" %>
               </div>

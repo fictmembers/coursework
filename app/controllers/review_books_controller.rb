@@ -6,7 +6,7 @@ class ReviewBooksController < ApplicationController
   end
 
   def index
-    @review_books = ReviewBook.where(lang:I18n.locale)
+    @review_books = ReviewBook.where(lang: I18n.locale)
   end
 
   def create
@@ -45,6 +45,6 @@ class ReviewBooksController < ApplicationController
   private
 
   def review_book_params
-    params.require(:review_book).permit(:review, :customer, :review_type, :restaurant_id)
+    params.require(:review_book).permit(:review, :customer, :review_type, :restaurant_id, :lang)
   end
 end

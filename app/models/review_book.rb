@@ -5,4 +5,5 @@ class ReviewBook < ActiveRecord::Base
   validates :review, presence: true
   validates :review_type, presence: true
   validates :customer,	presence: true
+  validates :lang, presence: true
 end

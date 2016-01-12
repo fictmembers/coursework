@@ -7,7 +7,7 @@ class MenusController < ApplicationController
   end
 
   def index
-    @menus = Menu.where(lang:I18n.locale)
+    @menus = Menu.where(lang: I18n.locale)
   end
 
   def create
@@ -43,6 +43,6 @@ class MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:cuisine, :restaurant_id)
+    params.require(:menu).permit(:cuisine, :restaurant_id, :lang)
   end
 end

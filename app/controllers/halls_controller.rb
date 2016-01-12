@@ -6,7 +6,7 @@ class HallsController < ApplicationController
   end
 
   def index
-    @halls = Hall.where(lang:I18n.locale)
+    @halls = Hall.where(lang: I18n.locale)
   end
 
   def create
@@ -46,6 +46,6 @@ class HallsController < ApplicationController
   private
 
   def hall_params
-    params.require(:hall).permit(:hall_type, :restaurant_id)
+    params.require(:hall).permit(:hall_type, :restaurant_id, :lang)
   end
 end

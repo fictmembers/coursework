@@ -6,7 +6,7 @@ class ChefsController < ApplicationController
   end
 
   def index
-    @chefs = Chef.where(lang:I18n.locale)
+    @chefs = Chef.where(lang: I18n.locale)
   end
 
   def create
@@ -43,6 +43,6 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:lastname, :restaurant_id)
+    params.require(:chef).permit(:lastname, :restaurant_id, :lang)
   end
 end

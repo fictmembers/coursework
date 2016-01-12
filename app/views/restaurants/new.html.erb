@@ -12,6 +12,7 @@
                 <%= f.text_field :name,     :placeholder => "Name of restaurant" %> </br>
                 <%= f.text_field :address,  :placeholder => "Address" %> </br>
                 <%= f.telephone_field :tel, :placeholder => "Telephone" %> </br>
+                <%= f.select :lang, options_for_select([['Russian', 'ru'], ['English', 'en']]), :prompt => "#{t('choose_language')}", class: "browser-default" %>
               </div>
           <div class="card-action">
             <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>

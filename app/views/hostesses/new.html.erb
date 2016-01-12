@@ -10,7 +10,8 @@
             <%= form_for(@hostess) do |f| %>
               <div class="field">
                 <%= f.text_field :lastname,     :placeholder => "Your name and lastname" %></br>
-                <%= f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('jobplace')}" }, class: "browser-default" %>
+                <%= f.select :lang, options_for_select([['Russian', 'ru'], ['English', 'en']]), :prompt => "#{t('choose_language')}", class: "browser-default" %>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('jobplace')}" }, class: "browser-default" %>
                 <%= f.collection_select :hall_id, Hall.where(lang:I18n.locale), :id, :hall_type, { prompt: "#{t('select_hall')}" }, class: "browser-default" %>
               </div>
           <div class="card-action">

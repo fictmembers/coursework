@@ -6,7 +6,7 @@ class CashiersController < ApplicationController
   end
 
   def index
-    @cashiers = Cashier.where(lang:I18n.locale)
+    @cashiers = Cashier.where(lang: I18n.locale)
   end
 
   def create
@@ -42,6 +42,6 @@ class CashiersController < ApplicationController
   private
 
   def cashier_params
-    params.require(:cashier).permit(:lastname, :restaurant_id)
+    params.require(:cashier).permit(:lastname, :restaurant_id, :lang)
   end
 end

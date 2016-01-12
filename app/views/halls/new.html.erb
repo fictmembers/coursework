@@ -10,7 +10,8 @@
             <%= form_for(@hall) do |f| %>
               <div class="field">
                 <%= f.text_field :hall_type,      :placeholder => "#{t('hall_type')}" %> </br>
-                <%= f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+                <%= f.select :lang, options_for_select([['Russian', 'ru'], ['English', 'en']]), :prompt => "#{t('choose_language')}", class: "browser-default" %></br>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
               </div>
           <div class="card-action">
             <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>

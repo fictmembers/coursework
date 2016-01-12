@@ -7,7 +7,7 @@ class ManagersController < ApplicationController
   end
 
   def index
-    @managers = Manager.where(lang:I18n.locale)
+    @managers = Manager.where(lang: I18n.locale)
   end
 
   def create
@@ -46,6 +46,6 @@ class ManagersController < ApplicationController
   private
 
   def manager_params
-    params.require(:manager).permit(:lastname, :restaurant_id)
+    params.require(:manager).permit(:lastname, :restaurant_id, :lang)
   end
 end

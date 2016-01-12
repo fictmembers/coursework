@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.where(lang:I18n.locale)
+    @items = Item.where(lang: I18n.locale)
   end
 
   def create
@@ -44,6 +44,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:price, :description, :menu_id, :restaurant_id)
+    params.require(:item).permit(:price, :description, :menu_id, :restaurant_id, :lang)
   end
 end

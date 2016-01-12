@@ -7,7 +7,7 @@ class HostessesController < ApplicationController
   end
 
   def index
-    @hostesses = Hostess.where(lang:I18n.locale)
+    @hostesses = Hostess.where(lang: I18n.locale)
   end
 
   def create
@@ -45,6 +45,6 @@ class HostessesController < ApplicationController
   private
 
   def hostess_params
-    params.require(:hostess).permit(:lastname, :restaurant_id, :hall_id)
+    params.require(:hostess).permit(:lastname, :restaurant_id, :hall_id, :lang)
   end
 end

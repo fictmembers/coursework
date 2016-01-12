@@ -7,7 +7,7 @@ class WaitersController < ApplicationController
   end
 
   def index
-    @waiters = Waiter.where(lang:I18n.locale)
+    @waiters = Waiter.where(lang: I18n.locale)
   end
 
   def create
@@ -44,6 +44,6 @@ class WaitersController < ApplicationController
   private
 
   def waiter_params
-    params.require(:waiter).permit(:lastname, :restaurant_id)
+    params.require(:waiter).permit(:lastname, :restaurant_id, :lang)
 end
 end

@@ -11,6 +11,7 @@
         <div class="input-field">
           <i class="material-icons prefix">perm_identity</i>
           <%= f.text_field :customer,        :placeholder => "#{t('name_lastname')}", id: "icon_prefix" %>
+          <%= f.select :lang, options_for_select([['Russian', 'ru'], ['English', 'en']]), :prompt => "#{t('choose_language')}", class: "browser-default" %>
         </div>
         <div class="input-field">
           <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "#{t('select_rest')}"%>
