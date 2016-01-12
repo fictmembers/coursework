@@ -48,7 +48,7 @@
           <%= hidden_field_tag "order[item_ids][]", nil %>
           <h5>
             <%= f.cuisine %></h5>
-          <% current_cuisine = Item.where(menu_id: f.id, restaurant_id: restaurant.id) %>
+          <% current_cuisine = Item.where(menu_id: f.id, restaurant_id: restaurant.id, lang: I18n.locale) %>
           <% current_cuisine.each do |item| %>
           <li class="pushed">
             <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
