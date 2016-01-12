@@ -1,6 +1,6 @@
 module ItemsHelper
   def cuisine_select
-    @cusines = Menu.all
+    @cusines = Menu.where(lang:I18n.locale)
     s = ''
     @cusines.each do |cuisine|
       s << "<option value=#{cuisine.id}>#{cuisine.cuisine}</option>"

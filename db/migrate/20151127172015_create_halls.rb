@@ -4,6 +4,7 @@ class CreateHalls < ActiveRecord::Migration
       t.string :hall_type
       t.integer :capacity
       t.references :restaurant
+      t.string :lang
 
       t.timestamps null: false
     end

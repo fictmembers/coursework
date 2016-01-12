@@ -38,6 +38,7 @@ en:
   can_make_order: "Now you can make order!"
   make_order: "Make order"
   back_to_main: "Back to main page"
+  select_lang: "Select language"
 
   #---------leftmenu---------#
   mailbox: "MailBox"

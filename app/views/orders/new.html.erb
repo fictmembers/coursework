@@ -5,7 +5,8 @@
     <div class="card">
       <div class="card-image">
         <%= image_tag("order.jpg")%>
-        <span class="card-title grey-text text-lighten-2"> <%=t :make_order %></span>
+        <span class="card-title grey-text text-lighten-2">
+          <%=t :make_order %></span>
       </div>
       <div class="card-content">
         <%= form_for(@order) do |f| %>
@@ -13,15 +14,18 @@
         <% table = Table.find(reservation.table_id) %>
         <% waiter = Waiter.find(table.waiter.id) %>
         <% restaurant = Restaurant.find(waiter.restaurant_id) %>
-        <% @menu = Menu.all %>
+        <% @menu = Menu.where(lang:I18n.locale) %>
 
-        <h4> <%=t :order_for %>
+        <h4>
+          <%=t :order_for %>
           <%= session[:customer] %></h4>
         <ul>
-          <li class="pushed"> <%=t :at %>
+          <li class="pushed">
+            <%=t :at %>
             <%= restaurant.name %>
           </li>
-          <li class="pushed"> <%=t :table %>
+          <li class="pushed">
+            <%=t :table %>
             <b>#<%= table.id %></b>
           </li>
           <li class="pushed">
@@ -29,18 +33,21 @@
             <%= reservation.from %>:00
             <%= reservation.reserv_time.to_date %>
           </li>
-          <li class="pushed"> <%=t :your_waiter %>
+          <li class="pushed">
+            <%=t :your_waiter %>
             <%= waiter.lastname %>
           </li>
         </ul>
-        <i> <%= link_to "#{t('smth_wrong')}", root_path %></i>
+        <i>
+          <%= link_to "#{t('smth_wrong')}", root_path %></i>
       </div>
 
       <div class="card-action">
         <ul>
           <% @menu.each do |f| %>
           <%= hidden_field_tag "order[item_ids][]", nil %>
-          <h5> <%= f.cuisine %></h5>
+          <h5>
+            <%= f.cuisine %></h5>
           <% current_cuisine = Item.where(menu_id: f.id, restaurant_id: restaurant.id) %>
           <% current_cuisine.each do |item| %>
           <li class="pushed">
@@ -52,7 +59,8 @@
         </ul>
       </div>
       <div class="card-action">
-        <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>
+        <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">
+          <%=t :save_info %></button>
       </div>
       <% end %>
     </div>

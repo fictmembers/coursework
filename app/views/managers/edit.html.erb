@@ -11,7 +11,7 @@
             <%= form_for(@manager) do |f| %>
               <div class="field">
                 <%= f.text_field :lastname, class: "form-control",    :placeholder => "#{t('name_lastname')}" %> </br>
-                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('jobplace')}" }, class: "browser-default" %>
+                <%= f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('jobplace')}" }, class: "browser-default" %>
               </div>
           </div>
           <div class="card-action">

@@ -6,7 +6,7 @@ class ReviewBooksController < ApplicationController
   end
 
   def index
-    @review_books = ReviewBook.all
+    @review_books = ReviewBook.where(lang:I18n.locale)
   end
 
   def create

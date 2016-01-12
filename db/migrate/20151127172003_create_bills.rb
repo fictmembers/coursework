@@ -6,6 +6,7 @@ class CreateBills < ActiveRecord::Migration
       t.integer :summary
       t.references :cashier
       t.references :customer
+      t.string :lang
 
       t.timestamps null: false
     end

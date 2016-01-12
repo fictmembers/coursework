@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(lang:I18n.locale)
   end
 
   def create
@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurants
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(lang:I18n.locale)
   end
 
   private

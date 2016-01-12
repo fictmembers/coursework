@@ -1,6 +1,6 @@
 module TablesHelper
   def waiter_select
-    waiter = Waiter.all
+    waiter = Waiter.where(lang:I18n.locale)
 
     s = ''
     waiter.each do |w|

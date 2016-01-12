@@ -4,6 +4,7 @@ class CreateManagers < ActiveRecord::Migration
 
       t.string :lastname
       t.string :tel
+      t.string :lang
       t.references :restaurant
 
       t.timestamps null: false

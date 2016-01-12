@@ -3,6 +3,7 @@ class CreateReviewBooks < ActiveRecord::Migration
     create_table :review_books do |t|
       t.string :review
       t.references :customer
+      t.string :lang
 
       t.timestamps null: false
     end

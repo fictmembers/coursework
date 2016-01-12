@@ -3,6 +3,7 @@ class CreateHostesses < ActiveRecord::Migration
     create_table :hostesses do |t|
       t.string :lastname
       t.references :restaurant
+      t.string :lang
       t.references :hall
 
 

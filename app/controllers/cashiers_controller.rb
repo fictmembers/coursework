@@ -6,7 +6,7 @@ class CashiersController < ApplicationController
   end
 
   def index
-    @cashiers = Cashier.all
+    @cashiers = Cashier.where(lang:I18n.locale)
   end
 
   def create

@@ -9,16 +9,16 @@
           </div>
           <div class="card-content">
 
-              <% items = Item.all %>
+              <% items = Item.where(lang:I18n.locale) %>
             <%= form_for(@order) do |f| %>
 
               <div class="field">
-                <%=f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+                <%=f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
 
           </div>
 
           <div class="row">
-            <% Menu.all.each do |f| %>
+            <% Menu.where(lang:I18n.locale).each do |f| %>
             <div class="col s4">
               <%= hidden_field_tag "order[item_ids][]", nil %>
             <h5> <%= f.cuisine %></h5>
