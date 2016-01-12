@@ -6,21 +6,21 @@
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
-			              <th data-field="lastname">Lastname</th>
-										<th data-field="created_at">Created at</th>
-                    <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+			              <th data-field="lastname"> <%=t :name_lastname %></th>
+										<th data-field="created_at"> <%=t :created %></th>
+                    <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
 			    <tbody>
 			    	<% @customers.each do |customer| %>
 			          <tr>
-									<td><%= customer.id %></td>
-			            <td><%= customer.lastname %></td>
-									<td><%= customer.created_at %></td>
-			            <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-	    					  <td><%= link_to "Delete", customer, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= customer.id %></td>
+			            <td> <%= customer.lastname %></td>
+									<td> <%= customer.created_at %></td>
+			            <td> <%= link_to "#{t('edit')}", edit_customer_path(customer) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", customer, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

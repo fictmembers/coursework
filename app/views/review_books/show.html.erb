@@ -1,7 +1,11 @@
 <%= render 'layouts/header' %>
 <div class="formfactor">
-  <h4>Whom: <%= @review_book.customer %></h4>
-  Restaurant: <%= @restaurant = Restaurant.find(@review_book.restaurant_id) %>
-  Type: <%= @review_book.review_type %></br>
-  Text: <%= @review_book.review %>
+  <h4> <%=t :whom %>:
+    <%= @review_book.customer %></h4>
+    <%=t :restaurant %>:
+  <%= @restaurant = Restaurant.find(@review_book.restaurant_id) %>
+  <%=t :review_type %>:
+  <%= @review_book.review_type %></br>
+  <%=t :text %>:
+<%= @review_book.review %>
 </div>

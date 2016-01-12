@@ -5,26 +5,26 @@
 			<table id="restaurant">
 			    <thead>
 			          <tr>
-                    <th data-field="id">ID</th>
-			              <th data-field="name">Lastname</th>
-                    <th data-field="address">Address</th>
-                    <th data-field="tel">Tel</th>
-										<th data-field="created_at">Created at</th>
-                    <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+                    <th data-field="id"> ID</th>
+			              <th data-field="name"> <%=t :rest_name %></th>
+                    <th data-field="address"> <%=t :address %></th>
+                    <th data-field="tel"> <%=t :tel %></th>
+										<th data-field="created_at"> <%=t :created %></th>
+                    <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
 			    <tbody>
 			    	<% @restaurants.each do |restaurant| %>
 			          <tr>
-                  <td><%= restaurant.id %></td>
-			            <td><%= restaurant.name %></td>
-                  <td><%= restaurant.address %></td>
-                  <td><%= restaurant.tel %></td>
-									<td><%= restaurant.created_at %></td>
-			            <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-	    					  <td><%= link_to "Delete", restaurant, method: :delete, data: { confirm: "You sure?" } %></td>
+                  <td> <%= restaurant.id %></td>
+			            <td> <%= restaurant.name %></td>
+                  <td> <%= restaurant.address %></td>
+                  <td> <%= restaurant.tel %></td>
+									<td> <%= restaurant.created_at %></td>
+			            <td> <%= link_to "#{t('edit')}", edit_restaurant_path(restaurant) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", restaurant, method: :delete, data: { confirm: "you_sure" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

@@ -1,34 +1,42 @@
 <%= render 'layouts/header' %>
 
-	<div class="row">
-		<div class="col s10 offset-s1">
-			<table id="reservation">
-			    <thead>
-			          <tr>
-										<th data-field="id">ID</th>
-			              <th data-field="customer">Customer</th>
-			              <th data-field="table">Table</th>
-                    <th data-field="reserv_time">Reservation time</th>
-                    <th data-field="created_at">Created at</th>
-				            <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
-			          </tr>
-			    </thead>
+<div class="row">
+  <div class="col s10 offset-s1">
+    <table id="reservation">
+      <thead>
+        <tr>
+          <th data-field="id">
+            ID</th>
+          <th data-field="customer">
+            <%=t :customer %></th>
+          <th data-field="table">
+            <%=t :table %></th>
+          <th data-field="reserv_time">
+            <%=t :reserv_time %></th>
+          <th data-field="created_at">
+            <%=t :created %></th>
+          <th data-field="edit">
+            <%=t :edit %></th>
+          <th data-field="delete">
+            <%=t :delete %></th>
+        </tr>
+      </thead>
 
-			    <tbody>
-			    	<% @reservations.each do |reservation| %>
-						<% customer = Customer.find(reservation.customer_id) %>
-			          <tr>
-									<td><%= reservation.id %></td>
-			            <td><%= customer.lastname %></td>
-			            <td><%= reservation.table_id %></td>
-                  <td><b><%= reservation.from %>:00</b> <%= reservation.reserv_time.to_date %></td>
-			            <td><%= reservation.created_at %></td>
-                  <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-	    					  <td><%= link_to "Delete", reservation, method: :delete, data: { confirm: "You sure?" } %></td>
-			          </tr>
-			        <% end %>
-			    <tbody>
-			</table>
-		</div>
-	</div>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+        <% customer = Customer.find(reservation.customer_id) %>
+        <tr>
+          <td> <%= reservation.id %></td>
+          <td> <%= customer.lastname %></td>
+          <td> <%= reservation.table_id %></td>
+          <td>
+            <b> <%= reservation.from %>:00</b>
+            <%= reservation.reserv_time.to_date %></td>
+          <td> <%= reservation.created_at %></td>
+          <td> <%= link_to "#{t('edit')}", edit_reservation_path(reservation) %></td>
+          <td> <%= link_to "#{t('delete')}", reservation, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
+        </tr>
+        <% end %>
+        <tbody></table>
+      </div>
+    </div>

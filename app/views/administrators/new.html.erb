@@ -4,7 +4,7 @@
         <div class="card">
           <div class="card-image">
             <%= image_tag("administrator_new.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Hello, new administrator! Join us now:</span>
+            <span class="card-title grey-text text-lighten-2"> <%=t :hello_admin %></span>
 
           </div>
           <%= form_for(@administrator) do |f| %>
@@ -12,21 +12,21 @@
           <div class="card-content">
             <div class="input-field">
               <i class="material-icons prefix">perm_identity</i>
-              <%= f.text_field :login,        :placeholder => "Login", class: "validate", id: "icon_prefix" %>
+              <%= f.text_field :login,        :placeholder => "#{t('login')}", class: "validate", id: "icon_prefix" %>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">lock_outline</i>
-              <%= f.password_field :password, :placeholder => "Password", class: "validate", id: "icon_prefix" %>
+              <%= f.password_field :password, :placeholder => "#{t('password')}", class: "validate", id: "icon_prefix" %>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">lock</i>
-              <%= f.password_field :password_confirmation, :placeholder => "Confirm password", class: "validate", id: "icon_prefix" %>
+              <%= f.password_field :password_confirmation, :placeholder => "#{t('password_confirmation')}", class: "validate", id: "icon_prefix" %>
             </div>
           </div>
 
           <%= render 'shared/errors_admin_registration' %>
           <div class="card-action">
-              <%= f.submit "Save", class: "btn waves-effect waves-light blue-grey darken-4", style: "margin: auto;" %>
+              <%= f.submit "#{t('save_info')}", class: "btn waves-effect waves-light blue-grey darken-4", style: "margin: auto;" %>
             <% end %>
           </div>
         </div>

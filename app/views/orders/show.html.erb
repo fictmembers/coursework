@@ -1,37 +1,54 @@
 <%= render 'layouts/header' %>
 
 <div class="row">
-  <div class="col s4 offset-s4">
+  <div class="col s12 m6 offset-m3">
     <div class="card">
       <div class="card-content  blue-grey darken-4">
         <span class="card-title white-text">Order details</span>
       </div>
       <div class="card-content">
-          <h4>Order # <%= @order.id %></h4>
-            Created:  <%= @order.created_at %>
+        <h4>   <%=t :order %> #
+          <%= @order.id %></h4>
+          <%=t :created %>:
+        <%= @order.created_at %>
 
-          <h4>Restaurant description</h4>
+        <h4> <%=t :restaurant_description %></h4>
+        <ul>
+          <li class="pushed">
+            <b> <%=t :restaurant %>:
+              <%= link_to @restaurant.name, @restaurant %></b>
+          </li>
+          <li class="pushed"> <%=t :duty_manager %>:
+            <%= link_to @manager.lastname, @manager %></li>
+          <li class="pushed"> <%=t :duty_waiter %>:
+            <%= link_to @chef.lastname, @chef %></li>
+          <li class="pushed"> <%=t :duty_chef %>:
+            <%= link_to @waiter.lastname, @waiter %></li>
+        </ul>
+        <h4> <%=t :customer_description %> </h4>
+        <ul>
+          <li class="pushed">  <%=t :customer %>:
+            <b><%= @customer.lastname %></b>
+          </li>
+          <li class="pushed"> <%=t :order_costs %>:
+            <%= @cost %>
+            &euro;
+          </li>
+          <li class="pushed">  <%=t :ordered_dishes %>:
             <ul>
-              <li class="pushed"><b>Restaurant: <%= link_to @restaurant.name, @restaurant %></b></li>
-              <li class="pushed">Duty manager: <%= link_to @manager.lastname, @manager %></li>
-              <li class="pushed">Duty chef: <%= link_to @chef.lastname, @chef %></li>
-              <li class="pushed">Duty waiter: <%= link_to @waiter.lastname, @waiter %></li>
+              <% @items.each do |f| %>
+              <li class="pushed">
+                <i>
+                  -
+                  <%= f.description %></i>
+              </li>
+              <% end %>
             </ul>
-          <h4>Customer description</h4>
-          <ul>
-            <li class="pushed">Customer: <b><%= @customer.lastname %></b></li>
-            <li class="pushed">Order costs: <%= @cost %> &euro; </li>
-            <li class="pushed">Orderd dishes:
-              <ul>
-                <% @items.each do |f| %>
-                  <li class="pushed"><i> - <%= f.description %></i></li>
-                <% end %>
-              </ul>
-            </li>
-      </div>
-      <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+          </li>
+        </div>
+        <div class="card-action">
+          <%= link_to "#{t('back_to_main')}", root_path %>
+        </div>
       </div>
     </div>
   </div>
-</div>

@@ -1,6 +1,6 @@
 <%= render 'layouts/header' %>
 <div class="formfactor">
   <h4><%= @cashier.lastname %></h4>
-  Personal id: <%= @cashier.id %></br>
-  Works at <%= @restaurant.name %> since <%= @cashier.created_at.strftime("%d.%b.%Y") %> </br>
+  <%=t :personal_id %> <%= @cashier.id %></br>
+  <%=t :works_at %> <%= @restaurant.name %>  <%=t :since %> <%= @cashier.created_at.strftime("%d.%b.%Y") %> </br>
 </div>

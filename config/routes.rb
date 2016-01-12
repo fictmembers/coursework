@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  scope "(:locale)", :locale => /en|ru/ do
+
   resources :administrators
   resources :bills
   resources :cashiers
@@ -14,8 +16,11 @@ Rails.application.routes.draw do
   resources :review_books
   resources :tables
   resources :waiters
+  resources :users
+  resources :messages
   resources :menus
   resources :sessions, only: [:new, :create, :destroy]
+  resources :usersessions, only: [:new, :create, :destroy]
 
   root 'administrators#landing'
 
@@ -24,7 +29,7 @@ Rails.application.routes.draw do
   match '/signout',                 to: 'sessions#destroy',                 via: 'delete'
   match '/main',                    to: 'administrators#landing',           via: 'get'
   match '/customers/:id/order',     to: 'customers#order',                  via: 'get'
-  match '/customers/:id/restaurant', to: 'customers#restaurant',            via: 'get'
+  match '/customers/:id/restaurant', to: 'customers#restaurant', via: 'get'
   match '/complete',                to: 'orders#complete',                  via: 'get'
   match '/resivefeed',              to: 'review_books#resivefeed',          via: 'get'
 
@@ -34,4 +39,13 @@ Rails.application.routes.draw do
   match '/topwaiters',              to: 'administrators#topwaiters',        via: 'get'
   match '/lastweektop',             to: 'administrators#lastweektop',       via: 'get'
   match '/alldayslong',             to: 'administrators#alldayslong',       via: 'get'
+
+  match '/sendmessage',             to: 'messages#new',                     via: 'get'
+  match '/im',                      to: 'messages#im',                      via: 'get'
+  match '/imsended',                to: 'messages#imsended',                via: 'get'
+
+  match '/user_signup',             to: 'users#new',                        via: 'get'
+  match '/user_signin',             to: 'usersessions#new',                 via: 'get'
+  match '/user_signout',            to: 'usersessions#destroy',             via: 'delete'
+end
 end

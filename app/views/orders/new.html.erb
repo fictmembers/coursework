@@ -1,59 +1,60 @@
 <%= render 'layouts/header' %>
 
-<div class="panel">
 <div class="row">
-
-  <div class="col s6 offset-s3">
+  <div class="col s12 m6 offset-m3">
     <div class="card">
       <div class="card-image">
         <%= image_tag("order.jpg")%>
-        <span class="card-title grey-text text-lighten-2">Make order:</span>
+        <span class="card-title grey-text text-lighten-2"> <%=t :make_order %></span>
       </div>
       <div class="card-content">
         <%= form_for(@order) do |f| %>
-            <% reservation = Reservation.find(session[:reservation_id]) %>
-            <% table = Table.find(reservation.table_id) %>
-            <% waiter = Waiter.find(table.waiter.id) %>
-            <% restaurant = Restaurant.find(waiter.restaurant_id) %>
-            <% @menu = Menu.all %>
+        <% reservation = Reservation.find(session[:reservation_id]) %>
+        <% table = Table.find(reservation.table_id) %>
+        <% waiter = Waiter.find(table.waiter.id) %>
+        <% restaurant = Restaurant.find(waiter.restaurant_id) %>
+        <% @menu = Menu.all %>
 
+        <h4> <%=t :order_for %>
+          <%= session[:customer] %></h4>
+        <ul>
+          <li class="pushed"> <%=t :at %>
+            <%= restaurant.name %>
+          </li>
+          <li class="pushed"> <%=t :table %>
+            <b>#<%= table.id %></b>
+          </li>
+          <li class="pushed">
+            <%=t :date_time %>
+            <%= reservation.from %>:00
+            <%= reservation.reserv_time.to_date %>
+          </li>
+          <li class="pushed"> <%=t :your_waiter %>
+            <%= waiter.lastname %>
+          </li>
+        </ul>
+        <i> <%= link_to "#{t('smth_wrong')}", root_path %></i>
+      </div>
 
-            <h4>For: <%= session[:customer] %></h4>
-            <ul>
-              <li class="pushed">At: <%= restaurant.name %> </li>
-              <li class="pushed">Table <b>#<%= table.id %></b></li>
-              <li class="pushed">
-                Date and Time: <%= reservation.from %>:00
-                               <%= reservation.reserv_time.to_date %>
-              </li>
-              <li class="pushed">Your waiter: <%= waiter.lastname %> </li>
-            </ul>
-            <i><%= link_to "Is something wrong? Correct it!", root_path %></i>
-            </div>
-
-
-
-            <div class="card-action">
-              <ul>
-                <% @menu.each do |f| %>
-                  <%= hidden_field_tag "order[item_ids][]", nil %>
-                  <h5> <%= f.cuisine %></h5>
-                  <% current_cuisine = Item.where(menu_id: f.id, restaurant_id: restaurant.id) %>
-                    <% current_cuisine.each do |item| %>
-                    <li class="pushed">
-                      <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
-                      <%= label_tag dom_id(item), item.description+' '+item.price.to_s+'€' %><br>
-                    </li>
-                    <% end %>
-                  </p>
-                <% end %>
-             </ul>
-           </div>
-           <div class="card-action">
-              <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action" >Save information</button>
-           </div>
-        <% end %>
-
+      <div class="card-action">
+        <ul>
+          <% @menu.each do |f| %>
+          <%= hidden_field_tag "order[item_ids][]", nil %>
+          <h5> <%= f.cuisine %></h5>
+          <% current_cuisine = Item.where(menu_id: f.id, restaurant_id: restaurant.id) %>
+          <% current_cuisine.each do |item| %>
+          <li class="pushed">
+            <%= check_box_tag "order[item_ids][]", item.id, @order.item_ids.include?(item.id), id: dom_id(item) %>
+            <%= label_tag dom_id(item), item.description+' '+item.price.to_s+'€' %><br>
+          </li>
+          <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="card-action">
+        <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

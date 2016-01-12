@@ -1,0 +1,98 @@
+<%= render 'layouts/header' %>
+
+<div class="row hide-on-med-and-down">
+  <div class="col s8 offset-s2">
+    <div class="card">
+      <%= form_for(@user) do |f| %>
+      <%= f.hidden_field :photo, :value => "http://res.cloudinary.com/hy4kyit2a/image/upload/new-user-image-default.png" %>
+      <div class="card-content">
+        <div class="row">
+          <div class="col s4 hide-on-med-and-down">
+            <center>
+              <%= image_tag "userreg.jpg", size: "157x313" %>
+            </center>
+            <h5> <%=t :easy_way %></h5>
+            <%= render 'shared/errors_user_registration' %>
+            <small>
+              <em> <%=t :covered %></em>
+            </small>
+          </div>
+          <div class="col s1">
+            <div class="divider"></div>
+          </div>
+          <div class="col m12 s10 l7 ">
+            <h4> <%=t :registration %></h4>
+            <div class="field">
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">perm_identity</i>
+                <%= f.text_field  :lastname, placeholder: "#{t('name_lastname')}", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">mail_outline</i>
+                <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">lock_open</i>
+                <%= f.password_field  :password, placeholder: "#{t('password')}", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <i class="material-icons prefix">lock_outline</i>
+                <%= f.password_field  :password_confirmation, placeholder: "#{t('password_confirmation')}", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <%= link_to "#{t('already_registred')}", user_signin_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <%= f.submit "#{t('confirm_registration')}", class: "btn blue-grey darken-4" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-large-only">
+  <div class="col s12">
+    <div class="card">
+      <%= form_for(@user) do |f| %>
+      <%= f.hidden_field :photo, :value => "http://res.cloudinary.com/hy4kyit2a/image/upload/new-user-image-default.png" %>
+      <div class="card-content">
+        <h4> <%=t :registration %></h4>
+        <h5> <%=t :easy_way %></h5>
+        <%= render 'shared/errors_user_registration' %>
+        <div class="row">
+          <div class="col s12">
+            <div class="field">
+              <div class="input-field">
+                <i class="material-icons prefix">perm_identity</i>
+                <%= f.text_field  :lastname, placeholder: "#{t('name_lastname')}", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">mail_outline</i>
+                <%= f.email_field :email, placeholder: "email", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">lock_open</i>
+                <%= f.password_field  :password, placeholder: "#{t('password')}", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">lock_outline</i>
+                <%= f.password_field  :password_confirmation, placeholder: "#{t('password_confirmation')}", class: "validate", id: "icon_prefix" %>
+              </div>
+              <div class="input-field">
+                <%= link_to "#{t('already_registred')}", user_signin_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <%= f.submit "#{t('confirm_registration')}", class: "btn blue-grey darken-4" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

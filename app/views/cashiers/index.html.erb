@@ -6,11 +6,11 @@
 			    <thead>
 			          <tr>
 										<th data-field="id">ID</th>
-			              <th data-field="lastname">Lastname</th>
-			              <th data-field="restaurant">Restaurant</th>
-										<th data-field="created_at">Created at</th>
-                    <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+			              <th data-field="lastname"> <%=t :name_lastname %></th>
+			              <th data-field="restaurant"> <%=t :restaurant %></th>
+										<th data-field="created_at"> <%=t :created %></th>
+                    <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
@@ -18,12 +18,12 @@
 			    	<% @cashiers.each do |cashier| %>
 						<% restaurant = Restaurant.find(cashier.restaurant_id) %>
 			          <tr>
-									<td><%= cashier.id %></td>
-			            <td><%= cashier.lastname %></td>
-			            <td><%= restaurant.name %></td>
-									<td><%= cashier.created_at %></td>
-			            <td><%= link_to 'Edit', edit_cashier_path(cashier) %></td>
-	    					  <td><%= link_to "Delete", cashier, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= cashier.id %></td>
+			            <td> <%= cashier.lastname %></td>
+			            <td> <%= restaurant.name %></td>
+									<td> <%= cashier.created_at %></td>
+			            <td> <%= link_to "#{t('edit')}", edit_cashier_path(cashier) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", cashier, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

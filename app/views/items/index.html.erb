@@ -5,14 +5,14 @@
 			<table id="item">
 			    <thead>
 			          <tr>
-										<th data-field="id">ID</th>
-										<th data-field="id">Restaurant</th>
-			              <th data-field="description">Description</th>
-			              <th data-field="price">Price</th>
-                    <th data-field="menu">Cuisine</th>
-										<th data-field="created_at">Created at</th>
-                    <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+										<th data-field="id"> ID</th>
+										<th data-field="id"> <%=t :restaurant %></th>
+			              <th data-field="description"> <%=t :description %></th>
+			              <th data-field="price"> <%=t :price %></th>
+                    <th data-field="menu"> <%=t :menu %></th>
+										<th data-field="created_at"> <%=t :created %></th>
+                    <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
@@ -21,14 +21,14 @@
 						<% menu = Menu.find(item.menu_id) %>
 						<% restaurant = Restaurant.find(menu.restaurant_id) %>
 			          <tr>
-									<td><%= item.id %></td>
-									<td><%= restaurant.name %></td>
-			            <td><%= item.description %></td>
-			            <td><%= item.price %> €</td>
-                  <td><%= menu.cuisine %></td>
-									<td><%= item.created_at %></td>
-			            <td><%= link_to 'Edit', edit_item_path(item) %></td>
-	    					  <td><%= link_to "Delete", item, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= item.id %></td>
+									<td> <%= restaurant.name %></td>
+			            <td> <%= item.description %></td>
+			            <td> <%= item.price %> €</td>
+                  <td> <%= menu.cuisine %></td>
+									<td> <%= item.created_at %></td>
+			            <td> <%= link_to "#{t('edit')}", edit_item_path(item) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", item, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

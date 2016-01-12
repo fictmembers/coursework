@@ -1,36 +1,46 @@
 <%= render 'layouts/header' %>
 
 <div class="row">
-  <div class="col s8 offset-s2">
+  <div class="col s8 offset-s2 hide-on-med-and-down">
     <div class="card">
       <div class="card-content blue-grey darken-4">
         <span class="card-title white-text">Table #<%= session[:table] %></span>
       </div>
       <div class="card-content">
         <span class="card-title">
-                          Current reservations:
-                            <b><%= @restaurant.name %></b> -
-                            <i>Hall <%= @hall.hall_type %></i>
+          <%=t :current_reservations %>:
+          <b><%= @restaurant.name %></b>
+          -
+          <i> <%=t :hall %>
+            <%= @hall.hall_type %></i>
         </span>
         <div class="row">
           <div class="col s8">
             <ul class="collapsible" data-collapsible="accordion">
               <li>
-                <div class="collapsible-header active"><i class="material-icons">today</i>Today</div>
+                <div class="collapsible-header active">
+                  <i class="material-icons">today</i> <%=t :today %></div>
                 <% @today.each do |f| %>
-                  <div class="collapsible-body"><p>Reservation from: <%= f.from %>:00</p></div>
+                <div class="collapsible-body">
+                  <p> <%=t :reservation_from %>:
+                    <%= f.from %>:00</p>
+                </div>
                 <% end %>
                 <% if @today == nil %>
-                  <p>Table is free for today!</p>
+                <p> <%=t :free_table_today %></p>
                 <% end %>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">today</i>Tommorow</div>
+                <div class="collapsible-header">
+                  <i class="material-icons">today</i> <%=t :tommorow %></div>
                 <% @tommorow.each do |f| %>
-                  <div class="collapsible-body"><p>Reservation from: <%= f.from %>:00</p></div>
+                <div class="collapsible-body">
+                  <p> <%=t :reservation_from %> :
+                    <%= f.from %>:00</p>
+                </div>
                 <% end %>
                 <% if @today == nil %>
-                  <p>Table is free for tommorow!</p>
+                <p> <%=t :free_table_tommorow %></p>
                 <% end %>
               </li>
             </ul>
@@ -38,26 +48,101 @@
           <div class="col s4">
             <div class="card">
               <div class="card-content">
-                <span class="card-title">Need another date?</span>
-                Call to our us: <br>
-                <span class="pushed"><%= @restaurant.tel %></span></br>
+                <span class="card-title"> <%=t :another_date %></span>
+                <%=t :call_to_us %>:
+                <br>
+                  <span class="pushed"> <%= @restaurant.tel %></span>
+                </br>
                 <% if @hostess != nil %>
-                  <ul>
+                <ul>
                   <% @hostess.each do |f| %>
-                    <li class="pushed">Hostess <i><%= f.lastname %></i></li>
+                  <li class="pushed"> <%=t :hostess %>
+                    <i> <%= f.lastname %></i>
+                  </li>
                   <% end %>
-                  </ul>
+                </ul>
                 <% end %>
               </div>
               <div class="card-action">
-                <%= link_to "Reserve this table!", new_reservation_path %>
+                <%= link_to "#{t('reserve_this_table')}", new_reservation_path %>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 hide-on-large-only">
+    <div class="card">
+      <div class="card-content blue-grey darken-4">
+        <span class="card-title white-text"> <%=t :current_reservations %></span>
+      </div>
+      <div class="card-content">
+        <span class="card-title">
+          <ul>
+            <li>
+              <b> <%= @restaurant.name %></b>
+            </li>
+            <li>
+              <i> <%= @hall.hall_type %></i>
+            </li>
+            <li> <%=t :table %> #<%= session[:table] %></li>
+          </ul>
+        </span>
+        <div class="row">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header active">
+                <i class="material-icons">today</i> <%=t :today %></div>
+              <% @today.each do |f| %>
+              <div class="collapsible-body">
+                <p> <%=t :reservation_from %>:
+                  <%= f.from %>:00</p>
+              </div>
+              <% end %>
+              <% if @today == nil %>
+              <p> <%=t :free_table_today %></p>
+              <% end %>
+            </li>
+            <li>
+              <div class="collapsible-header">
+                <i class="material-icons">today</i> <%=t :tommorow %></div>
+              <% @tommorow.each do |f| %>
+              <div class="collapsible-body">
+                <p> <%=t :reservation_from %>:
+                  <%= f.from %>:00</p>
+              </div>
+              <% end %>
+              <% if @today == nil %>
+              <p> <%=t :free_table_tommorow %></p>
+              <% end %>
+            </li>
+          </ul>
+
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"> <%=t :another %></span><br>
+              <%=t :call_to_us %>:
+              <%= link_to @restaurant.tel, "#{t('tel')}" + @restaurant.tel %>
+              <% if @hostess != nil %>
+              <ul>
+                <% @hostess.each do |f| %>
+                <li class="pushed"> <%=t :hostess %>:
+                  <i><%= f.lastname %></i>
+                </li>
+                <% end %>
+              </ul>
+              <% end %>
+            </div>
+            <div class="card-action">
+              <%= link_to "#{t('reserve_this_table')}", new_reservation_path %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

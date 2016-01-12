@@ -6,15 +6,15 @@
   <div class="fixed-div">
     <div class="card">
       <div class="card-content ">
-        <h4><%= current_administrator.login.capitalize %></h4>
-        <h5>Control panel</h5>
-        <b><%= link_to "Add Restaurant", new_restaurant_path %></b>
-        </br><%= link_to "Add Administrator", new_administrator_path %>
-        </br><%= link_to "View top workers", topwaiters_path %>
-        </br><%= link_to "View top dishes", lastweektop_path %>
+        <h4> <%= current_administrator.login.capitalize %></h4>
+        <h5> <%=t :contro_panel %></h5>
+        <b> <%= link_to "#{t('add_restaurant')}", new_restaurant_path %></b>
+      </br> <%= link_to "#{t('add_admin')}", new_administrator_path %>
+    </br> <%= link_to "#{t('top_waiters')}", topwaiters_path %>
+  </br> <%= link_to "#{t('top_dishes')}", lastweektop_path %>
       </div>
       <div class="card-action">
-        <%= link_to "Sign out", signout_path, method: "delete" %>
+        <%= link_to "#{t('signout')}", signout_path, method: "delete" %>
       </div>
     </div>
   </div>
@@ -23,19 +23,19 @@
   <div class="col s8 offset-s2">
     <div class="card">
       <div class="card-content blue-grey darken-4">
-        <span class="card-title white-text">TOP KITCHENS' WORKERS</span>
+        <span class="card-title white-text"> <%=t :top_kitchen %></span>
       </div>
 
       <div class="card-content">
-      <p><h4>Top waiters and chefs by number of orders</h4></p>
+      <p><h4> <%=t :top_by_num %></h4></p>
 
       <div class="row">
         <div class="col s6">
           <table>
 			      <thead>
               <tr>
-                <th>Waiter</th>
-                <th>Number of orders</th>
+                <th> <%=t :waiter %></th>
+                <th> <%=t :orders_num %></th>
               </tr>
             </thead>
             <tbody>
@@ -63,8 +63,8 @@
           <table>
             <thead>
               <tr>
-                <th>Chef</th>
-                <th>Number cooked dishes</th>
+                <th> <%=t :chef %></th>
+                <th> <%=t :dish_num %></th>
               </tr>
             </thead>
             <tbody>
@@ -90,7 +90,7 @@
       </div>
 
       <div class="card-action">
-        <%= link_to "Back to administrator page", controlpanel_path %>
+        <%= link_to "#{t('back_to_adm')}", controlpanel_path %>
       </div>
 
     </div>

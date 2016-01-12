@@ -4,23 +4,23 @@
         <div class="card">
           <div class="card-image">
             <%= image_tag("bill.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Add a paybill!</span>
+            <span class="card-title grey-text text-lighten-2"> <%=t :edit_bill %></span>
 
           </div>
           <div class="card-content">
             <%= form_for(@bill) do |f| %>
               <div class="field">
-                <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "-Select guest-" }, class: "browser-default" %>
-                <%= f.collection_select :cashier_id, Cashier.all, :id, :lastname, { prompt: "-Select cashier-" }, class: "browser-default" %>
-                <%= f.number_field :summary, :placeholder => "Summary in $", :value => "1", :step => "any"%>
-                <%= f.text_area :options,  :placeholder => "Additional options" %> </br>
-                <%= f.label :name, 'Specify a date' %>
+                <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "#{t('select_guest')}" }, class: "browser-default" %>
+                <%= f.collection_select :cashier_id, Cashier.all, :id, :lastname, { prompt: "#{t('select_cashier')}" }, class: "browser-default" %>
+                <%= f.number_field :summary, :placeholder => "#{t('summary_in')}", :value => "1", :step => "any"%>
+                <%= f.text_area :options,  :placeholder => "#{t('additional')}" %> </br>
+                <%= f.label :name, '#{t('date_spec')}' %>
                 <%= f.text_field :created , type: "date", class: "datepicker"%>
                   <input type="date" class="datepicker">
 
           </div>
           <div class="card-action">
-            <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
+            <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">  <%=t :save_info %></button>
           </div>
         </div>
       </div>

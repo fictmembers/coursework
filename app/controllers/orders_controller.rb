@@ -76,10 +76,7 @@ class OrdersController < ApplicationController
     @items.each do |f|
       @cost += f.price
     end
-
-    session.delete(:customer)
-    session.delete(:customer_id)
-    session.delete(:reservation_id)
+    clean_useless_session
   end
 
   def edit

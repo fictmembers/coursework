@@ -1,12 +1,12 @@
 <%= render 'layouts/header' %>
 <div class="formfactor">
-    <h4>Database administrator</h4>
-    Personal id: <%= @administrator.id %></br>
-    Login: <%= @administrator.login %></br>
-      <% if signed_in? %>
-      <%= link_to "Sign out", signout_path, method: "delete" %>
+    <h4> <%=t :db_adm %></h4>
+    <%=t :personal_id %> <%= @administrator.id %></br>
+    <%=t :login %> <%= @administrator.login %></br>
+      <% if signed_<%=t :hi_dear %>in? %>
+      <%= link_to "#{t('signout')}", signout_path, method: "delete" %>
     <% else %>
-      Not signed in!
+    <%=t :not_signed %>
     <% end %>
 
 </div>

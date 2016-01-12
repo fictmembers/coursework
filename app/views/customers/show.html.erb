@@ -1,6 +1,6 @@
 <%= render 'layouts/header' %>
 <div class="formfactor">
   <h4><%= @customer.lastname %></h4>
-  Your id: <%= @customer.id %></br>
-  Registred on: <%= @customer.created_at.strftime("%d/%b/%Y") %>
+  <%=t :personal_id %> <%= @customer.id %></br>
+  <%=t :registred_on %> <%= @customer.created_at.strftime("%d/%b/%Y") %>
 </div>

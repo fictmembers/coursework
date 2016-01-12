@@ -6,19 +6,19 @@
         <div class="card">
           <div class="card-image">
             <%= image_tag("table.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Adding table to restaurant </span>
+            <span class="card-title grey-text text-lighten-2"> <%=t :hello_table %></span>
           </div>
           <div class="card-content">
             <%= form_for(@table) do |f| %>
               <div class="field">
-                  <%= f.number_field :visnumber,  :placeholder => "Person on it" %></br>
+                  <%= f.number_field :visnumber,  :placeholder => "#{t('person_on')}" %></br>
 
-                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select restaurant-" }, class: "browser-default" %>
-                <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "-Select waiter-" }, class: "browser-default" %>
-                <%= f.collection_select :hall_id, Hall.all, :id, :hall_type, { prompt: "-Select hall-" }, class: "browser-default" %>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+                <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "#{t('select_waiter')}" }, class: "browser-default" %>
+                <%= f.collection_select :hall_id, Hall.all, :id, :hall_type, { prompt: "#{t('select_hall')}" }, class: "browser-default" %>
               </div>
           <div class="card-action">
-            <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
+            <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">  <%=t :save_info %></button>
           </div>
         </div>
       </div>

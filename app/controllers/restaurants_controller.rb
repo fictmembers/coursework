@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :signed_in_administrator, only:
-          [:new, :index, :edit, :update, :destory]
+          [:new, :index, :edit, :update, :destroy]
 
   def new
     @restaurant = Restaurant.new

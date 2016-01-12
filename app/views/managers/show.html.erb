@@ -1,11 +1,16 @@
 <div class="formfactor">
-    <h4><%= @manager.lastname %></h4>
-    Personal id: <%= @manager.id %></br>
-    Works at <%= @restaurant.name %> since <%= @manager.created_at.strftime("%d.%b.%Y") %> </br>
-    <% if signed_in? %>
-      <%= link_to "Sign out", signout_path, method: "delete" %>
-    <% else %>
-      Not signed in!
-    <% end %>
+  <h4><%= @manager.lastname %></h4>
+  <%=t :personal_id %>
+  <%= @manager.id %></br>
+  <%=t :works_at %>
+<%= @restaurant.name %>
+<%=t :since %>
+<%= @manager.created_at.strftime("%d.%b.%Y") %>
+</br>
+<% if signed_in? %>
+<%= link_to "#{t('signout')}", signout_path, method: "delete" %>
+<% else %>
+<%=t :not_signed %>
+<% end %>
 
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208201535) do
+ActiveRecord::Schema.define(version: 20160106133309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(version: 20151208201535) do
 
   add_index "menus", ["cuisine"], name: "index_menus_on_cuisine", unique: true, using: :btree
 
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "from_member"
+    t.integer  "to_member"
+    t.string   "theme"
+    t.string   "text"
+    t.boolean  "viewed",      default: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "restaurant_id"
     t.integer  "customer_id"
@@ -152,6 +162,20 @@ ActiveRecord::Schema.define(version: 20151208201535) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.string   "photo"
+    t.integer  "customer_id"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
   create_table "waiters", force: :cascade do |t|
     t.string   "lastname"

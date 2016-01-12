@@ -1,0 +1,38 @@
+<%= render 'layouts/header' %>
+
+<div class="row">
+  <%= render 'administrators/administratorsleftmenu' %>
+  <div class="col s10 offset-s2">
+    <div class="card">
+      <%= form_for(@message) do |f| %>
+      <%= f.hidden_field :from_member, :value => current_administrator.id %>
+      <div class="row">
+        <div class="col s4">
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <h5>
+                <%=t :message %></h5>
+            </li>
+          </ul>
+          <p> <%=t :message_from %>
+            <%= current_administrator.login %></p>
+          <p> <%=t :message_to %>
+            <%= f.select :to_member, administrator_select, :placeholder => "#{t('select_adm')}" %></p>
+        </div>
+        <div class="col s8">
+          <ul class="collection with-header">
+            <li class="collection-item">
+              <%= f.text_field :theme, :placeholder => "#{t('message_theme')}" %>
+            </li>
+            <li class="collection-item">
+              <%= f.text_area  :text,  :placeholder => "#{t('text_there')}", class: "materialize-textarea" %>
+            </li>
+            <li class="collection-item">
+              <%= f.submit "#{t('send_message')}", class: "btn blue-grey darken-4" %>
+            </li>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

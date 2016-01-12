@@ -1,22 +1,24 @@
-
 <%= render 'layouts/header' %>
 <div class="row">
   <div class="col s4 offset-s4">
-        <div class="card">
-          <div class="card-image">
-            <%= image_tag("menu.jpg")%>
-            <span class="card-title grey-text text-lighten-2">Adding new part of menu!</span>
-          </div>
-          <div class="card-content">
-            <%= form_for(@menu) do |f| %>
-              <div class="field">
-                <%= f.text_field :cuisine, :placeholder => "New cuisine" %> </br>
-                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "-Select Restaurant-" }, class: "browser-default" %>
-              </div>
-          <div class="card-action">
-            <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Save information</button>
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("menu.jpg")%>
+        <span class="card-title grey-text text-lighten-2">
+          <%=t :hello_menu %></span>
+      </div>
+      <div class="card-content">
+        <%= form_for(@menu) do |f| %>
+        <div class="field">
+          <%= f.text_field :cuisine, :placeholder => "#{t('new_cuisine')}" %>
+        </br>
+        <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+      </div>
+      <div class="card-action">
+        <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">
+          <%=t :save_info %></button>
       </div>
     </div>
-    <% end %>
+  </div>
+</div>
+<% end %>

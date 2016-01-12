@@ -5,14 +5,14 @@
 			<table id="table">
 			    <thead>
 			          <tr>
-										<th data-field="id">ID</th>
-                    <th data-field="restaurant">Restaurant</th>
-										<th data-field="waiter">Waiter</th>
-			              <th data-field="visnumber">Number of visitors</th>
-                    <th data-field="status">Status</th>
-			              <th data-field="created_at">Created at</th>
-				            <th data-field="edit">Edit</th>
-		    				    <th data-field="delete">Delete</th>
+										<th data-field="id"> ID</th>
+                    <th data-field="restaurant"> <%=t :restaurant %></th>
+										<th data-field="waiter"> <%=t :waiter %></th>
+			              <th data-field="visnumber"> <%=t :person_on %></th>
+                    <th data-field="status"> <%=t :status %></th>
+			              <th data-field="created_at"> <%=t :created %></th>
+				            <th data-field="edit"> <%=t :edit %></th>
+		    				    <th data-field="delete"> <%=t :delete %></th>
 			          </tr>
 			    </thead>
 
@@ -20,14 +20,14 @@
 			    	<% @tables.each do |table| %>
 						<% restaurant = Restaurant.find(table.restaurant_id) %>
 			          <tr>
-									<td><%= table.id %></td>
-			            <td><%= restaurant.name %></td>
-									<td><%= table.waiter_id %></td>
-			            <td><%= table.visnumber %></td>
-                  <td><%= table.status %></td>
-			            <td><%= table.created_at %></td>
-                  <td><%= link_to 'Edit', edit_table_path(table) %></td>
-	    					  <td><%= link_to "Delete", table, method: :delete, data: { confirm: "You sure?" } %></td>
+									<td> <%= table.id %></td>
+			            <td> <%= restaurant.name %></td>
+									<td> <%= table.waiter_id %></td>
+			            <td> <%= table.visnumber %></td>
+                  <td> <%= table.status %></td>
+			            <td> <%= table.created_at %></td>
+                  <td> <%= link_to "#{t('edit')}", edit_table_path(table) %></td>
+	    					  <td> <%= link_to "#{t('delete')}", table, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
 			        <% end %>
 			    <tbody>

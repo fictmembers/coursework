@@ -1,24 +1,73 @@
 <%= render 'layouts/header' %>
 
 <div class="row">
-  <div class="col s6 offset-s3">
+  <div class="col s6 offset-s3 hide-on-med-and-down">
     <div class="card">
       <div class="card-image">
-          <%= image_tag "reservation.jpg" %>
-          <span class="card-title black-text">Thank you for reservation!</span>
+        <%= image_tag "reservation.jpg" %>
+        <span class="card-title white-text">
+          <%=t :thank %></span>
       </div>
       <div class="card-content">
-          <h4>For: <%= @customer.lastname %> </h4>
-          <ul>
-            <li class="pushed">Reservation #<b><%= @reservation.id %></b></li>
-            <li class="pushed">Restaurant: <b><%= @restaurant.name %></b></li>
-            <li class="pushed">Hall: <%= @hall.hall_type %></li>
-            <li class="pushed">Table #<%= @table.id %></li>
-          </ul>
+        <h4>
+          <%=t :order_for %>
+          <%= @customer.lastname %>
+        </h4>
+        <ul>
+          <li class="pushed">
+            <%=t :reservation %>
+            #
+            <b><%= @reservation.id %></b>
+          </li>
+          <li class="pushed">
+            <%=t :restaurant %>:
+            <b><%= @restaurant.name %></b>
+          </li>
+          <li class="pushed">
+            <%=t :hall %>:
+            <%= @hall.hall_type %></li>
+          <li class="pushed">
+            <%=t :table %>
+            #<%= @table.id %></li>
+        </ul>
       </div>
       <div class="card-action">
-        <%= link_to "Make new order", new_order_path %>
-        <%= link_to "Back to home page", root_path %>
+        <%= link_to "#{t('continue')}", root_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 hide-on-large-only">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag "reservation.jpg" %>
+      </div>
+      <div class="card-content">
+        <h5>
+          <%=t :reserv_details %></h5>
+        <h6>
+          <%=t :order_for %>
+          <%= @customer.lastname %></h6>
+        <ul>
+          <li class="pushed">
+            <%=t :reservation %>
+            #
+            <b><%= @reservation.id %></b>
+          </li>
+          <li class="pushed">
+            <%=t :restaurant %>:
+            <b><%= @restaurant.name %></b>
+          </li>
+          <li class="pushed">
+            <%=t :hall %>:
+            <%= @hall.hall_type %></li>
+          <li class="pushed">
+            <%=t :table %>
+            #<%= @table.id %></li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <%= link_to "#{t('continue')}", root_path %>
       </div>
     </div>
   </div>

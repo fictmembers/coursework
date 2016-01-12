@@ -1,6 +1,6 @@
 <%= render 'layouts/header' %>
 <div class="row">
-  <div class="col s8 offset-s2">
+  <div class="col s8 offset-s2 hide-on-med-and-down">
     <div class="card">
       <div class="card-image">
         <%= image_tag "table.jpg" %>
@@ -12,16 +12,34 @@
             <div class="col s3">
               <div class="card">
                 <div class="card-action">
-                  <p class="pushed"><b>Table #<%= f.id %></b></p>
-                  <p class="pushed">Persons on it: <%= f.visnumber %></p>
-                  <%= link_to "View", f %></div>
+                  <p class="pushed"><b> <%=t :table %> #<%= f.id %></b></p>
+                  <p class="pushed"> <%=t :person_on %>: <%= f.visnumber %></p>
+                  <%= link_to "#{t('view')}", f %></div>
               </div>
             </div>
           <% end %>
         </div>
       </div>
       <div class="card-action">
-        <%= link_to "Back to main page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 hide-on-large-only">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag "table.jpg" %>
+        <span class="card-title white-text"><b><%= @restaurant.name %></b> </br> <%= @hall.hall_type %></span>
+      </div>
+      <div class="card-content">
+          <% @tables.each do |f| %>
+              <div class="card">
+                <div class="card-action">
+                  <p class="pushed"><b> <%=t :table %> #<%= f.id %></b></p>
+                  <p class="pushed"> <%=t :person_on %>: <%= f.visnumber %></p>
+                  <%= link_to "#{t('view')}", f %></div>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>

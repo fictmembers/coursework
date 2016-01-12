@@ -1,21 +1,22 @@
 class Administrator < ActiveRecord::Base
-  
-    before_create :create_remember_token
+  has_many :messages, dependent: :destroy
 
-    validates :login,     presence: true
-    validates :password,  presence: true, length: { minimum: 6 }
+  before_create :create_remember_token
 
-    has_secure_password
+  validates :login,     presence: true
+  validates :password,  presence: true, length: { minimum: 6 }
 
-    def Administrator.new_remember_token
-      SecureRandom.urlsafe_base64
-    end
+  has_secure_password
 
-    def Administrator.encrypt(token)
-      Digest::SHA1.hexdigest(token.to_s)
-    end
+  def self.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
 
-    private  def create_remember_token
-        self.remember_token = Administrator.encrypt(Administrator.new_remember_token)
-    end
+  def self.encrypt(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private def create_remember_token
+    self.remember_token = Administrator.encrypt(Administrator.new_remember_token)
+  end
 end

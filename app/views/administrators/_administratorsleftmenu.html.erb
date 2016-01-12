@@ -1,0 +1,33 @@
+<!-- Left nav bar-->
+<div class="col s2 hide-on-med-and-down">
+  <div class="fixed-div">
+    <div class="card">
+      <div class="card-content ">
+        <h4><%= current_administrator.login.capitalize %></h4>
+        <p>
+          <b><%=t :mailbox %></b>
+          </br> <%= link_to "#{t('new_message')}", sendmessage_path %>
+        </br> <%= link_to "#{t('incomming')}", im_path %>
+          <% counter_of_incoming_messages = Message.where("to_member = ? and viewed = false", current_administrator).count %>
+          <% if counter_of_incoming_messages != 0 %>
+            <span class="new badge header">
+              <%= counter_of_incoming_messages %>
+            </span>
+          <% end %>
+        </br> <%= link_to "#{t('sended')}",  imsended_path %>
+        </p>
+      </br>
+        <p>
+          <b>Statistic</b>
+        </br> <%= link_to "#{t('top_waiters')}", topwaiters_path %>
+      </br> <%= link_to "#{t('top_dishes')}", lastweektop_path %>
+    </br> <%= link_to "#{t('day_statistic')}", alldayslong_path %>
+        </p>
+      </div>
+      <div class="card-action">
+        <%= link_to "#{t('signout')}", signout_path, method: "delete" %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End left nav bar -->

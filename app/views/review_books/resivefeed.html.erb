@@ -4,13 +4,13 @@
   <div class="col s6 offset-s3">
     <div class="card">
       <div class="card-image">
-          <%= image_tag "feedback.jpg" %>
-          <span class="card-title black-text">
-            Thank you for rating us!
-          </span>
+        <%= image_tag "feedback.jpg" %>
+        <span class="card-title black-text">
+          <%=t :rating %>
+        </span>
       </div>
       <div class="card-action">
-        <%= link_to "Back to home page", root_path %>
+        <%= link_to "#{t('back_to_main')}", root_path %>
       </div>
     </div>
   </div>
