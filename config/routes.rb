@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   scope "(:locale)", :locale => /en|ru/ do
-
   resources :administrators
   resources :bills
   resources :cashiers

@@ -7,10 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 admin = Administrator.create(login: 'admin', password: '111111', password_confirmation: '111111')
-rest_1 =  Restaurant.create(name: 'Hof Van Cleve', address: 'Riemegemstraat,  1, 9770 Kruishoutem, Belgium', tel: '+3293835848', lang: 'en')
-rest_2 =  Restaurant.create(name: 'El Celler de Can Roca', address: 'Calle Can Sunyer, 48, 17007 Girona, Spain', tel: '+34972222157',  lang: 'en')
-rest_3 =  Restaurant.create(name: 'Hof Van Cleve', address: 'Riemegemstraat 1, 9770 Kruishoutem, Бельгия', tel: '+3293835848', lang: 'ru')
-rest_4 =  Restaurant.create(name: 'El Celler de Can Roca', address: 'Carrer de Can Sunyer, 48, 17007 Girona, Испания', tel: '+34972222157',  lang: 'ru')
+rest_1 =  Restaurant.create(name: 'Hof Van Cleve', address: 'Riemegemstraat,  1, 9770 Kruishoutem, Belgium', tel: '+3293835848')
+rest_2 =  Restaurant.create(name: 'El Celler de Can Roca', address: 'Calle Can Sunyer, 48, 17007 Girona, Spain', tel: '+34972222157')
 
 man_1 = Manager.create(lastname: 'Phillip Coulson', lang: 'en',  restaurant_id: rest_1.id)
 man_2 = Manager.create(lastname: 'Nick Fury', lang: 'en',  restaurant_id: rest_2.id)
