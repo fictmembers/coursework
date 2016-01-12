@@ -13,7 +13,7 @@
               <div class="field">
                   <%= f.number_field :visnumber,  :placeholder => "#{t('person_on')}" %></br>
 
-                <%= f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
                 <%= f.collection_select :waiter_id, Waiter.where(lang:I18n.locale), :id, :lastname, { prompt: "#{t('select_waiter')}" }, class: "browser-default" %>
                 <%= f.collection_select :hall_id, Hall.where(lang:I18n.locale), :id, :hall_type, { prompt: "#{t('select_hall')}" }, class: "browser-default" %>
               </div>

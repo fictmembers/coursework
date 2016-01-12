@@ -12,7 +12,7 @@
         <div class="field">
           <%= f.text_field :cuisine, :placeholder => "#{t('new_cuisine')}" %>
         </br>
-        <%= f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+        <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
       </div>
       <div class="card-action">
         <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">

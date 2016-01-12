@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.where(lang:I18n.locale)
+    @restaurants = Restaurant.all
   end
 
   def create
@@ -21,7 +21,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @halls = Hall.where('restaurant_id = ?', params[:id])
+    @halls = Hall.where('restaurant_id = ? and lang = ?', params[:id], I18n.locale)
     session.delete(:restaurant)
     session[:restaurant] = @restaurant.id
   end
@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurants
-    @restaurants = Restaurant.where(lang:I18n.locale)
+    @restaurants = Restaurant.all
   end
 
   private

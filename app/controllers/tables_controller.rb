@@ -25,7 +25,7 @@ class TablesController < ApplicationController
     session[:table] = @table.id
 
     @hall = Hall.find(@table.hall_id)
-    @hostess = Hostess.where('hall_id = ?', @hall.id)
+    @hostess = Hostess.where('hall_id = ? and lang = ?', @hall.id, I18n.locale)
     @restaurant = Restaurant.find(@hall.restaurant_id)
     @today = Reservation.where('reserv_time = ? and table_id = ?', Date.today.to_s, @table.id)
     @tommorow = Reservation.where('reserv_time = ? and table_id = ?', Date.current.tomorrow.to_s, @table.id)
