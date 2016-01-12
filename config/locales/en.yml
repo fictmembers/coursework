@@ -47,7 +47,7 @@ en:
   top_waiters: "Top kitchen's workers"
   top_dishes: "View top dishes"
   day_statistic: "Days Statistic"
-
+  adminstatistic: "Statistics"
   #---------alldayslong---------#
   day: "Day"
 
