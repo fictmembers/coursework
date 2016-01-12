@@ -12,8 +12,8 @@
               <div class="field">
                   <%= f.number_field :visnumber, class: "form-control",  :placeholder => "#{t('person_on')}" %></br>
 
-                <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
-                <%= f.collection_select :waiter_id, Waiter.all, :id, :lastname, { prompt: "#{t('select_waiter')}" }, class: "browser-default" %>
+                <%= f.collection_select :restaurant_id, Restaurant.where(lang:I18n.locale), :id, :name, { prompt: "#{t('select_rest')}" }, class: "browser-default" %>
+                <%= f.collection_select :waiter_id, Waiter.where(lang:I18n.locale), :id, :lastname, { prompt: "#{t('select_waiter')}" }, class: "browser-default" %>
               </div>
           <div class="card-action">
             <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>

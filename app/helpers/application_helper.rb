@@ -1,6 +1,6 @@
 module ApplicationHelper
   def restaurant_select
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(lang:I18n.locale)
     s = ''
     @restaurants.each do |restaurant|
       s << "<option value=#{restaurant.id}>#{restaurant.name}</option>"

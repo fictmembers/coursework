@@ -7,7 +7,7 @@ class WaitersController < ApplicationController
   end
 
   def index
-    @waiters = Waiter.all
+    @waiters = Waiter.where(lang:I18n.locale)
   end
 
   def create

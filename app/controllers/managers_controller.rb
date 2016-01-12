@@ -7,7 +7,7 @@ class ManagersController < ApplicationController
   end
 
   def index
-    @managers = Manager.all
+    @managers = Manager.where(lang:I18n.locale)
   end
 
   def create

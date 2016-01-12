@@ -7,7 +7,7 @@
 			          <tr>
 										<th data-field="id"> ID</th>
 			              <th data-field="lastname"> <%=t :name_lastname %></th>
-			              <th data-field="restaurant"> <%=t :restaurant %></th>
+			              <th data-field="restaurant"> <%=t :restaurant %></th>									
 			              <th data-field="created_at"> <%=t :created %></th>
 				            <th data-field="edit"> <%=t :edit %></th>
 		    				    <th data-field="delete"> <%=t :delete %></th>
@@ -15,7 +15,9 @@
 			    </thead>
 
 			    <tbody>
-			    	<% @managers.each do |manager| %>
+
+							<% @managers.each do |manager| %>
+
 						<% restaurant = Restaurant.find(manager.restaurant_id) %>
 			          <tr>
 									<td> <%= manager.id %></td>
@@ -25,6 +27,7 @@
                   <td> <%= link_to "#{t('edit')}", edit_manager_path(manager) %></td>
 	    					  <td> <%= link_to "#{t('delete')}", manager, method: :delete, data: { confirm: "#{t('you_sure')}" } %></td>
 			          </tr>
+
 			        <% end %>
 			    <tbody>
 			</table>

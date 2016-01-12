@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
   create_table "bills", force: :cascade do |t|
     t.integer  "cashier_id"
     t.integer  "customer_id"
+    t.string   "lang"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "order_id"
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
 
   create_table "cashiers", force: :cascade do |t|
     t.string   "lastname"
+    t.string   "lang"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
 
   create_table "chefs", force: :cascade do |t|
     t.string   "lastname"
+    t.string   "lang"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -58,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
   create_table "halls", force: :cascade do |t|
     t.string   "hall_type"
     t.integer  "restaurant_id"
+    t.string   "lang"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -65,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
   create_table "hostesses", force: :cascade do |t|
     t.string   "lastname"
     t.integer  "restaurant_id"
+    t.string   "lang"
     t.integer  "hall_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -74,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
     t.integer  "price"
     t.string   "description"
     t.integer  "restaurant_id"
+    t.string   "lang"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "menu_id"
@@ -81,6 +87,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
 
   create_table "managers", force: :cascade do |t|
     t.string   "lastname"
+    t.string   "lang"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -88,6 +95,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
 
   create_table "menus", force: :cascade do |t|
     t.string   "cuisine"
+    t.string   "lang"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "restaurant_id"
@@ -111,6 +119,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
     t.integer  "waiter_id"
     t.integer  "manager_id"
     t.integer  "chef_id"
+    t.string   "lang"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -140,12 +149,14 @@ ActiveRecord::Schema.define(version: 20160106133309) do
     t.string   "name"
     t.string   "address"
     t.string   "tel"
+    t.string   "lang"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "review_books", force: :cascade do |t|
     t.string   "review"
+    t.string   "lang"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "review_type"
@@ -180,6 +191,7 @@ ActiveRecord::Schema.define(version: 20160106133309) do
   create_table "waiters", force: :cascade do |t|
     t.string   "lastname"
     t.integer  "restaurant_id"
+    t.string   "lang"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

@@ -11,7 +11,7 @@
             <%= form_for(@bill) do |f| %>
               <div class="field">
                 <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "#{t('select_guest')}" }, class: "browser-default" %>
-                <%= f.collection_select :cashier_id, Cashier.all, :id, :lastname, { prompt: "#{t('select_cashier')}" }, class: "browser-default" %>
+                <%= f.collection_select :cashier_id, Cashier.where(lang:I18n.locale), :id, :lastname, { prompt: "#{t('select_cashier')}" }, class: "browser-default" %>
                 <%= f.number_field :summary, :placeholder => "#{t('summary_in')}", :value => "1", :step => "any"%>
                 <%= f.text_area :options,  :placeholder => "#{t('additional')}" %> </br>
                 <%= f.label :name, '#{t('date_spec')}' %>

@@ -7,7 +7,7 @@ class MenusController < ApplicationController
   end
 
   def index
-    @menus = Menu.all
+    @menus = Menu.where(lang:I18n.locale)
   end
 
   def create

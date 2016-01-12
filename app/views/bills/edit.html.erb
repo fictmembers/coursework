@@ -11,7 +11,7 @@
             <%= form_for(@bill) do |f| %>
               <div class="field">
                 <%= f.collection_select :customer_id, Customer.all, :id, :lastname, { prompt: "#{t('select_guest')}" }, class: "browser-default" %>
-                <%= f.collection_select :cashier_id, Cashier.all, :id, :lastname, { prompt: "#{t('select_cashier')}" }, class: "browser-default" %>
+                <%= f.collection_select :cashier_id, Cashier.where(lang:I18n.locale), :id, :lastname, { prompt: "#{t('select_cashier')}" }, class: "browser-default" %>
               </div>
               <div class="card-action">
             <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action"> <%=t :save_info %></button>

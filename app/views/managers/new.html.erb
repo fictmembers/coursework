@@ -13,6 +13,7 @@
           <div class="input-field">
             <i class="material-icons prefix">account_circle</i>
             <%= f.text_field :lastname,     :placeholder => "#{t('name_lastname')}", class: "validate", id: "icon_prefix" %>
+            <%= f.select :lang, options_for_select([['Russian', 'ru'], ['English', 'en']]),   :placeholder => "#{t('select_lang')}", class: "input-field col s4" %>
           </div>
           <div class="input-field">
             <%= f.select :restaurant_id, restaurant_select, class: "input-field col s4", :prompt => "#{t('jobplace')}"%>

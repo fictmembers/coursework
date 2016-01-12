@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :price
       t.string :description
       t.references :restaurant
+      t.string :lang
       t.timestamps null: false
     end
   end

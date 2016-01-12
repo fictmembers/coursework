@@ -6,7 +6,7 @@ class HallsController < ApplicationController
   end
 
   def index
-    @halls = Hall.all
+    @halls = Hall.where(lang:I18n.locale)
   end
 
   def create

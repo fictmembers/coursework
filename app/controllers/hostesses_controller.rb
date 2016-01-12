@@ -7,7 +7,7 @@ class HostessesController < ApplicationController
   end
 
   def index
-    @hostesses = Hostess.all
+    @hostesses = Hostess.where(lang:I18n.locale)
   end
 
   def create

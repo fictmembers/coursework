@@ -6,7 +6,7 @@ class ChefsController < ApplicationController
   end
 
   def index
-    @chefs = Chef.all
+    @chefs = Chef.where(lang:I18n.locale)
   end
 
   def create
