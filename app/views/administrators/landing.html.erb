@@ -7,24 +7,24 @@
 <% end %>
 
 <div class="layer">
-  <div class="white-text">
-    <p>
+
+<div class="row">
       <% if session[:customer].nil? %>
-      <h3>
-        <%=t :hi_dear %></h3>
-      <p>
-        <%=t :please %></p>
+      <div class="textvalign please center-align light grey-text text-lighten-3 hide-on-med-and-down">
+    <h1>  <%=t :hi_dear %> </h1>
+            <h3 class="please light grey-text text-lighten-3">
+        <%=t :please %> </h3>
+      </div>
       <div class="white-text">
         <%= button_to  "#{t('authorise')}", new_customer_path, class: "btn blue-grey darken-3", :method => :get %>
       </div>
       <% elsif !session[:customer].nil? and session[:reservation_id].nil? %>
-
       <h3>
         <%=t :pleasure %><%= session[:customer] %>!</h3>
       <i>
         <%= link_to "#{t('not_you')}", new_customer_path %></i>
       <%=t :reserv_time %>
-      <div class="white-text">
+      <div class="white-text caption">
         <%= button_to "#{t('reservation')}", allrestaurants_path, class: "btn blue-grey darken-3", :method => :get %>
       </div>
 
@@ -46,7 +46,6 @@
       </div>
 
       <% end %>
-    </p>
-  </div>
+    </div>
 </div>
 <%= render 'layouts/footer' %>
